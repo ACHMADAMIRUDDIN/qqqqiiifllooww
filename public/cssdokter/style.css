@@ -1,0 +1,232 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f9f9f9;
+}
+
+.top-bar {
+  background-color: #5f94ff;
+  color: white;
+  padding: 5px 0;
+  font-size: 12px;
+  text-align: center;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #5f94ff;
+  text-align: center;
+}
+
+.contact {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.menu {
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: #e6eaff;
+}
+
+.menu .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  z-index: 1000;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+}
+
+.menu .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu .dropdown > a::after {
+  content: " ▼";
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.menu .dropdown-content li a {
+  padding: 12px 16px;
+  color: #333;
+  background-color: #fff;
+  white-space: nowrap;
+}
+
+.menu .dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  z-index: 1100;
+}
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #5f94ff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 15px;
+  }
+  .logo {
+    margin-bottom: 10px;
+  }
+  .contact {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  .menu {
+    position: relative;
+  }
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background: #f5f5f5;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    z-index: 1000;
+  }
+  .menu ul.active {
+    display: flex;
+  }
+  .menu li {
+    width: 100%;
+  }
+  .menu a {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  .menu .dropdown-content {
+    position: static;
+    box-shadow: none;
+    min-width: 100%;
+    border-radius: 0;
+  }
+  .menu .dropdown:hover .dropdown-content,
+  .menu .dropdown:focus-within .dropdown-content {
+    display: none;
+  }
+  .menu .dropdown.open .dropdown-content {
+    display: block;
+  }
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* --- HERO & FOOTER --- */
+.hero {
+  position: relative;
+  background-image: url('imgg/akuountur.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background-color: rgba(0, 74, 173, 0.6);
+  z-index: 1;
+}
+.hero h1 {
+  position: relative;
+  z-index: 2;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+footer {
+  background-color: #4d7fe7;
+  color: white;
+  padding: 30px 20px 10px;
+  font-size: 14px;
+  margin-top: 60px;
+}
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-content div {
+  flex: 1 1 30%;
+  margin: 10px;
+}
+.footer-bottom {
+  text-align: center;
+  padding: 10px;
+  background-color: #3a66c6;
+  margin-top: 20px;
+  font-size: 13px;
+}

@@ -1,0 +1,625 @@
+.top-bar {
+  background-color: #5f94ff;
+  color: white;
+  font-size: 12px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.marquee {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scrollText 15s linear infinite;
+  padding-left: 50%;
+  /* Start dari kanan */
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #1976d2;
+}
+
+.contact {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  font-size: 14px;
+}
+
+.contact span {
+  cursor: pointer;
+  white-space: nowrap;
+  color: #444;
+}
+
+/* Style umum */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: #ffffff;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar .logo {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.navbar .user-profile {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  z-index: 999;
+}
+
+.overlay.active {
+  display: block;
+}
+
+/* Modal Login */
+.login-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 30px 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  display: none;
+  z-index: 1000;
+}
+
+.login-modal.active {
+  display: block;
+}
+
+.login-modal h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.login-modal input {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-modal button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-modal button:hover {
+  background-color: #155ca3;
+}
+
+/* Main Content */
+
+.menu {
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  position: sticky;
+  top: 0;
+  z-index: 888;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.menu li {
+  position: relative;
+}
+
+.menu a {
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.menu li:hover {
+  background-color: #e6eaff;
+}
+
+.menu .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 0 0 6px 6px;
+  overflow: hidden;
+
+}
+
+.menu .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.menu .dropdown>a::after {
+  content: " ▼";
+  font-size: 10px;
+  margin-left: 5px;
+}
+
+.menu .dropdown-content li a {
+  padding: 12px 16px;
+  color: #333;
+  background-color: #fff;
+  white-space: nowrap;
+}
+
+.menu .dropdown-content li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  z-index: 1100;
+}
+
+.hamburger span {
+  height: 4px;
+  width: 100%;
+  background: #5f94ff;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 900px) {
+
+  .menu {
+    position: relative;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    background: #f5f5f5;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+  }
+
+  .menu ul.active {
+    display: flex;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+  }
+
+  .menu .dropdown-content {
+    position: static;
+    box-shadow: none;
+    min-width: 100%;
+    border-radius: 0;
+  }
+
+  .menu .dropdown:hover .dropdown-content,
+  .menu .dropdown:focus-within .dropdown-content {
+    display: none;
+  }
+
+  .menu .dropdown.open .dropdown-content {
+    display: block;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+/* Footer */
+footer {
+  background-color: #5f94ff;
+  /* Warna biru seperti di foto */
+  color: white;
+  padding: 30px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  margin-bottom: 20px;
+}
+
+.footer-column h4 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  border-bottom: 2px solid white;
+  padding-bottom: 5px;
+}
+
+.footer-column p,
+.footer-column li {
+  font-size: 0.9em;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+
+.footer-column i {
+  margin-right: 8px;
+}
+
+.footer-column.kontak p {
+  margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    width: 80%;
+    text-align: center;
+  }
+
+  .footer-column.kontak {
+    text-align: left;
+  }
+}
+
+.copyright {
+  text-align: center;
+  background-color: #5f94ff;
+  color: white;
+  padding: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  /* A light background for context */
+}
+
+/* Kontainer utama untuk konten halaman Anda */
+.page-content-wrapper {
+  max-width: 1200px;
+  /* Atur lebar maksimal untuk konten halaman Anda */
+  margin: 0 auto;
+  /* Pusatkan konten halaman */
+  padding: 20px;
+  /* Padding di sekitar konten halaman */
+}
+
+/* Styling untuk banner "Tentang Kami" */
+        .about-us-banner {
+            width: 100%; /* Pastikan banner mengambil lebar penuh */
+            height: 250px; /* Menggunakan tinggi yang Anda berikan */
+            background-color: #5f94ff; /* Menggunakan warna yang Anda berikan */
+            color: #ffffff; /* Warna teks putih */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* border-radius: 8px; <--- BARIS INI DIHAPUS UNTUK EFEK FULL-WIDTH */
+            margin-bottom: 20px; /* Jarak bawah dari konten berikutnya */
+            padding: 0 20px; /* Padding di kiri dan kanan agar teks tidak menempel ke tepi */
+            opacity: 0.9; /* Menggunakan opacity yang Anda berikan */
+            /* Jika Anda ingin background image, tambahkan seperti ini: */
+            /* background-image: url('https://placehold.co/1200x400/3f51b5/ffffff?text=Background+Image'); */
+            /* background-size: cover; */
+            /* background-position: center; */
+            /* background-blend-mode: multiply; */
+        }
+
+
+
+.about-us-banner h1 {
+  font-size: 3em;
+  /* Sesuaikan ukuran font sesuai kebutuhan */
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  /* Bayangan teks opsional */
+}
+
+.about-us-banner p {
+  font-size: 1.2em;
+  /* Sesuaikan ukuran font sesuai kebutuhan */
+  max-width: 80%;
+  /* Batasi lebar untuk keterbacaan yang lebih baik */
+  line-height: 1.5;
+}
+
+
+/* Custom CSS untuk memastikan slider terlihat bagus */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f0f2f5;
+  /* Warna latar belakang lembut */
+  margin: 0;
+  padding: 0;
+  /* Pastikan tidak ada padding default pada body */
+  box-sizing: border-box;
+  /* Hapus gaya berikut yang memusatkan seluruh body: */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* min-height: 100vh; */
+}
+
+/* Kontainer utama untuk konten halaman Anda */
+.page-content-wrapper {
+  max-width: 1200px;
+  /* Atur lebar maksimal untuk konten halaman Anda */
+  margin: 0 auto;
+  /* Pusatkan konten halaman */
+  padding: 20px;
+  /* Padding di sekitar konten halaman */
+}
+
+.swiper-container {
+  width: 100%;
+  max-width: 800px;
+  /* Batasi lebar maksimal slider */
+  height: 400px;
+  /* Tinggi slider */
+  border-radius: 12px;
+  /* Sudut membulat */
+  overflow: hidden;
+  /* Pastikan gambar tidak keluar dari batas */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  /* Bayangan lembut */
+  background-color: #ffffff;
+  /* Latar belakang putih untuk kontainer */
+  margin: 40px auto;
+  /* Tambahkan margin atas/bawah dan pusatkan slider dalam kontainer induknya */
+  position: relative;
+  /* Penting untuk memposisikan tombol navigasi di dalamnya */
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8;
+  /* Latar belakang slide */
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  /* Gambar mengisi lebar slide */
+  height: 100%;
+  /* Gambar mengisi tinggi slide */
+  object-fit: cover;
+  /* Pastikan gambar menutupi area tanpa terdistorsi */
+  border-radius: 12px;
+  /* Sudut membulat pada gambar */
+}
+
+/* Styling untuk tombol navigasi (prev/next) */
+.swiper-button-prev,
+.swiper-button-next {
+  color: #3f51b5;
+  /* Warna tombol navigasi */
+  background-color: rgba(255, 255, 255, 0.8);
+  /* Latar belakang tombol semi-transparan */
+  border-radius: 50%;
+  /* Bentuk bulat */
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  /* Posisikan secara absolut di dalam swiper-container */
+  top: 50%;
+  /* Pusatkan secara vertikal */
+  transform: translateY(-50%);
+  /* Sesuaikan posisi vertikal */
+  z-index: 10;
+  /* Pastikan di atas gambar */
+}
+
+.swiper-button-prev {
+  left: 10px;
+  /* Posisikan tombol prev di kiri */
+}
+
+.swiper-button-next {
+  right: 10px;
+  /* Posisikan tombol next di kanan */
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: rgba(255, 255, 255, 1);
+  /* Latar belakang tombol saat hover */
+}
+
+/* Styling untuk pagination (titik-titik di bawah) */
+.swiper-pagination {
+  position: absolute;
+  /* Posisikan secara absolut di dalam swiper-container */
+  bottom: 10px;
+  /* Posisikan di bagian bawah */
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+  /* Pastikan di atas gambar */
+}
+
+.swiper-pagination-bullet {
+  background-color: #ccc;
+  /* Warna titik pagination tidak aktif */
+  opacity: 0.7;
+  transition: background-color 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #3f51b5;
+  /* Warna titik pagination aktif */
+  opacity: 1;
+}
+
+/* Responsiveness: Sesuaikan tinggi slider untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+  .swiper-container {
+    height: 300px;
+    /* Kurangi tinggi slider untuk mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .swiper-container {
+    height: 250px;
+    /* Kurangi tinggi slider lebih lanjut untuk mobile kecil */
+  }
+}
+.content-section {
+            max-width: 960px;
+            margin: 0 auto;
+            padding-bottom: 50px; /* Adjust as needed for spacing before the footer-like section */
+        }
+        /* Menambahkan properti untuk merapikan tulisan (rata kanan-kiri) */
+        .content-section p {
+            text-align: justify;
+            margin-bottom: 1em; /* Memberikan jarak antar paragraf */
+        }
+        .contact-info {
+            background-color: #e0f2f7; /* Bluish-white color */
+            padding: 20px;
+            margin-top: 20px;
+            /* To simulate "distance to footer" if this is the last element before an actual footer,
+               you'd typically add padding-bottom to the section containing this, or margin-bottom to this element.
+               Here, we'll assume this is the 'footer-like' section itself. */
+        }
+        .contact-info p {
+            margin: 5px 0;
+            color: #000; /* Ensure text is readable against the background */
+        }
+        .contact-info a {
+            color: #007bff; /* Standard link blue */
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        .footer-placeholder {
+            height: 100px; /* Placeholder for actual footer to show spacing */
+            background-color: #f0f0f0;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #ccc;
+        }
