@@ -2,6 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PasienController;
+use App\Http\Controllers\Admin\PesanControllers;
+use App\Http\Controllers\Admin\PemesananControllers;
+use App\Http\Controllers\Admin\ProfilControllers;
+use App\Http\Controllers\Admin\PromoControllers;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     return view('layouts.beranda');
@@ -15,12 +21,36 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
+
     // Contoh: route untuk pemesanan layanan yang butuh login
     Route::get('/pesan-fisioterapi', function () {
         // return view('pesan-fisioterapi'); // Buat view ini sesuai kebutuhan
     })->name('pesan.fisioterapi');
-    
+
+});
+
+Route::middleware(['auth', 'atmin'])->prefix('admin')->name('admin.')->group(function () {
+    // URL: /admin/dashboard
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard'); // Pastikan file ini ada: resources/views/admin/dashboard.blade.php
+    });
+
+    Route::resource('pasien', PasienController::class);
+    Route::resource('pesan', PesanControllers::class)->only(['index', 'update']);
+    Route::resource('profil', ProfilControllers::class)->only(['index', 'update']);
+    Route::resource('promo', PromoControllers::class);
+    Route::resource('pemesanan', PemesananControllers::class)->only(['index', 'update']);
+});
+
+Route::get('/redirect-dashboard', function () {
+    if (Auth::check()) {
+        $user = Auth::user();
+        if ($user->role === 'admin') {
+            return redirect()->route('admin.dashboard');
+        }
+    }
+
+    return redirect('/beranda'); // ini route default untuk non-admin
 });
 
 Route::get('/tentangkami', function () {
@@ -105,7 +135,7 @@ Route::get('/jadwaldokter1', function () {
     return view('layouts.jadwaldokter1');
 })->name('jadwaldokter1');
 Route::get('/dashboard', function () {
-    return view('layouts.beranda');
+    return view('admin.dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
