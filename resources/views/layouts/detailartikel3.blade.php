@@ -3,25 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Akupunktur - Sehat Harmoni Indonesia</title>
-  <link rel="stylesheet" href="new folder (2)/detailartikel3.css">
+  <title>berita1 - Sehat Harmoni Indonesia</title>
+  <link rel="stylesheet" href="New folder(2)/detailartikel2.css">
 </head>
 <body>
 
   <!-- Header -->
-   <header>
   <div class="top-bar">
-    <p>📍 Jl. alamat Brigjen Slamet Riyadi 14 Malang, Jawa Timur, Indonesia 65112</p>
+    <div class="marquee">
+      📍 Jl. alamat Brigjen Slamet Riyadi 14 Malang, Jawa Timur, Indonesia 65112
+    </div>
   </div>
+
+<!-- Navbar -->
   <div class="navbar">
 <div class="logo" style="display: flex; align-items: center; gap: 10px;">
   <img src="img/sehat_harmoni.jpeg" alt="Logo Sehat Harmoni" style="height: 40px;">
   <span>Sehat Harmoni Indonesia</span>
 </div>
-
+    <div class="contact">
+       @auth
+       <span class="welcome-text">
+    Hallo, {{ Auth::user()->name }}
+    </span>
+    <span>
+   <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+    @csrf
+     <button type="submit" class="logout-button">Logout</button>
+    </form>
+   </span>
+      @else
+         <span>
+        <a href="{{ route('login') }}" class="btn">Log in</a>
+        </span>
+          <span>
+        <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+        </span>
+      @endauth
+    </div>
   </div>
 
-  <!-- Bagian menu navbar responsif -->
+  {{-- Tempatkan konten halaman di sini --}}
+  @yield('content')
+
+
+  <!-- Menu Navigasi -->
   <nav class="menu">
     <div class="hamburger" id="hamburger-menu">
       <span></span>
@@ -60,6 +86,13 @@
     </ul>
   </nav>
 
+
+<div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
+    <h1>BERITA TER UPDATE</h1>
+    <p>
+atasi Covid-19 di Klinik Sehat Harmoni Malang bersama dengan kami menjadi salah satu tempat terbaik untuk menjaga kesehatan.</p>
+</div>
+
 <!-- Script untuk hamburger dan dropdown -->
 <script>
   // Hamburger menu toggle
@@ -79,37 +112,39 @@
     });
   });
 </script>
-  <!-- Judul Halaman -->
-  <section class="hero">
-    <h1>informasi</h1>
-  </section>
+  <!-- Konten Profil -->
+  <main class="content">
+    <div class="berita-container">
+      <img class="berita-img" src="img/acupuncture-2.jpg" alt="Akupunktur">
+      <div class="berita-deskripsi">
+        <P>
+        NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu 
+        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan. 
+        Teknik ini mirip dengan akupuntur, tetapi tanpa penggunaan jarum.
+        Akupresur melibatkan pemberian tekanan pada titik-titik akupuntur menggunakan jari,
+        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh. 
+        </P>
+      </div>
+      @auth
+      
+      @else
+        <div style="background:#fff;border-radius:12px;padding:2em;text-align:center;max-width:500px;margin:2em auto;box-shadow:0 2px 12px #0002;">
+          <h2 style="font-weight:600;margin-bottom:1em;color:#444;">Pesan Layanan</h2>
+          <p style="margin-bottom:2em;font-size:1.1em;">
+            Anda harus <a href="{{ route('login') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">login</a> atau 
+            <a href="{{ route('register') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">register</a> terlebih dahulu untuk mengisi form pemesanan layanan.
+          </p>
+          <div style="display:flex;gap:1em;justify-content:center;">
+            <a href="{{ route('login') }}" style="background:#4f8cff;color:#fff;padding:0.7em 2.5em;border-radius:8px;font-weight:600;text-decoration:none;font-size:1.1em;box-shadow:0 2px 8px #4f8cff33;">Login</a>
+            <a href="{{ route('register') }}" style="background:#4f8cff;color:#fff;padding:0.7em 2.5em;border-radius:8px;font-weight:600;text-decoration:none;font-size:1.1em;box-shadow:0 2px 8px #4f8cff33;">Register</a>
+          </div>
+        </div>
+      @endauth
+    </div>
+  </main>
 
-  <!-- Konten -->
-<div class="gambar">
-  <img src="img/Screenshot 2025-02-26 111859.png" class="image-fade-in-up">
-</div>
-<div class="teks-bawah-gambar">
-  <!-- Pindahkan isi <main class="content"> ke sini agar rapi dan di tengah -->
-  <p>
-    “Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, <br>
-    sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.<br>
-    Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.”<br><br>
-
-    “Ini adalah cara cerdas untuk mengatasi berbagai masalah kesehatanmu. Gak usah takut jarum lagi deh 😁, karena akupunktur itu gak seburuk yang kamu bayangkan kok!”<br><br>
-
-    “Kalau sakit kepala kamu gak sembuh-sembuh, mungkin perlu coba akupunktur.”<br><br>
-
-    “Dari riset dan sidang yang kami temukan, ternyata akupunktur memberikan rasa rileks saat sesi berjalan karena rasa sakit itu—ternyata cuma di bayangan kita aja! Bahkan ada pasien dengan migrain berat aja setelah mendapatkan 3 sesi udah merasa enteng banget loh.”<br><br>
-
-    “Untuk nyeri sendi atau masalah pencernaan, akupunktur bisa jadi solusi yang baik.”<br><br>
-
-    “Kamu sering pegal di pundak, leher, atau punggung belakang? Apalagi duduk lama kerja di depan laptop? Ini salah satu cara yang bisa bantu banget!”<br><br>
-
-    Atau siapa tahu yang mau meredakan rasa sakit tanpa obat, ternyata ini bisa membawa sesuatu yang lebih baik?
-  </p>
-</div>
   <!-- Footer -->
- <footer>
+<footer>
   <div class="footer-container">
       <div class="footer-column">
           <h4>Sehat Harmoni Indonesia</h4>

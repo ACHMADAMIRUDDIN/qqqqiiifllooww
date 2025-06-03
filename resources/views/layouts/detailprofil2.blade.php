@@ -23,22 +23,22 @@
   <span>Sehat Harmoni Indonesia</span>
 </div>
     <div class="contact">
-      @auth
-        <span>
-          <a href="{{ route('beranda') }}">{{ Auth::user()->name }}</a>
-        </span>
-        <span>
-          <form method="POST" action="{{ route('logout') }}" style="display:inline;">
-            @csrf
-            <button type="submit" style="background:none;border:none;padding:0;color:inherit;cursor:pointer;">Logout</button>
-          </form>
-        </span>
+       @auth
+       <span class="welcome-text">
+    Hallo, {{ Auth::user()->name }}
+    </span>
+    <span>
+   <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+    @csrf
+     <button type="submit" class="logout-button">Logout</button>
+    </form>
+   </span>
       @else
-        <span>
-          <a href="{{ route('login') }}">Log in</a>
+         <span>
+        <a href="{{ route('login') }}" class="btn">Log in</a>
         </span>
-        <span>
-          <a href="{{ route('register') }}">Register</a>
+          <span>
+        <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
         </span>
       @endauth
     </div>
