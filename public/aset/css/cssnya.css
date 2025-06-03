@@ -289,10 +289,11 @@ body {
   }
   header img {
     width: 100%;
-    display: block;
+    max-width: 100%;
+    display: flex;
     z-index: 1;
-
-    height: 600px;
+    height: auto;
+    max-height: 600px; /* Set a maximum height for the header image */
 
   }
   * {
