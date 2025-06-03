@@ -89,7 +89,7 @@
 
 
 <div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
-    <h1>Pengaduan</h1>
+    <h1>Pesan Layanan</h1>
     <p>Anda Dapat Memberikan Kritik/Saran Terkait Layanan Yang Kami Berikan</p>
 </div>
 
@@ -100,12 +100,22 @@
       @auth
       <form class="service-form">
         <h3>Data Pasien:</h3>
+                    <label for="nama_lengkap">Nama Lengkap</label>
         <input type="text" placeholder="Nama Lengkap" required>
-        <input type="date" required>
+                    <label for="nama_lengkap">tanggal Lahir</label>
+         <input type="date" placeholder="Tanggal Lahir" required>
+                     <label for="nama_lengkap">No. Handphone</label>
         <input type="tel" placeholder="No. Handphone" required>
+                    <label for="nama_lengkap">Alamat Email</label>
         <input type="email" placeholder="Alamat Email" required>
+                    <label for="nama_lengkap">Alamat Rumah</label>
         <input type="text" placeholder="Alamat Rumah" required>
-        <input type="text" placeholder="Jenis Kelamin" required>
+<label for="jenis_kelamin">Jenis Kelamin</label>
+<select id="jenis_kelamin" name="jenis_kelamin" required>
+  <option value="" disabled selected>Pilih Jenis Kelamin</option>
+  <option value="Laki-laki">Laki-laki</option>
+  <option value="Perempuan">Perempuan</option>
+</select>
 
         <h3>Informasi Kesehatan:</h3>
         <input type="text" placeholder="Gejala Yang Dialami / Dirasakan" required>
@@ -114,11 +124,14 @@
         <textarea placeholder="Keluhan Utama" required></textarea>
 
         <select required>
-          <option value="">Tanggal Layanan</option>
+          <option value="">Tanggal Pemesanan</option>
           <option value="2025-05-12">12 Mei 2025</option>
         </select>
         <select required>
           <option value="">Jenis Layanan</option>
+          <option value="konsultasi"> aku</option>
+          <option value="konsultasi">Konsultasi</option>
+          <option value="konsultasi">Konsultasi</option>
           <option value="konsultasi">Konsultasi</option>
         </select>
 
