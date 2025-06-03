@@ -33,12 +33,12 @@
           </form>
         </span>
       @else
-        <span>
-          <a href="{{ route('login') }}">Log in</a>
-        </span>
-        <span>
-          <a href="{{ route('register') }}">Register</a>
-        </span>
+         <span>
+        <a href="{{ route('login') }}" class="btn">Log in</a>
+    </span>
+    <span>
+        <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+    </span>
       @endauth
     </div>
   </div>

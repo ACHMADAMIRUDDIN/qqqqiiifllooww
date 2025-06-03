@@ -515,3 +515,26 @@ body {
 .tabel-jadwal tr:hover {
   background: #f5faff;
 }
+.btn {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #3490dc; /* Biru */
+        color: white;
+        text-decoration: none;
+        border-radius: 7px;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+        }
+
+      .btn:hover {
+      background-color: #064a7e;
+      }
+
+      .btn-secondary {
+      background-color: #3490dc; /* Abu-abu */
+      }
+
+      .btn-secondary:hover {
+      background-color: #064a7e;
+      }
+
