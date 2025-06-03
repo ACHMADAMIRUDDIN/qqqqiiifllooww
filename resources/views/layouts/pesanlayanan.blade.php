@@ -90,7 +90,7 @@
 
 <div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
     <h1>Pesan Layanan</h1>
-    <p>Anda Dapat Memberikan Kritik/Saran Terkait Layanan Yang Kami Berikan</p>
+    <p>Sebelum Melakukan Pemesanan Cek Jadwal Dokter Terlebih Dahulu</p>
 </div>
 
   <!-- Formulir -->
@@ -123,26 +123,31 @@
         <input type="text" placeholder="Keluhan Disampaikan Menurut?" required>
         <textarea placeholder="Keluhan Utama" required></textarea>
 
+<label for="tanggal">Tanggal Pemesanan</label>
+<input type="date" id="tanggal" name="tanggal" required>
+<label for="tanggal">Jenis layanan</label>
+
         <select required>
-          <option value="">Tanggal Pemesanan</option>
-          <option value="2025-05-12">12 Mei 2025</option>
-        </select>
-        <select required>
+
           <option value="">Jenis Layanan</option>
-          <option value="konsultasi"> aku</option>
-          <option value="konsultasi">Konsultasi</option>
-          <option value="konsultasi">Konsultasi</option>
-          <option value="konsultasi">Konsultasi</option>
+          <option value="konsultasi">Akupunture</option>
+          <option value="konsultasi">Akupresure</option>
+          <option value="konsultasi">Bekam</option>
+          <option value="konsultasi">Pijat</option>
         </select>
 
         <div class="checklist">
           <p><strong>Silakan baca dan beri tanda centang pada setiap pernyataan di bawah ini:</strong></p>
-          <label><input type="checkbox"> Saya tidak mengalami risiko besar dan kondisi kesehatan saya dianggap aman oleh dokter</label>
-          <label><input type="checkbox"> Saya memahami layanan diberikan oleh petugas medis yang profesional</label>
-          <label><input type="checkbox"> Saya menyadari bahwa hasil konsultasi tidak menjadi dasar tunggal diagnosis</label>
-          <label><input type="checkbox"> Saya memberikan informasi yang benar kepada petugas</label>
-          <label><input type="checkbox"> Saya menyetujui hasil konsultasi medis dapat dibagikan ke pihak lain sesuai kebutuhan</label>
-          <label><input type="checkbox"> Saya mengizinkan pihak rumah sakit melakukan tindakan darurat bila diperlukan</label>
+<br>
+<ul style="text-align: justify ; margin-left: 20px;">
+          <li> Saya memahami bahwa tindakan akupunktur dapat menimbulkan efek samping ringan seperti memar, nyeri, pusing, atau kelelahan.</li>
+          <li> Saya telah menginformasikan semua kondisi medis yang saya alami, termasuk penyakit kronis, alergi, serta status kehamilan (jika ada).</li>
+          <li> Saya memberikan izin kepada praktisi/terapis akupunktur untuk melakukan tindakan sesuai standar medis yang berlaku.</li>
+          <li> Saya memahami bahwa semua informasi saya akan dijaga kerahasiaannya sesuai dengan kebijakan penyedia layanan.</li>
+          <li> Saya mengetahui dan menyetujui kebijakan pembatalan atau penjadwalan ulang layanan yang berlaku.</li>
+</ul><br>
+          <label><input type="checkbox"> Dengan menyetujui secara digital, saya menyatakan telah membaca, memahami, dan menyetujui seluruh isi pernyataan ini tanpa paksaan dari pihak manapun.</label>
+
         </div>
 
         <button type="submit" class="submit-button">Daftar</button>
