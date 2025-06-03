@@ -6,6 +6,7 @@
   <title>Header Website</title>
   <link rel="stylesheet" href="aset/css/cssnya.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  
 </head>
 
 <body>
@@ -49,18 +50,7 @@
   {{-- Tempatkan konten halaman di sini --}}
   @yield('content')
 
-  <!-- Overlay -->
-  <div id="overlay" class="overlay hidden"></div>
 
-  <!-- Login Modal -->
-  <div id="loginModal" class="login-modal hidden">
-    <div class="login-box">
-      <h2>Login</h2>
-      <input type="text" placeholder="Email atau Username" />
-      <input type="password" placeholder="Password" />
-      <button>Masuk</button>
-    </div>
-  </div>
 
    <!-- Menu Navigasi -->
   <nav class="menu">
@@ -119,9 +109,14 @@
       });
     });
   </script>
-  <header  alt="Header Image" >
-    <img src="aset/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Header Image">
-  </header>
+ <header class="header">
+  <img src="aset/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Header Image" class="header-img">
+
+  <div class="header-overlay">
+    <h1>Call Center Ambulance (24 Jam)</h1>
+    <a href="#" class="header-btn">Selengkapnya</a>
+  </div>
+</header>
 
   <section class="info-buttons">
     <div class="info-button">
@@ -187,6 +182,10 @@
       <div class="promo-item">Promo 3</div>
       <div class="promo-item">Promo 4</div>
       <div class="promo-item">Promo 5</div>
+          <div class="promo-item">Promo 5</div>
+              <div class="promo-item">Promo 5</div>
+                  <div class="promo-item">Promo 5</div>
+                      <div class="promo-item">Promo 5</div>
     </div>
 
     <button class="lihat-selengkapnya" id="lihatBtn" style="display: none;">Lihat Selengkapnya</button>
@@ -232,6 +231,30 @@
         </div>
       </div>
 
+           <div class="berita-item">
+        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
+        <div class="berita-deskripsi">
+<h3>
+  <a href="{{ route('detailberita3') }}" class="news-title-link">
+    Judul Berita 1
+  </a>
+</h3>
+          <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
+        </div>
+      </div>
+
+           <div class="berita-item">
+        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
+        <div class="berita-deskripsi">
+<h3>
+  <a href="{{ route('detailberita3') }}" class="news-title-link">
+    Judul Berita 1
+  </a>
+</h3>
+          <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
+        </div>
+      </div>
+
       <!-- Tambahkan berita lainnya -->
     </div>
 
@@ -250,16 +273,16 @@
         </div>
         <div class="details-container">
           <h3 class="details-title">Rincian</h3>
-          <p class="detail-item"><span class="detail-label">📍 ALAMAT</span>: Jl. Brigjen Slamet Riadi 14 Malang, Jawa
-            Timur, Indonesia 65112.</p>
-          <p class="detail-item"><span class="detail-label">📞 NO. TELEPON</span>: xxxxxxxxxx</p>
-          <p class="detail-item"><span class="detail-label">📱 WHATSAPP</span>: xxxxxxxxxx</p>
-          <p class="detail-item"><span class="detail-label">✉️ EMAIL</span>: xxxxxxxxxx</p>
-          <p class="detail-item"><span class="detail-label">📠 FAX</span>: -</p>
-          <p class="detail-item"><span class="detail-label">🐦 TWITTER</span>: @xxxxxxxxxx</p>
-          <p class="detail-item"><span class="detail-label">📸 INSTAGRAM</span>: @xxxxxxxxxx</p>
-          <p class="detail-item"><span class="detail-label">f FACEBOOK</span>: xxxxxxxxxx</p>
-          <p class="detail-item"><span class="detail-label">📺 YOUTUBE</span>: xxxxxxxxxx</p>
+
+          <p class="detail-item"><span class="detail-label"><i class="bi bi-geo-alt-fill"></i> ALAMAT</span>: Jl. Brigjen Slamet Riadi 14 Malang, Jawa Timur, Indonesia 65112.</p>
+<p class="detail-item"><span class="detail-label"><i class="bi bi-telephone-fill"></i> NO. TELEPON</span>: (0341) 367093</p>
+<p class="detail-item"><span class="detail-label"><i class="bi bi-whatsapp"></i> WHATSAPP</span>: (0341) 367093</p>
+<p class="detail-item"><span class="detail-label"><i class="bi bi-envelope-fill"></i> EMAIL</span>: <a href="mailto:harmony_fengshui@yahoo.com">harmony_fengshui@yahoo.com</a></p>
+<p class="detail-item"><span class="detail-label"><i class="bi bi-printer-fill"></i> FAX</span>: 0341  345854</p>
+<p class="detail-item"><span class="detail-label"><i class="bi bi-instagram"></i> INSTAGRAM</span>: @SehatPol</p>
+<p class="detail-item"><span class="detail-label"><i class="bi bi-facebook"></i> FACEBOOK</span>: Sehat Harmoni Malang</p>
+<p class="detail-item"><span class="detail-label"><i class="bi bi-youtube"></i> YOUTUBE</span>: Sehat Pol</p>
+
         </div>
       </div>
     </section>
