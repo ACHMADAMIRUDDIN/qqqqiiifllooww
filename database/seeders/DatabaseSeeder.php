@@ -50,7 +50,6 @@ class DatabaseSeeder extends Seeder
             'name' => 'Admin Klinik',
             'email' => 'admin@example.com',
             'password' => Hash::make('password'),
-            'role' => 'admin'
         ]);
     }
 }

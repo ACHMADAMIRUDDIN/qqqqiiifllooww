@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Promo;
 
-class PromoControllers extends Controller
+class PromoController extends Controller
 {
     public function index() {
         $promos = Promo::all();

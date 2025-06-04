@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Profil;
 
-class ProfilControllers extends Controller
+class ProfilController extends Controller
 {
     public function index() {
         $profil = Profil::first();

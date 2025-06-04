@@ -102,43 +102,54 @@
     <section class="form-section">
         <h2 class="form-title">Pesan Layanan</h2>
         @auth
-            <form class="service-form">
+
+            <form action="{{ route('form.store') }}" method="POST" class="service-form">
+                @csrf
+
                 <h3>Data Pasien:</h3>
+
                 <label for="nama_lengkap">Nama Lengkap</label>
-                <input type="text" placeholder="Nama Lengkap" required>
-                <label for="nama_lengkap">tanggal Lahir</label>
-                <input type="date" placeholder="Tanggal Lahir" required>
-                <label for="nama_lengkap">No. Handphone</label>
-                <input type="tel" placeholder="No. Handphone" required>
-                <label for="nama_lengkap">Alamat Email</label>
-                <input type="email" placeholder="Alamat Email" required>
-                <label for="nama_lengkap">Alamat Rumah</label>
-                <input type="text" placeholder="Alamat Rumah" required>
+                <input type="text" name="nama_lengkap" required>
+
+                <label for="tanggal_lahir">Tanggal Lahir</label>
+                <input type="date" name="tanggal_lahir" required>
+
+                <label for="no_hp">No. Handphone</label>
+                <input type="tel" name="no_hp" required>
+
+                <label for="email">Alamat Email</label>
+                <input type="email" name="email" required>
+
+                <label for="alamat">Alamat Rumah</label>
+                <input type="text" name="alamat" required>
+
                 <label for="jenis_kelamin">Jenis Kelamin</label>
-                <select id="jenis_kelamin" name="jenis_kelamin" required>
+                <select name="jenis_kelamin" required>
                     <option value="" disabled selected>Pilih Jenis Kelamin</option>
                     <option value="Laki-laki">Laki-laki</option>
                     <option value="Perempuan">Perempuan</option>
                 </select>
 
                 <h3>Informasi Kesehatan:</h3>
-                <input type="text" placeholder="Gejala Yang Dialami / Dirasakan" required>
-                <input type="text" placeholder="Riwayat Penyakit" required>
-                <input type="text" placeholder="Keluhan Disampaikan Menurut?" required>
-                <textarea placeholder="Keluhan Utama" required></textarea>
 
-                <label for="tanggal">Tanggal Pemesanan</label>
-                <input type="date" id="tanggal" name="tanggal" required>
-                <label for="tanggal">Jenis layanan</label>
+                <input type="text" name="gejala" placeholder="Gejala" required>
+                <input type="text" name="riwayat_penyakit" placeholder="Riwayat Penyakit" required>
+                <input type="text" name="keluhan" placeholder="Keluhan Disampaikan Menurut?" required>
+                <textarea name="keluhan_utama" placeholder="Keluhan Utama" required></textarea>
 
-                <select required>
+                <label for="jadwal_pemesanan">Tanggal Pemesanan</label>
+                <input type="date" name="jadwal_pemesanan" required>
 
+                <label for="jenis_layanan">Jenis Layanan</label>
+                <select name="jenis_layanan" required>
                     <option value="">Jenis Layanan</option>
-                    <option value="konsultasi">Akupunture</option>
-                    <option value="konsultasi">Akupresure</option>
-                    <option value="konsultasi">Bekam</option>
-                    <option value="konsultasi">Pijat</option>
+                    <option value="Akupunture">Akupunture</option>
+                    <option value="Akupresure">Akupresure</option>
+                    <option value="Bekam">Bekam</option>
+                    <option value="Pijat">Pijat</option>
                 </select>
+
+                <!-- Checklist, jika ingin menyimpan centang juga, tambah input hidden -->
 
                 <div class="checklist">
                     <p><strong>Silakan baca dan beri tanda centang pada setiap pernyataan di bawah ini:</strong></p>
