@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>berita1 - Sehat Harmoni Indonesia</title>
+  <title>Artikel - Sehat Harmoni Indonesia</title>
   <link rel="stylesheet" href="New folder(2)/detailartikel1.css">
 </head>
 <body>
@@ -88,7 +88,7 @@
 
 
 <div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
-    <h1>BERITA TER UPDATE</h1>
+    <h1>Artikel</h1>
     <p>
 atasi Covid-19 di Klinik Sehat Harmoni Malang bersama dengan kami menjadi salah satu tempat terbaik untuk menjaga kesehatan.</p>
 </div>

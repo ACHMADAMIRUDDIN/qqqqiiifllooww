@@ -540,7 +540,7 @@ body {
 
       .logout-button {
     background-color: #3490dc;
-    font-style: italic;
+   font-family: serif;
     color: white;
     border: none;
     padding: 6px 12px;

@@ -118,31 +118,34 @@
   <!-- Konten Profil -->
   <section class="conten">
     <div class="card fade-in-left">
-      <img src="img/gojostoru.jpg" alt="Akupunktur">
+      <img src="img/acupuncture-2.jpg" alt="Akupunktur">
       <div class="text">
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        <h3> Akupunktur: Terapi Tradisional dengan Jarum Halus</h3>
+        <br>
+        <p>Akupunktur adalah teknik pengobatan tradisional Tiongkok yang menggunakan jarum-jarum tipis yang ditusukkan ke titik-titik tertentu pada tubuh.</p>
       </div>
     </div>
     <div class="card fade-in-left">
-      <img src="img/gojostoru.jpg" alt="Akupunktur">
+      <img src="img/images.jpeg" alt="Akupunktur">
       <div class="text">
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        <h3>Akupresur: Pijat Titik-Titik Energi untuk Kesehatan</h3>
+        <br>
+        <p>Akupresur adalah metode penyembuhan yang mirip dengan akupunktur, tetapi tanpa menggunakan jarum. Teknik ini menggunakan tekanan jari pada titik-titik tertentu di tubuh untuk merangsang energi dan memperbaiki fungsi organ</p>
       </div>
     </div>
     <div class="card fade-in-left">
-      <img src="img/gojostoru.jpg" alt="Akupunktur">
+      <img src="img/jenis-terapi-bekam-1.jpg" alt="Akupunktur">
       <div class="text">
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        <h3>Bekam: Pengobatan Kuno dengan Cangkir Vakum</h3>
+        <br>
+        <p>Bekam adalah terapi pengobatan tradisional yang dilakukan dengan meletakkan cangkir khusus pada permukaan kulit dan menciptakan efek vakum</p>
       </div>
     </div>
     <div class="card fade-in-left">
-      <img src="img/gojostoru.jpg" alt="Akupunktur">
+      <img src="img/images (1).jpeg" alt="Akupunktur">
       <div class="text">
-        <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+        <h3>Pijat: Relaksasi dan Penyembuhan dengan Sentuhan</h3>
+        <p>Pijat adalah teknik terapi fisik yang menggunakan tangan untuk memberikan tekanan dan gerakan pada otot, sendi, dan jaringan tubuh lainnya</p>
       </div>
     </div>
   </section>
