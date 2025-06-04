@@ -12,7 +12,6 @@ use App\Http\Controllers\Admin\PromoController;
 use Illuminate\Support\Facades\Log;
 
 
-// 🏠 Halaman Utama & Umum
 Route::get('/', fn () => view('layouts.beranda'))->name('beranda');
 Route::get('/beranda', fn () => view('layouts.beranda'))->name('beranda');
 Route::get('/tentangkami', fn () => view('layouts.tentangkami'))->name('tentangkami');
@@ -77,5 +76,4 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::resource('pemesanan', PemesananController::class)->only(['index', 'update']);
 });
 
-// Auth routes dari Laravel Breeze / Jetstream
 require __DIR__.'/auth.php';
