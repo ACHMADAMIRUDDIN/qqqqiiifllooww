@@ -40,11 +40,11 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        Pesanan::factory(10)->create()->each(function ($pesanan) {
-        Pasien::factory()->create([
-            'id_pesanan' => $pesanan->id_pesanan,
-        ]);
-    });
+    //     Pesanan::factory(10)->create()->each(function ($pesanan) {
+    //     Pasien::factory()->create([
+    //         'id_pesanan' => $pesanan->id_pesanan,
+    //     ]);
+    // });
 
     User::create([
             'name' => 'Admin Klinik',
