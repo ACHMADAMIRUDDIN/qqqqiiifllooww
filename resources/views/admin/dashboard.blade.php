@@ -128,10 +128,9 @@
    onclick="return confirm('Yakin ingin masuk ke halaman pesanan layanan?')">
    pesanan layanan
 </a>
-    <a href="#">dashboard</a>
-    <a href="#">Profil Sekolah</a>
-    <a href="#">Visi & Misi Sekolah</a>
-    <a href="#">Registrasi</a>
+    <a href="#">pengaduan</a>
+    <a href="#">Data Pasien</a>
+    <a href="#">Profil Klinik</a>
   </div>
 <div class="main">
     @yield('content')
