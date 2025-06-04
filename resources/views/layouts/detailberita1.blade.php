@@ -118,12 +118,11 @@ atasi Covid-19 di Klinik Sehat Harmoni Malang bersama dengan kami menjadi salah 
       <img class="berita-img" src="img/acupuncture-2.jpg" alt="Akupunktur">
       <div class="berita-deskripsi">
         <P>
-        NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu 
-        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan. 
+        Akupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu
+        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan.
         Teknik ini mirip dengan akupuntur, tetapi tanpa penggunaan jarum.
         Akupresur melibatkan pemberian tekanan pada titik-titik akupuntur menggunakan jari,
-        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh. 
-        </P>
+        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh.        </P>
       </div>
       @auth
       

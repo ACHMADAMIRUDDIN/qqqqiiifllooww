@@ -63,14 +63,13 @@
       <li class="dropdown">
         <a href="#">Dokter Kami </a>
         <ul class="dropdown-content">
-          <li><a href="/jadwaldokter1">jadwal dokter</a></li>
-          <li><a href="/profildokter">profil dokter</a></li>
+          <li><a href="/jadwaldokter1">Jadwal Terapis</a></li>
+          <li><a href="/profildokter">Profil Terapis</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#">Layanan </a>
+        <a href="/pesanlayanan">Layanan </a>
         <ul class="dropdown-content">
-          <li><a href="/pesanlayanan">pesan layanan</a></li>
           <li><a href="/apalah">Akupunture</a></li>
           <li><a href="/akupresure">akupresure</a></li>
           <li><a href="/bekam">bekam</a></li>
@@ -125,7 +124,7 @@
     </div>
     <div class="info-button">
               <img src="aset/img/2705523986e1892362b489f56fc4ec94.jpg">
-      <h3>Jadwal Dokter</h3>
+      <h3>Jadwal Terapis</h3>
       <p>Informasi jadwal dokter dari Sehat Harmoni Indonesia.</p>
       <a href="{{ route('jadwaldokter1') }}">Lihat Jadwal →</a>
     </div>
@@ -198,7 +197,7 @@
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita1') }}" class="news-title-link">
-    Judul Berita 1
+    Akupunktur
   </a>
 </h3>
           <p>Deskripsi singkat berita 1 yang menarik dan informatif.</p>
@@ -210,7 +209,7 @@
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita2') }}" class="news-title-link">
-    Judul Berita 1
+    Akupresur
   </a>
 </h3>
           <p>Deskripsi singkat berita 2 yang menarik dan informatif.</p>
@@ -222,7 +221,7 @@
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita3') }}" class="news-title-link">
-    Judul Berita 1
+    Bekam
   </a>
 </h3>
           <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
@@ -233,8 +232,8 @@
         <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
         <div class="berita-deskripsi">
 <h3>
-  <a href="{{ route('detailberita3') }}" class="news-title-link">
-    Judul Berita 1
+  <a href="/pijatt" class="news-title-link">
+    Pijat
   </a>
 </h3>
           <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
