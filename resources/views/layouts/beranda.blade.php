@@ -25,24 +25,22 @@
 </div>
     <div class="contact">
       @auth
-        <span>
-          <a href="{{ route('beranda') }}" style="font-weight:bold; color:#2b6cb0; font-size:1.1em; text-shadow:1px 1px 2px #e0e0e0;">
-            {{ Auth::user()->name }}
-          </a>
-        </span>
-        <span>
-          <form method="POST" action="{{ route('logout') }}" style="display:inline;">
-            @csrf
-            <button type="submit" style="background:none;border:none;padding:0;color:inherit;cursor:pointer;">Logout</button>
-          </form>
-        </span>
+       <span class="welcome-text">
+    Hallo, {{ Auth::user()->name }}
+    </span>
+    <span>
+   <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+    @csrf
+     <button type="submit" class="logout-button">Logout</button>
+    </form>
+   </span>
       @else
-        <span>
-          <a href="{{ route('login') }}">Log in</a>
-        </span>
-        <span>
-          <a href="{{ route('register') }}">Register</a>
-        </span>
+       <span>
+        <a href="{{ route('login') }}" class="btn">Log in</a>
+    </span>
+    <span>
+        <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+    </span>
       @endauth
     </div>
   </div>
