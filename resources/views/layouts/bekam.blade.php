@@ -80,7 +80,7 @@
    <li><a href="/artikel">Artikel</a></li>
         </ul>
       </li>
-  
+
       <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -119,11 +119,11 @@ layanan bekam, silakan hubungi kami atau buat janji temu sebelum datang ke klini
       <img class="layanan-img" src="img/jenis-terapi-bekam-1.jpg" alt="Akupunktur">
       <div class="layanan-deskripsi">
         <P>
-        NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu 
-        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan. 
+        NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu
+        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan.
         Teknik ini mirip dengan akupuntur, tetapi tanpa penggunaan jarum.
         Akupresur melibatkan pemberian tekanan pada titik-titik akupuntur menggunakan jari,
-        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh. 
+        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh.
         </P>
       </div>
       <button class="btn-daftar">Daftar ke Layanan</button>

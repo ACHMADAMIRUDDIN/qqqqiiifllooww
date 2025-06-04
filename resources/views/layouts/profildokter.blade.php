@@ -80,7 +80,7 @@
    <li><a href="/artikel">Artikel</a></li>
         </ul>
       </li>
-  
+
       <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -145,7 +145,7 @@
   <div style="background:#fff;border-radius:12px;padding:2em;text-align:center;max-width:500px;margin:2em auto;box-shadow:0 2px 12px #0002;">
     <h2 style="font-weight:600;margin-bottom:1em;color:#444;">Pesan Layanan</h2>
     <p style="margin-bottom:2em;font-size:1.1em;">
-      Anda harus <a href="{{ route('login') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">login</a> atau 
+      Anda harus <a href="{{ route('login') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">login</a> atau
       <a href="{{ route('register') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">register</a> terlebih dahulu untuk melihat profil dokter.
     </p>
     <div style="display:flex;gap:1em;justify-content:center;">

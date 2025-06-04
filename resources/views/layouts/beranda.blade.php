@@ -6,7 +6,7 @@
   <title>Header Website</title>
   <link rel="stylesheet" href="aset/css/cssnya.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  
+
 </head>
 
 <body>
@@ -85,7 +85,7 @@
    <li><a href="/artikel">Artikel </a></li>
         </ul>
       </li>
-  
+
       <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>

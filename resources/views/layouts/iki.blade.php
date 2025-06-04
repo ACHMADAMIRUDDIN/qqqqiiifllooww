@@ -93,7 +93,7 @@
    <li><a href="/artikel">Artikel</a></li>
         </ul>
       </li>
-  
+
       <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -106,7 +106,7 @@
 Dimohon Sebelum Mengunjungi Klinik Dapat Menghubungi Atau Membuat Janji Temu/Mendaftar Terlebih Dahulu.</p>
 </div>
 
-  
+
  <div class="main-container">
         <div class="map-section">
             <div class="map-header">
@@ -117,7 +117,7 @@ Dimohon Sebelum Mengunjungi Klinik Dapat Menghubungi Atau Membuat Janji Temu/Men
             <a href="#" class="map-link">Lihat peta lebih besar</a>
 
             <div class="map-placeholder">
-                
+
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13290.344356309506!2d112.62172787938347!3d-7.973817240726862!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd6282c8d5a600d%3A0xef21ef1552c1d8a5!2sSehat%20Harmoni!5e0!3m2!1sid!2sid!4v1748354985043!5m2!1sid!2sid" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
