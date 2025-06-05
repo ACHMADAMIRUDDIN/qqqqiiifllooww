@@ -70,9 +70,9 @@
             // Simulate loading process
             setTimeout(() => {
                 // Redirect or hide loader after loading
-                document.querySelector('.loader-container').style.opacity = '0';
+                document.querySelector('.loading-screen').style.opacity = '0';
                 setTimeout(() => {
-                    document.querySelector('.loader-container').style.display = 'none';
+                    document.querySelector('.loading-screen').style.display = 'none';
                     // Optionally redirect: window.location.href = '/';
                     window.location.href = "{{ route('beranda') }}";
                 }, 500);
