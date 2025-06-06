@@ -550,7 +550,7 @@ body {
   }
 
   .logout-button:hover {
-    background-color: #174166;
+    background-color: #3490dc;
   }
 
   .welcome-text {
@@ -558,3 +558,75 @@ body {
     margin-right: 10px;
     font-style: oblique;
   }
+
+
+
+.container {
+ display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1100px; /* Lebar maksimal di desktop */
+  margin: 0 auto 80px auto; /* Jarak ke bawah (footer) */
+  padding: 20px;
+}
+
+.form-container, .result-container {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+input[type="date"], select, button {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  background-color: #3490dc;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #3490dc;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #3490dc;
+  color: white;
+}
+
+/* Responsive Layout */
+@media (min-width: 768px) {
+  .container {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+  }
+
+  .form-container, .result-container {
+    width: 48%;
+  }
+}

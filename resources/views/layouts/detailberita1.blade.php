@@ -24,7 +24,7 @@
     <div class="contact">
        @auth
        <span class="welcome-text">
-    Hallo, {{ Auth::user()->name }}
+    Hallo,  {{ Auth::user()->name }}
     </span>
     <span>
    <form method="POST" action="{{ route('logout') }}" style="display:inline;">
@@ -60,27 +60,21 @@
       <li class="dropdown">
         <a href="#">Dokter Kami </a>
         <ul class="dropdown-content">
-          <li><a href="/jadwaldokter1">jadwal dokter</a></li>
-          <li><a href="/profildokter">profil dokter</a></li>
+          <li><a href="/jadwaldokter1">Jadwal Terapis</a></li>
+          <li><a href="/profildokter">Profil Terapis</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#">Layanan </a>
-        <ul class="dropdown-content">
-          <li><a href="/pesanlayanan">pesan layanan</a></li>
-          <li><a href="/apalah">Akupunture</a></li>
-          <li><a href="/akupresure">akupresure</a></li>
-          <li><a href="/bekam">bekam</a></li>
-          <li><a href="/pijatt">pijat</a></li>
-        </ul>
+        <a href="/pesanlayanan">Layanan </a>
+        
       </li>
       <li class="dropdown">
         <a href="#">Informasi </a>
         <ul class="dropdown-content">
-   <li><a href="/artikel">Artikel</a></li>
+   <li><a href="/artikel">Artikel </a></li>
         </ul>
       </li>
-  
+
       <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -118,12 +112,11 @@ atasi Covid-19 di Klinik Sehat Harmoni Malang bersama dengan kami menjadi salah 
       <img class="berita-img" src="img/acupuncture-2.jpg" alt="Akupunktur">
       <div class="berita-deskripsi">
         <P>
-        NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu 
-        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan. 
+        Akupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu
+        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan.
         Teknik ini mirip dengan akupuntur, tetapi tanpa penggunaan jarum.
         Akupresur melibatkan pemberian tekanan pada titik-titik akupuntur menggunakan jari,
-        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh. 
-        </P>
+        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh.        </P>
       </div>
       @auth
       

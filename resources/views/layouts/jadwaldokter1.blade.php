@@ -43,7 +43,7 @@
 
   {{-- Tempatkan konten halaman di sini --}}
   @yield('content')
- 
+
 
 
   <!-- Menu Navigasi -->
@@ -79,7 +79,7 @@
    <li><a href="/artikel">Artikel</a></li>
         </ul>
       </li>
-  
+
       <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -108,6 +108,43 @@
       overlay.classList.toggle("active");
       modal.classList.toggle("active");
     }
+    const dataJadwal = {
+  Akupuntur: [
+    { nama: "Dr. Yoga", jadwal: "08:00 - 10:00" },
+    { nama: "Dr. Lina", jadwal: "13:00 - 15:00" }
+  ],
+  Akupresur: [
+    { nama: "Dr. Budi", jadwal: "09:00 - 11:00" }
+  ],
+  Bekam: [
+    { nama: "Dr. Rina", jadwal: "10:00 - 12:00" }
+  ],
+  Pijat: [
+    { nama: "Dr. Toni", jadwal: "11:00 - 13:00" }
+  ]
+};
+
+function cariJadwal() {
+  const tanggal = document.getElementById("tanggal").value;
+  const terapi = document.getElementById("terapi").value;
+  const hasil = document.getElementById("hasil");
+
+  if (!tanggal || !terapi) {
+    alert("Silakan isi tanggal dan pilih jenis terapi.");
+    return;
+  }
+
+  const daftar = dataJadwal[terapi];
+
+  if (daftar && daftar.length > 0) {
+    hasil.innerHTML = daftar.map(item =>
+      `<tr><td>${item.nama}</td><td>${item.jadwal}</td></tr>`
+    ).join('');
+  } else {
+    hasil.innerHTML = '<tr><td colspan="2">Tidak ada jadwal</td></tr>';
+  }
+}
+
   </script>
 
 <div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
@@ -117,49 +154,38 @@
 
 @auth
   <!-- Konten Profil Dokter dalam Box -->
-   <section>
-    <form class="form-jadwal">
-      <h2>Form Jadwal Dokter</h2>
-      <div class="form-row">
-        <div class="form-group">
-          <label for="hari">Tentukan Hari</label>
-          <select id="hari" name="hari" required>
-            <option value="">Pilih Hari</option>
-            <option>Senin</option>
-            <option>Selasa</option>
-            <option>Rabu</option>
-            <option>Kamis</option>
-            <option>Jumat</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="dokter">Pilih Dokter</label>
-          <select id="dokter" name="dokter" required>
-            <option value="">Pilih Dokter</option>
-            <option>Dr. Andika</option>
-            <option>Dr. Amir</option>
-            <option>Dr. Bintang</option>
-            <option>Dr. Deva</option>
-            <option>Dr. Nabil</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Jadwal Tersedia</label>
-        <div class="jadwal-box">
-          <div class="jadwal-item">09.30 – 12.30 WIB</div>
-          <div class="jadwal-item">14.30 – 16.30 WIB</div>
-          <input type="text" placeholder="Catatan tambahan (opsional)">
-        </div>
-      </div>
-      <button type="submit" class="btn">Pilih Jadwal</button>
-    </form>
-  </section>
+   <div class="container">
+    <div class="form-container">
+      <input type="date" id="tanggal" />
+      <select id="terapi">
+        <option value="">-- Pilih Jenis Terapi --</option>
+        <option value="Akupuntur">Akupuntur</option>
+        <option value="Akupresur">Akupresur</option>
+        <option value="Bekam">Bekam</option>
+        <option value="Pijat">Pijat</option>
+      </select>
+      <button onclick="cariJadwal()">Cari</button>
+    </div>
+
+    <div class="result-container">
+      <table>
+        <thead>
+          <tr>
+            <th>NAMA DOKTER</th>
+            <th>JADWAL</th>
+          </tr>
+        </thead>
+        <tbody id="hasil">
+          <tr><td colspan="2">Tidak ada jadwal</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 @else
   <div style="background:#fff;border-radius:12px;padding:2em;text-align:center;max-width:500px;margin:2em auto;box-shadow:0 2px 12px #0002;">
     <h2 style="font-weight:600;margin-bottom:1em;color:#444;">Pesan Layanan</h2>
     <p style="margin-bottom:2em;font-size:1.1em;">
-      Anda harus <a href="{{ route('login') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">login</a> atau 
+      Anda harus <a href="{{ route('login') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">login</a> atau
       <a href="{{ route('register') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">register</a> terlebih dahulu untuk mengisi form pemesanan layanan.
     </p>
     <div style="display:flex;gap:1em;justify-content:center;">

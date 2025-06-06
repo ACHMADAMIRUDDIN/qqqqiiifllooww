@@ -43,7 +43,7 @@
 
   {{-- Tempatkan konten halaman di sini --}}
   @yield('content')
- 
+
 
 
   <!-- Menu Navigasi -->
@@ -79,7 +79,7 @@
    <li><a href="/artikel">Artikel</a></li>
         </ul>
       </li>
-  
+
       <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>

@@ -115,7 +115,7 @@ atasi Covid-19 di Klinik Sehat Harmoni Malang bersama dengan kami menjadi salah 
   <!-- Konten Profil -->
   <main class="content">
     <div class="berita-container">
-      <img class="berita-img" src="img/acupuncture-2.jpg" alt="Akupunktur">
+      <img class="berita-img" src="img/jenis-terapi-bekam-1.jpg" alt="Akupunktur">
       <div class="berita-deskripsi">
         <P>
         NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu 
