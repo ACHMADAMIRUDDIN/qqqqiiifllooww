@@ -24,7 +24,7 @@
     <div class="contact">
        @auth
        <span class="welcome-text">
-    Hallo, {{ Auth::user()->name }}
+    Hallo,  {{ Auth::user()->name }}
     </span>
     <span>
    <form method="POST" action="{{ route('logout') }}" style="display:inline;">
@@ -60,27 +60,21 @@
       <li class="dropdown">
         <a href="#">Dokter Kami </a>
         <ul class="dropdown-content">
-          <li><a href="/jadwaldokter1">jadwal dokter</a></li>
-          <li><a href="/profildokter">profil dokter</a></li>
+          <li><a href="/jadwaldokter1">Jadwal Terapis</a></li>
+          <li><a href="/profildokter">Profil Terapis</a></li>
         </ul>
       </li>
       <li class="dropdown">
-        <a href="#">Layanan </a>
-        <ul class="dropdown-content">
-          <li><a href="/pesanlayanan">pesan layanan</a></li>
-          <li><a href="/apalah">Akupunture</a></li>
-          <li><a href="/akupresure">akupresure</a></li>
-          <li><a href="/bekam">bekam</a></li>
-          <li><a href="/pijatt">pijat</a></li>
-        </ul>
+        <a href="/pesanlayanan">Layanan </a>
+        
       </li>
       <li class="dropdown">
         <a href="#">Informasi </a>
         <ul class="dropdown-content">
-   <li><a href="/artikel">Artikel</a></li>
+   <li><a href="/artikel">Artikel </a></li>
         </ul>
       </li>
-  
+
       <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
