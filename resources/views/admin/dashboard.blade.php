@@ -1,39 +1,141 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-@section('content')
-<div class="max-w-6xl mx-auto px-4 py-8">
-    <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Dashboard Admin</h1>
+    body {
+      display: flex;
+      min-height: 100vh;
+      background-color: #f4f4f4;
+    }
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <a href="{{ route('admin.pasien.index') }}"
-           class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition border border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Kelola Pasien</h2>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">Lihat dan atur data pasien.</p>
-        </a>
+    /* Sidebar */
+    .sidebar {
+      width: 250px;
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+    }
 
-        <a href="{{ route('admin.pesan.index') }}"
-           class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition border border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Pesan Pasien</h2>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">Kelola pesanan masuk dari pasien.</p>
-        </a>
+    .sidebar h2 {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
 
-        {{-- <a href="{{ route('admin.profil.index') }}"
-           class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition border border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Profil Klinik</h2>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">Edit informasi profil klinik.</p>
-        </a>
+    .sidebar a {
+      display: block;
+      color: white;
+      padding: 10px 0;
+      text-decoration: none;
+      font-size: 14px;
+    }
 
-        <a href="{{ route('admin.promo.index') }}"
-           class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition border border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Promo Layanan</h2>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">Kelola promo dan diskon layanan.</p>
-        </a>
+    .sidebar a:hover,
+    .sidebar a.active {
+      background-color: #2980b9;
+      padding-left: 10px;
+    }
 
-        <a href="{{ route('admin.pemesanan.index') }}"
-           class="block p-6 bg-white dark:bg-gray-800 rounded-2xl shadow hover:shadow-lg transition border border-gray-200 dark:border-gray-700">
-            <h2 class="text-xl font-semibold text-gray-900 dark:text-gray-100">Konfirmasi Pemesanan</h2>
-            <p class="text-gray-500 dark:text-gray-400 mt-2">Lihat dan konfirmasi pemesanan layanan.</p>
-        </a> --}}
-    </div>
+    .sidebar .section-title {
+      margin-top: 20px;
+      font-weight: bold;
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    /* Main */
+    .main {
+      flex-grow: 1;
+      padding: 30px;
+    }
+
+    .dashboard-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      flex: 1 1 220px;
+      padding: 20px;
+      color: white;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    }
+
+    .card .icon {
+      font-size: 30px;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      opacity: 0.4;
+    }
+
+    .card .value {
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    .card .label {
+      margin-top: 10px;
+      font-size: 16px;
+    }
+
+    .card .info {
+      margin-top: 10px;
+      font-size: 12px;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .bg-blue { background-color: #1abc9c; }
+    .bg-yellow { background-color: #f1c40f; }
+    .bg-red { background-color: #e74c3c; }
+    .bg-green { background-color: #27ae60; }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2><i class="bi bi-person-fill"></i> ADMIN</h2>
+<a href="{{ route('admin.pasien.index') }}"
+   onclick="return confirm('Yakin ingin masuk ke halaman Kelola Pasien?')">
+   Kelola Pasien
+</a>
+ 
+<a href="{{ route('admin.pesan.index') }}" 
+   onclick="return confirm('Yakin ingin masuk ke halaman pesanan layanan?')">
+   pesanan layanan
+</a>
+    <a href="#">pengaduan</a>
+    <a href="#">Data Pasien</a>
+    <a href="#">Profil Klinik</a>
+  </div>
+<div class="main">
+    @yield('content')
 </div>
-@endsection
+    
+   
+</body>
+</html>

@@ -207,7 +207,7 @@
             </div>
             <div class="footer-column kontak">
                 <h4>Kontak</h4>
-                <p>Jl. Tiogamas No.45, Dusun Rambaan, Landungsari, Kec. Dau, Kota Malang, Jawa Timur 65144</p>
+                <p>Jl. Tlogamas No.45, Dusun Rambaan, Landungsari, Kec. Dau, Kota Malang, Jawa Timur 65144</p>
                 <p><i class="fas fa-phone"></i> NO. TELEPON : 0341-XXXXXXXX</p>
                 <p><i class="fab fa-whatsapp"></i> WHATSAPP : 081XXXXXXXXXX</p>
                 <p><i class="fas fa-envelope"></i> EMAIL : -</p>

@@ -623,3 +623,47 @@ body {
             padding-top: 20px;
             border-top: 1px solid #ccc;
         }
+
+        /*botton login dan register di navbar*/ 
+        .btn {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #3490dc; /* Biru */
+        color: white;
+        text-decoration: none;
+        border-radius: 7px;
+        font-weight: 600;
+        transition: background-color 0.2s ease;
+        }
+
+      .btn:hover {
+      background-color: #064a7e;
+      }
+
+      .btn-secondary {
+      background-color: #3490dc; /* Abu-abu */
+      }
+
+      .btn-secondary:hover {
+      background-color: #064a7e;
+      }
+  .logout-button {
+    background-color: #3490dc;
+    font-style: italic;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .logout-button:hover {
+    background-color: #174166;
+  }
+
+  .welcome-text {
+    font-weight: bold;
+    margin-right: 10px;
+    font-style: oblique;
+  }

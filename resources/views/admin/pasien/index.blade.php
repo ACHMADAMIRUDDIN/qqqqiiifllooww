@@ -1,5 +1,5 @@
-@extends('layouts.app')
-
+@extends('admin.dashboard')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 @section('content')
 <div class="max-w-7xl mx-auto px-4 py-8">
     <div class="flex justify-between items-center mb-6">
@@ -11,14 +11,78 @@
         <table class="min-w-full table-auto">
             <thead class="bg-gray-100 text-gray-700">
                 <tr>
-                    <th class="px-4 py-3 text-left text-sm font-medium">ID</th>
-                    <th class="px-4 py-3 text-left text-sm font-medium">Nama Lengkap</th>
-                    <th class="px-4 py-3 text-left text-sm font-medium">Tanggal Lahir</th>
-                    <th class="px-4 py-3 text-left text-sm font-medium">No HP</th>
-                    <th class="px-4 py-3 text-left text-sm font-medium">Jenis Kelamin</th>
-                    <th class="px-4 py-3 text-left text-sm font-medium">Gejala</th>
-                    <th class="px-4 py-3 text-left text-sm font-medium">Riwayat Penyakit</th>
-                    <th class="px-4 py-3 text-left text-sm font-medium">Aksi</th>
+<table id="basic-datatables"
+                                            class="display table table-striped table-hover text-center">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th>ID</th>
+													<th>Nama Lengkap</th>
+                                                    <th>Tanggal Lahir</th>
+                                                    <th>No HP</th>
+                                                    <th>Jenis Kelamin</th>
+                                                    <th>Gejala</th>
+                                                    <th>Riwayat Penyakit</th>
+                                                    <th>Aksi</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <tr>
+                                                    <td>-</td>
+													<td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+
+                                                    <td class="action-buttons">
+                                                        <button class="btn btn-sm btn-warning">
+                                                            <i class="fas fa-edit"></i> Edit
+                                                        </button>
+                                                        <button class="btn btn-sm btn-danger">
+                                                            <i class="fas fa-trash-alt"></i> Hapus
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>-</td>
+													<td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+
+                                                    <td class="action-buttons">
+                                                        <button class="btn btn-sm btn-warning">
+                                                            <i class="fas fa-edit"></i> Edit
+                                                        </button>
+                                                        <button class="btn btn-sm btn-danger">
+                                                            <i class="fas fa-trash-alt"></i> Hapus
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>-</td>
+													<td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td>-</td>
+                                                    <td class="action-buttons">
+                                                        <button class="btn btn-sm btn-warning">
+                                                            <i class="fas fa-edit"></i> Edit
+                                                        </button>
+                                                        <button class="btn btn-sm btn-danger">
+                                                            <i class="fas fa-trash-alt"></i> Hapus
+                                                        </button>
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
                 </tr>
             </thead>
             <tbody class="text-gray-800">
