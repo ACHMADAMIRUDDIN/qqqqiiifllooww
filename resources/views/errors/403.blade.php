@@ -1,15 +1,84 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading Screen</title>
+    <style>
+          * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-@section('content')
-<div class="text-center py-20">
-    <h1 class="text-4xl font-bold text-red-600 mb-4">403 - Akses Ditolak</h1>
-    <p class="text-gray-700 text-lg">Anda tidak memiliki izin untuk mengakses halaman ini.</p>
-    <p class="mt-4 text-sm text-gray-500">Anda akan diarahkan ke beranda dalam 1 detik...</p>
-</div>
+    body, html {
+      height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
 
-<script>
-    setTimeout(function () {
-        window.location.href = "{{ route('beranda') }}";
-    }, 1000); // 1 detik = 1000 ms
-</script>
-@endsection
+    /* Container loading */
+    #loading-screen {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background-color: #0b68cc;
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.5s ease;
+    }
+
+    /* Spinner animasi */
+    .spinner {
+      border: 8px solid #f7f7f8;
+      border-top: 8px solid #3498db;
+      border-radius: 50%;
+      width: 80px;
+      height: 80px;
+      animation: spin 1s linear infinite;
+    }
+
+    /* Animasi berputar */
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Konten utama website */
+    .content {
+      display: none;
+      padding: 40px;
+      text-align: center;
+    }
+
+    /* Fade-out ketika loading selesai */
+    .fade-out {
+      opacity: 0;
+      pointer-events: none;
+    }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="spinner"></div>
+  </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Simulate loading process
+            setTimeout(() => {
+                // Redirect or hide loader after loading
+                document.querySelector('.loading-screen').style.opacity = '0';
+                setTimeout(() => {
+                    document.querySelector('.loading-screen').style.display = 'none';
+                    // Optionally redirect: window.location.href = '/';
+                    window.location.href = "{{ route('beranda') }}";
+                }, 500);
+            }, 3000); // Adjust timing as needed
+        });
+    </script>
+</body>
+</html>
+
