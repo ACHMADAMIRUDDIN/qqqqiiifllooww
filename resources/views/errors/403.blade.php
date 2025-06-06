@@ -66,19 +66,18 @@
   </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Simulate loading process
-            setTimeout(() => {
-                // Redirect or hide loader after loading
-                document.querySelector('.loading-screen').style.opacity = '0';
-                setTimeout(() => {
-                    document.querySelector('.loading-screen').style.display = 'none';
-                    // Optionally redirect: window.location.href = '/';
-                    window.location.href = "{{ route('beranda') }}";
-                }, 500);
-            }, 3000); // Adjust timing as needed
-        });
-    </script>
+    // Simulasi delay loading (contoh: 2 detik)
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loading-screen');
+      const content = document.querySelector('.content');
+
+      setTimeout(() => {
+        loader.classList.add('fade-out');
+        content.style.display = 'block';
+    }, 2500); // bisa disesuaikan waktunya
+    window.location.href = '{{ route('beranda') }}';
+    });
+  </script>
 </body>
 </html>
 
