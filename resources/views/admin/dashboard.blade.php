@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
+    <link href="{{ asset('img/sehat_harmoni.jpeg') }} }}" rel="icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <style>
         * {
@@ -140,7 +141,7 @@
             pesanan layanan
         </a>
         <a href="#">pengaduan</a>
-        <a href="#">Profil Klinik</a>
+        <a href="{{ route('admin.profil.index') }}">Profil Klinik</a>
     </div>
     <div class="main">
         @yield('content')

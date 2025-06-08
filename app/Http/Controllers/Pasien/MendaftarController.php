@@ -11,43 +11,45 @@ class MendaftarController extends Controller
 {
     public function store(Request $request)
     {
-        $request->validate([
-            'nama_lengkap' => 'required',
-            'tanggal_lahir' => 'required|date',
-            'no_hp' => 'required',
-            'email' => 'required|email',
-            'alamat' => 'required',
-            'jenis_kelamin' => 'required',
-            'gejala' => 'required',
-            'riwayat_penyakit' => 'required',
-            'keluhan' => 'required',
-            'keluhan_utama' => 'required',
-            'jadwal_pemesanan' => 'required|date',
-            'jenis_layanan' => 'required',
-            'persetujuan' => 'accepted',
-        ]);
+    $request->validate([
+        'nama_lengkap' => 'required',
+        'tanggal_lahir' => 'required|date',
+        'no_hp' => 'required',
+        'email' => 'required|email',
+        'alamat' => 'required',
+        'jenis_kelamin' => 'required',
+        'gejala' => 'required',
+        'riwayat_penyakit' => 'required',
+        'keluhan' => 'required',
+        'keluhan_utama' => 'required',
+        'jadwal_pemesanan' => 'required|date',
+        'jenis_layanan' => 'required',
+        'persetujuan' => 'accepted',
+    ]);
 
-        // Buat pesanan terlebih dahulu
-        $pesanan = Pesanan::create([
-            'gejala' => $request->gejala,
-            'riwayat_penyakit' => $request->riwayat_penyakit,
-            'keluhan' => $request->keluhan,
-            'jadwal_pemesanan' => $request->jadwal_pemesanan,
-            'jenis_layanan' => $request->jenis_layanan,
-        ]);
+    // Buat pasien terlebih dahulu
+    $pasien = Pasien::create([
+        'nama_lengkap' => $request->nama_lengkap,
+        'tanggal_lahir' => $request->tanggal_lahir,
+        'no_hp' => $request->no_hp,
+        'email' => $request->email,
+        'alamat' => $request->alamat,
+        'jenis_kelamin' => $request->jenis_kelamin,
+    ]);
 
-        // Buat pasien dan hubungkan ke pesanan
-        Pasien::create([
-            'nama_lengkap' => $request->nama_lengkap,
-            'tanggal_lahir' => $request->tanggal_lahir,
-            'no_hp' => $request->no_hp,
-            'email' => $request->email,
-            'alamat' => $request->alamat,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'id_pesanan' => $pesanan->id_pesanan,
-        ]);
+    // Lalu buat pesanan dan hubungkan ke pasien
+    Pesanan::create([
+        'id_pasien' => $pasien->id_pasien,
+        'gejala' => $request->gejala,
+        'riwayat_penyakit' => $request->riwayat_penyakit,
+        'keluhan' => $request->keluhan,
+        'jadwal_pemesanan' => $request->jadwal_pemesanan,
+        'jenis_layanan' => $request->jenis_layanan,
+    ]);
 
-        return redirect()->back()->with('Terima Kasih, Pesanan Anda Berhasil Dikirim' , 'Mohon Tunggu Konfirmasi Dari Admin');
+       return redirect()->back()
+    ->with('status', 'Terima Kasih, Pesanan Anda Berhasil Dikirim')
+    ->with('info', 'Mohon Tunggu Konfirmasi Dari Admin');
     }
 }
 

@@ -76,7 +76,7 @@
             justify-content: space-between;
             align-items: center;
             font-size: 14px;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
         }
 
         .options a {
@@ -101,6 +101,19 @@
 
         .btn-login:hover {
             background-color: #005999;
+        }
+
+        .link {
+            font-size: 14px;
+        }
+
+        .link a {
+            color: #007acc;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -144,6 +157,10 @@
                 <a href="{{ route('password.request') }}">Forgot password?</a>
             @endif
         </div>
+        <div class="link">
+            <p>Don't have an account? <a href="{{ route('register') }}">Register</a></p>
+        </div>
+        <br>
 
         <!-- Submit -->
         <button type="submit" class="btn-login">LOGIN</button>

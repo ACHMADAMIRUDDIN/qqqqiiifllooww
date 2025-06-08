@@ -12,7 +12,7 @@
             <input
                 type="text"
                 name="nama_klinik"
-                value="{{ $profil->nama_klinik }}"
+                value="{{ $profils->nama_klinik }}"
                 class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             >
         </div>
@@ -23,14 +23,13 @@
                 name="deskripsi"
                 rows="5"
                 class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            >{{ $profil->deskripsi }}</textarea>
+            >{{ $profils->deskripsi }}</textarea>
         </div>
 
         <div>
             <button
                 type="submit"
-                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition"
-            >
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded transition">
                 Update
             </button>
         </div>

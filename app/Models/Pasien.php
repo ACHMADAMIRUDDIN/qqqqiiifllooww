@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * 
+ *
  *
  * @property int $id_pasien
  * @property string $nama_lengkap
@@ -53,6 +53,6 @@ class Pasien extends Model
     // ONE-TO-ONE ke Pesanan
     public function pesanan()
     {
-        return $this->belongsTo(Pesanan::class, 'id_pesanan', 'id_pesanan');
-    }
+    return $this->hasMany(Pesanan::class, 'id_pasien', 'id_pasien');
+}
 }

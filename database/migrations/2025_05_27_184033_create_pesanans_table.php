@@ -19,6 +19,9 @@ return new class extends Migration
             $table->dateTime('jadwal_pemesanan');
             $table->string('jenis_layanan');
             $table->timestamps();
+
+            $table->unsignedBigInteger('id_pasien');
+            $table->foreign('id_pasien')->references('id_pasien')->on('pasiens')->onDelete('cascade');
         });
     }
 

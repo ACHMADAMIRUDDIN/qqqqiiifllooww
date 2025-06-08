@@ -9,13 +9,13 @@ use App\Models\Profil;
 class ProfilController extends Controller
 {
     public function index() {
-        $profil = Profil::first();
+        $profils = Profil::first();
         return view('admin.profil.index', compact('profil'));
     }
 
     public function update(Request $request) {
-        $profil = Profil::first();
-        $profil->update($request->only('nama_klinik', 'deskripsi'));
+        $profils = Profil::first();
+        $profils->update($request->only('nama_klinik', 'deskripsi'));
         return back();
     }
 }

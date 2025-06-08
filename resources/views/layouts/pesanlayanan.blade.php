@@ -132,9 +132,16 @@
 
                 <h3>Informasi Kesehatan:</h3>
 
+                <label for="gejala">Gejala</label>
                 <input type="text" name="gejala" placeholder="Gejala" required>
+
+                <label for="riwayat_penyakit">Riwayat Penyakit</label>
                 <input type="text" name="riwayat_penyakit" placeholder="Riwayat Penyakit" required>
+
+                <label for="keluhan">Keluhan Disampaikan Menurut?</label>
                 <input type="text" name="keluhan" placeholder="Keluhan Disampaikan Menurut?" required>
+
+                <label for="keluhan_utama">Keluhan Utama</label>
                 <textarea name="keluhan_utama" placeholder="Keluhan Utama" required></textarea>
 
                 <label for="jadwal_pemesanan">Tanggal Pemesanan</label>
@@ -149,26 +156,27 @@
                     <option value="Pijat">Pijat</option>
                 </select>
 
-                <!-- Checklist, jika ingin menyimpan centang juga, tambah input hidden -->
-
                 <div class="checklist">
                     <p><strong>Silakan baca dan beri tanda centang pada setiap pernyataan di bawah ini:</strong></p>
-                    <br>
-                    <ul style="text-align: justify ; margin-left: 20px;">
-                        <li> Saya memahami bahwa tindakan akupunktur dapat menimbulkan efek samping ringan seperti memar,
+                    <ul style="text-align: justify; margin-left: 20px;">
+                        <li>Saya memahami bahwa tindakan akupunktur dapat menimbulkan efek samping ringan seperti memar,
                             nyeri, pusing, atau kelelahan.</li>
-                        <li> Saya telah menginformasikan semua kondisi medis yang saya alami, termasuk penyakit kronis,
+                        <li>Saya telah menginformasikan semua kondisi medis yang saya alami, termasuk penyakit kronis,
                             alergi, serta status kehamilan (jika ada).</li>
-                        <li> Saya memberikan izin kepada praktisi/terapis akupunktur untuk melakukan tindakan sesuai standar
+                        <li>Saya memberikan izin kepada praktisi/terapis akupunktur untuk melakukan tindakan sesuai standar
                             medis yang berlaku.</li>
-                        <li> Saya memahami bahwa semua informasi saya akan dijaga kerahasiaannya sesuai dengan kebijakan
+                        <li>Saya memahami bahwa semua informasi saya akan dijaga kerahasiaannya sesuai dengan kebijakan
                             penyedia layanan.</li>
-                        <li> Saya mengetahui dan menyetujui kebijakan pembatalan atau penjadwalan ulang layanan yang
-                            berlaku.</li>
+                        <li>Saya mengetahui dan menyetujui kebijakan pembatalan atau penjadwalan ulang layanan yang berlaku.
+                        </li>
                     </ul><br>
-                    <label><input type="checkbox"> Dengan menyetujui secara digital, saya menyatakan telah membaca,
-                        memahami, dan menyetujui seluruh isi pernyataan ini tanpa paksaan dari pihak manapun.</label>
 
+                    <!-- Ini akan divalidasi oleh controller sebagai 'accepted' -->
+                    <label>
+                        <input type="checkbox" name="persetujuan" value="1" required>
+                        Dengan menyetujui secara digital, saya menyatakan telah membaca, memahami, dan menyetujui seluruh
+                        isi pernyataan ini tanpa paksaan dari pihak manapun.
+                    </label>
                 </div>
 
                 <button type="submit" class="submit-button">Daftar</button>
