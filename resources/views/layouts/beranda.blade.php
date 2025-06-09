@@ -68,24 +68,15 @@
       <li><a href="/beranda">Beranda</a></li>
       <li><a href="/tentangkami">Tentang Kami</a></li>
       <li class="dropdown">
-        <a href="#">Dokter Kami </a>
+        <a href="#">Terapis</a>
         <ul class="dropdown-content">
           <li><a href="/jadwaldokter1">Jadwal Terapis</a></li>
           <li><a href="/profildokter">Profil Terapis</a></li>
         </ul>
       </li>
       <li >
-        <a href="/pesanlayanan">Layanan </a>
-        
+        <a href="/pesanlayanan">Layanan Terapis</a> 
       </li>
-      <li class="dropdown">
-        <a href="#">Informasi </a>
-        <ul class="dropdown-content">
-   <li><a href="/artikel">Artikel </a></li>
-        </ul>
-      </li>
-
-      <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
   </nav>
@@ -112,8 +103,8 @@
   <img src="aset/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Header Image" class="header-img">
 
   <div class="header-overlay">
-    <h1>Call Center Ambulance (24 Jam)</h1>
-    <a href="#" class="header-btn">Selengkapnya</a>
+    <h1>Konsultasi Keluhan Anda (Admin Kami)</h1>
+    <a href="https://wa.me/6285878607469?text=Halo%20saya%20ingin%20konsultasi%20dengan%20klinik%20Sehat%20Harmoni%20Indonesia" class="header-btn">Hubungi </a>
   </div>
 </header>
 

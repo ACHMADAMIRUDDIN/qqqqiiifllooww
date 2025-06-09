@@ -1,182 +1,208 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
         body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            min-height: 5000px;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60px;
+            background-color: #5f94ff;
             display: flex;
-            min-height: 100vh;
-            background-color: #f4f4f4;
+            align-items: center;
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
         }
 
-        /* Sidebar */
-        .sidebar {
-            width: 250px;
-            background-color: #3490dc;
-            color: white;
-            padding: 20px;
-        }
-
-        .sidebar h2 {
-            font-size: 40px;
-            margin-bottom: 20px;
-        }
-
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 10px 0;
-            text-decoration: none;
+        .toggle-menu {
             font-size: 20px;
-        }
-
-        .sidebar a:hover,
-        .sidebar a.active {
-            background-color: #2980b9;
-            padding-left: 10px;
-        }
-
-        .sidebar .section-title {
-            margin-top: 20px;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        /* Main */
-        .main {
-            flex-grow: 1;
-            padding: 30px;
-        }
-
-        .dashboard-title {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .card {
-            flex: 1 1 220px;
-            padding: 20px;
-            color: white;
-            border-radius: 10px;
-            position: relative;
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .card .icon {
-            font-size: 30px;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            opacity: 0.4;
-        }
-
-        .card .value {
-            font-size: 30px;
-            font-weight: bold;
-        }
-
-        .card .label {
-            margin-top: 10px;
-            font-size: 16px;
-        }
-
-        .card .info {
-            margin-top: 10px;
-            font-size: 12px;
-            text-decoration: underline;
+            background: none;
+            border: none;
             cursor: pointer;
+            margin-right: 20px;
         }
 
-        .bg-blue {
-            background-color: #3490dc;
+        .navbar-center a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #333;
         }
 
-        .bg-yellow {
-            background-color: #3490dc;
-        }
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #5f94ff;
+    padding: 20px;
+    transition: width 0.3s;
+    overflow: hidden;
+}
 
-        .bg-red {
-            background-color: #3490dc;
-        }
+.sidebar.minimized {
+    width: 60px;
+}
 
-        .bg-green {
-            background-color: #3490dc;
-        }
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
 
-        .bg-yellow {
-            background-color: #f1c40f;
-        }
+.sidebar.minimized h2 {
+    display: none;
+}
 
-        .bg-red {
-            background-color: #e74c3c;
-        }
+.sidebar a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
 
-        .bg-green {
-            background-color: #27ae60;
-        }
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
 
-        @media (max-width: 768px) {
-            .sidebar {
-                display: none;
-            }
-        }
+.sidebar a span {
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: #ffffff33; /* sedikit transparan putih */
+    color: #fff;
+        border-radius: 5px;
+    transition: all 0.2s;
+}
+
+.sidebar a:hover i {
+    transform: scale(1.1);
+    color: #fff;
+}
+
+.sidebar a:hover span {
+    color:#fff;
+}
+
+.sidebar.minimized a span {
+    display: none;
+}
+
+.main {
+    margin-top: 60px;
+    margin-left: 220px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar.minimized + .main {
+    margin-left: 60px;
+}
+
+
+
+
     </style>
 </head>
-
 <body>
-    <div class="sidebar">
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <button class="toggle-menu" onclick="toggleSidebar()">☰</button>
+    <div class="navbar-center" id="navbar-title">
+        <h3 style="margin: 0;">Dashboard</h3> <!-- default -->
+    </div>
+</nav>
+
+<!-- ===== SIDEBAR ===== -->
+<div id="sidebar" class="sidebar">
+    <a href="{{ route('admin.dashboard') }}" class="sidebar-link" data-title="Dashboard" style="text-decoration: none; color: white;">
         <h2><i class="bi bi-person-fill"></i> ADMIN</h2>
+    </a>
+    <a href="{{ route('admin.pasien.index') }}" class="sidebar-link" data-title="Kelola Data Pasien">
+        <i class="bi bi-people-fill"></i> <span>Kelola Data Pasien</span>
+    </a>
+    <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Promo Layanan">
+        <i class="bi bi-tags-fill"></i> <span>Promo Layanan</span>
+    </a>
+    <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Riwayat Pemesanan">
+        <i class="bi bi-clock-history"></i> <span>Riwayat Pemesanan</span>
+    </a>
+    <a href="{{ route('admin.profil.index') }}" class="sidebar-link" data-title="Profil Klinik">
+        <i class="bi bi-hospital-fill"></i> <span>Profil Klinik</span>
+    </a>
+    <a href="{{ route('admin.dokter.index') }}" class="sidebar-link" data-title="Profil Dokter">
+        <i class="bi bi-person-badge-fill"></i> <span>Profil Dokter</span>
+    </a>
+    <a href="{{ route('admin.jadwal.index') }}" class="sidebar-link" data-title="Jadwal Dokter">
+        <i class="bi bi-calendar-event-fill"></i> <span>Jadwal Dokter</span>
+    </a>
+    <a href="{{ route('admin.pengaduan.tampilan') }}" class="sidebar-link" data-title="Daftar Pengaduan Pengguna">
+        <i class="bi bi-chat-left-dots-fill"></i> <span>Pengaduan</span>
+    </a>
+</div>
 
-        <a href="{{ route('admin.pasien.index') }}">
-            Kelola Data Pasien
-        </a>
 
-        <a href="{{ route('admin.pesan.index') }}">
-            pesanan layanan
-        </a>
-        <a href="{{ route('admin.profil.index') }}">
-            Profil Klinik
-        </a>
+<!-- ===== MAIN CONTENT ===== -->
+<div class="main">
+    @yield('content')
+</div>
 
-        <a href="{{ route('admin.promo.index') }}">
-            promo
-        </a>
-        <a href="{{ route('admin.promo.index') }}">
-            riwayat
-        </a>
-        <a href="{{ route('admin.pengaduan.tampilan') }}">
-            pengaduan
-        </a>
-        <a href="{{ route('admin.jadwal.index') }}">
-            jadwal dokter
-        </a>
-        <a href="{{ route('admin.dokter.index') }}">
-            Profil Dokter
-        </a>
-    </div>
-    <div class="main">
-        @yield('content')
-    </div>
+<!-- ===== SCRIPT ===== -->
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('minimized');
+    }
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const navbarTitle = document.getElementById("navbar-title");
+
+        // Tampilkan title terakhir jika ada di localStorage
+        const savedTitle = localStorage.getItem("navbar-title");
+        if (savedTitle) {
+            navbarTitle.innerHTML = `<h3 style="margin: 0;">${savedTitle}</h3>`;
+        }
+
+        document.querySelectorAll(".sidebar-link").forEach(link => {
+            link.addEventListener("click", function () {
+                const newTitle = this.getAttribute("data-title");
+                if (newTitle) {
+                    localStorage.setItem("navbar-title", newTitle); // Simpan
+                    navbarTitle.innerHTML = `<h3 style="margin: 0;">${newTitle}</h3>`;
+                }
+            });
+        });
+    });
+
+    // Fungsi toggle sidebar (opsional jika kamu sudah punya, lewati ini)
+    function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("minimized");
+    }
+</script>
 
 
 </body>
-
 </html>

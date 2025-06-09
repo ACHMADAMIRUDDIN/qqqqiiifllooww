@@ -3,9 +3,9 @@
 @section('content')
 <div class="container py-4">
     <h2 class="h4 fw-bold text-dark mb-4">Daftar Pengaduan Pengguna</h2>
-    <div class="table-responsive bg-blue">
+    <div class="table-responsive bg-black">
         <table class="table table-striped table-hover text-center align-middle">
-           <thead class="bg-ocean-blue text-white">
+           <thead class="bg-ocean-blue text-black">
                 <tr>
                     <th>Nama Lengkap</th>
                     <th>Tanggal Lahir</th>
