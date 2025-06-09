@@ -47,7 +47,7 @@ class Pasien extends Model
         'email',
         'alamat',
         'jenis_kelamin',
-        'id_pesanan',
+        
     ];
 
     // ONE-TO-ONE ke Pesanan

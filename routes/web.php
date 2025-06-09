@@ -63,7 +63,7 @@ Route::middleware('auth')->group(function () {
        }
 
        return abort(403);
-   })->middleware('auth');
+   })->middleware('auth')->name('dashboard');
 
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {

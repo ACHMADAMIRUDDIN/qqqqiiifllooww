@@ -19,11 +19,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('alamat');
             $table->enum('jenis_kelamin', ['Laki-laki', 'Perempuan']);
-            $table->unsignedBigInteger('id_pesanan'); // foreign key
             $table->timestamps();
 
             // Foreign key constraint
-            
+
         });
     }
 

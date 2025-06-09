@@ -42,6 +42,7 @@ class Pesanan extends Model
         'keluhan',
         'jadwal_pemesanan',
         'jenis_layanan',
+        'id_pasien',
     ];
 
     // ONE-TO-ONE ke Pasien

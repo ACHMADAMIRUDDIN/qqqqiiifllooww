@@ -206,7 +206,7 @@
 
         setTimeout(() => {
             window.location.href = '{{ route('beranda') }}';
-        }, 4200); // marine fade out
+        }, 3800); // marine fade out
     });
 </script>
     </div>
