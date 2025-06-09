@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>berita1 - Sehat Harmoni Indonesia</title>
   <link rel="stylesheet" href="detailberita/detailberita1.css">
+    <!-- Favicon -->
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
+  
 </head>
 <body>
 

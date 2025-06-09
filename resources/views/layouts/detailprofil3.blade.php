@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil Dokter</title>
-  <link rel="stylesheet" href="profil/detailprofil3.css">
+  <link rel="stylesheet" href="profil/detailprofil3.css">  
+  <!-- Favicon -->
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
 <body>
   <!-- Header -->

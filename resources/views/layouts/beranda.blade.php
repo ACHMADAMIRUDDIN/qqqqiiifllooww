@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+  <!-- Favicon -->
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
   <title>Sehat Harmoni Indonesia</title>
   <link rel="stylesheet" href="aset/css/cssnya.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
@@ -380,65 +381,84 @@
 
     <div class="berita-items" id="beritaScroll">
       <div class="berita-item">
-        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 1">
+        <img src="https://www.sehatharmoni.com/wp-content/uploads/2016/11/DSC02141-1024x684.jpg" alt="Berita 1">
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita1') }}" class="news-title-link">
-    Akupunktur
+    KURSUS PIJAT REFLEKSI ANGKATAN 57
   </a>
 </h3>
-          <p>Deskripsi singkat berita 1 yang menarik dan informatif.</p>
+          <p>Pada hari Sabtu - Minggu tanggal 29-30 Oktober 2016 
+            dilaksanakan Kursus Pijat Refleksi Indonesia yang diselenggarakan
+            oleh...</p>
         </div>
       </div>
 
       <div class="berita-item">
-        <img src="aset/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Berita 2">
+        <img src="https://www.nhlbi.nih.gov/sites/default/files/inline-images/19-1243%20NHLBI%20OY2%20Q1%20FHT%20Insomnia_900x600px%20%281%29.jpg" alt="Berita 2">
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita2') }}" class="news-title-link">
-    Akupresur
+    MENYEMBUHKAN INSOMNIA DENGAN PIJAT REFLEKSI KAKI, MOKSA, DAN OBAT TRADISIONAL
   </a>
 </h3>
-          <p>Deskripsi singkat berita 2 yang menarik dan informatif.</p>
+          <p>Insomnia adalah keadaan di mana seseorang sulit masuk tidur,
+            atau kesulitan mempertahankan tidur dalam kurun waktu tertentu...</p>
         </div>
       </div>
 
       <div class="berita-item">
-        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
+        <img src="https://storage.googleapis.com/rspi-assets-production/rspi-api/uploads/MTcyNzY2NDgxMTIzNA==.jpg" alt="Berita 3">
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita3') }}" class="news-title-link">
-    Bekam
+    Kenali dan Obati Nyeri Pada Perut
   </a>
 </h3>
-          <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
+          <p>Kenali dan Obati Nyeri Pada Perut
+             nyeri perutPenyakit ini adalah jenis penyakit yang datang dan pergi selama periode yang panjang.
+             Rasa nyeri ini dapat disebabkan oleh berbagai hal.</p>
         </div>
       </div>
 
            <div class="berita-item">
-        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
+        <img src="https://img.grouponcdn.com/deal/3iqpBM7c1WQcvwZzSddLUeWzGdFE/3i-2048x1229/v1/c349x211q85.jpg" alt="Berita 3">
         <div class="berita-deskripsi">
 <h3>
   <a href="/pijatt" class="news-title-link">
-    Pijat
+    Menurunkan Berat Badan Dengan Berdiet & Terapi Pijatan
   </a>
 </h3>
-          <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
+          <p>Menurunkan berat badan bagi yang kelebihan berat badan dan mempertahankan berat badan bagi yang berat badannya ideal, merupakan cara yang baik untuk berdiet. Perlu diperhatikan pada saat mengkonsumsi makanan,
+            kita haruslah menahan diri untuk makan secukupnya saja.</p>
         </div>
       </div>
 
            <div class="berita-item">
-        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
+        <img src="https://suwun.co.id/blog/wp-content/uploads/2022/10/pijat-pundak.jpg" alt="Berita 3">
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita3') }}" class="news-title-link">
-    Judul Berita 1
+    Cegah & Sembuhkan Penyakit Anemia Gizi Dengan Pijatan
   </a>
 </h3>
-          <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
+          <p>Agar manusia memiliki kemampuan kerja fisik yang baik, maka tentunya harus didukung oleh tingkat keadaan gizi yang baik pula.
+            Tingkat keadaan gizi yang baik akan mendukung hasil kerja yang efisien dan optimal</p>
         </div>
       </div>
 
+               <div class="berita-item">
+        <img src="https://drhausdermatology.com/wp-content/uploads/2022/05/shutterstock_2069155256-1024x678.jpg" alt="Berita 3">
+        <div class="berita-deskripsi">
+<h3>
+  <a href="{{ route('detailberita3') }}" class="news-title-link">
+   Jerawat Atasi Dengan Pijatan
+  </a>
+</h3>
+          <p>Jerawat merupakan penyakit radang kronis dengan karakteristik ditandai oleh komedones (black heads),
+            papula, pustula, dan kadang-kadang terbentuk kistik, mengenai folikel dan kelenjar sebaseus.</p>
+        </div>
+      </div>
       <!-- Tambahkan berita lainnya -->
     </div>
 

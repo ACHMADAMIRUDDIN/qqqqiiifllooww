@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil Dokter</title>
-  <link rel="stylesheet" href="new folder/css/pijatt.css">
+  <link rel="stylesheet" href="new folder/css/pijatt.css">  
+  <!-- Favicon -->
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
 <body>
 

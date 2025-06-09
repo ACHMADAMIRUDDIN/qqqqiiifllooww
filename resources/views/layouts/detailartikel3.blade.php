@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artike2 - Sehat Harmoni Indonesia</title>
   <link rel="stylesheet" href="New folder(2)/detailartikel2.css">
+    <!-- Favicon -->
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
 <body>
 
