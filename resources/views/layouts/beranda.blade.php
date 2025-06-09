@@ -169,8 +169,8 @@
       <p class="testimonial-author">John Doe</p>
     </div>
   </section>
-  <br>
-  <br>
+
+  <section>
     <div class="promo">
     <h2>Promo</h2>
     <h3>promo terbaru dan ter update ada di sini </h3>
@@ -250,6 +250,8 @@
     document.getElementById("lightbox").style.display = "none";
   }
 </script>
+
+</section>
 <section class="berita">
 <html lang="id">
 <head>
