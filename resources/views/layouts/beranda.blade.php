@@ -195,110 +195,166 @@
 </body>
 </html>
 
-  <div class="promo-wrapper">
-    <button class="arrow left" onclick="scrollPromo(-1)">‹</button>
-    <button class="arrow left">&#8249;</button>
-    <div class="promo-items" id="promoScroll">
-    <div class="promo-item" onclick="showImage('promo1.png')">Promo 1</div>
-    <div class="promo-item" onclick="showImage('promo2.png')">Promo 2</div>
-<div class="promo-item" onclick="showImage('promo3.png')">Promo 3</div>
+ <div class="promo-wrapper">
+  <button class="arrow left" onclick="scrollPromo(-1)">‹</button>
 
-<!-- Modal Popup -->
-<div id="imageModal" style="display:none;" onclick="closeModal()">
-  <img id="modalImage" src="" style="max-width:90%; max-height:90%; border-radius:10px;">
-</div>
-
+  <div class="promo-items" id="promoScroll">
+    <div class="promo-item" onclick="showImage('/image/bg_darurat.png')">
+      <img src="/image/bg_darurat.png" alt="Promo 1" />
     </div>
-    <button class="arrow right">&#8250;</button>
-    <button class="arrow right" onclick="scrollPromo(1)">›</button>
+    <div class="promo-item" onclick="showImage('/image/bg_darurat.png')">
+      <img src="/image/bg_darurat.png" alt="Promo 2" />
+    </div>
+    <div class="promo-item" onclick="showImage('/image/bg_darurat.png')">
+      <img src="/image/bg_darurat.png" alt="Promo 3" />
+    </div>
+    <div class="promo-item" onclick="showImage('/image/bg_darurat.png')">
+      <img src="/image/bg_darurat.png" alt="Promo 4" />
+    </div>
+    <div class="promo-item" onclick="showImage('/image/bg_darurat.png')">
+      <img src="/image/bg_darurat.png" alt="Promo 5" />
+    </div>
+    <div class="promo-item" onclick="showImage('/image/bg_darurat.png')">
+      <img src="/image/bg_darurat.png" alt="Promo 6" />
+    </div>
+    <div class="promo-item" onclick="showImage('/image/bg_darurat.png')">
+      <img src="/image/bg_darurat.png" alt="Promo 7" />
+    </div>
+    <div class="promo-item" onclick="showImage('/image/bg_darurat.png')">
+      <img src="/image/bg_darurat.png" alt="Promo 8" />
+    </div>
   </div>
 
-  <!-- CSS animasi -->
-  <style>
-    .promo-item {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+  <button class="arrow right" onclick="scrollPromo(1)">›</button>
+</div>
 
-    .promo-item.animate {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
-  
+<!-- Modal Pop-up -->
+<div id="imageModal" onclick="closeModal()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); display:flex; justify-content:center; align-items:center; z-index:9999;">
+  <img id="modalImage" src="" style="max-width:90%; max-height:90%; border-radius:10px;" />
+</div>
+
+<!-- CSS -->
+<style>
+  .promo-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .promo-items {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 16px;
+    padding: 1rem 0;
+  }
+
+  .promo-item {
+    min-width: 250px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background-color: #e0e0e0;
+    cursor: pointer;
+    transition: transform 0.3s;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .promo-item.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .promo-item img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+  }
+
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: #333;
+    color: #fff;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+  }
+
+  .arrow.left {
+    left: 5px;
+  }
+
+  .arrow.right {
+    right: 5px;
+  }
+</style>
+
+<!-- JS -->
 <script>
-function showImage(imagePath) {
-  document.getElementById("modalImage").src = imagePath;
-  document.getElementById("imageModal").style.display = "flex";
-}
+  const scrollContainer = document.getElementById('promoScroll');
+  const promoItems = scrollContainer.querySelectorAll('.promo-item');
+  let currentIndex = 0;
 
-function closeModal() {
-  document.getElementById("imageModal").style.display = "none";
-}
-</script>
+  function scrollPromo(direction) {
+    const itemWidth = promoItems[0].offsetWidth + 16;
+    const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
 
-  <!-- JavaScript fungsi scroll + auto scroll + animasi ulang -->
-  <script>
-    const scrollContainer = document.getElementById('promoScroll');
-    const promoItems = scrollContainer.querySelectorAll('.promo-item');
-    let currentIndex = 0;
+    currentIndex += direction;
+    let scrollPosition = currentIndex * itemWidth;
 
-    function scrollPromo(direction) {
-      const itemWidth = promoItems[0].offsetWidth + 16;
-      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
-
-      currentIndex += direction;
-      let scrollPosition = currentIndex * itemWidth;
-
-      if (scrollPosition < 0) {
-        currentIndex = 0;
-        scrollPosition = 0;
-      } else if (scrollPosition > maxScroll) {
-        currentIndex = 0;
-        scrollPosition = 0;
-      }
-
-      scrollContainer.scrollTo({
-        left: scrollPosition,
-        behavior: 'smooth',
-      });
+    if (scrollPosition < 0 || scrollPosition > maxScroll) {
+      currentIndex = 0;
+      scrollPosition = 0;
     }
 
-    // Auto scroll
-    let autoScroll = setInterval(() => {
+    scrollContainer.scrollTo({
+      left: scrollPosition,
+      behavior: 'smooth',
+    });
+  }
+
+  let autoScroll = setInterval(() => {
+    scrollPromo(1);
+  }, 3000);
+
+  scrollContainer.addEventListener('mouseenter', () => clearInterval(autoScroll));
+  scrollContainer.addEventListener('mouseleave', () => {
+    autoScroll = setInterval(() => {
       scrollPromo(1);
     }, 3000);
+  });
 
-    scrollContainer.addEventListener('mouseenter', () => {
-      clearInterval(autoScroll);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+      } else {
+        entry.target.classList.remove('animate');
+      }
     });
+  }, {
+    root: scrollContainer,
+    threshold: 0.5
+  });
 
-    scrollContainer.addEventListener('mouseleave', () => {
-      autoScroll = setInterval(() => {
-        scrollPromo(1);
-      }, 3000);
-    });
+  promoItems.forEach(item => observer.observe(item));
 
-    // Observer untuk animasi saat item masuk area scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('animate');
-        } else {
-          entry.target.classList.remove('animate');
-        }
-      });
-    }, {
-      root: scrollContainer,
-      threshold: 0.5
-    });
+  function showImage(path) {
+    document.getElementById('modalImage').src = path;
+    document.getElementById('imageModal').style.display = 'flex';
+  }
 
-    promoItems.forEach(item => {
-      observer.observe(item);
-    });
-  </script>
-</section>
+  function closeModal() {
+    document.getElementById('imageModal').style.display = 'none';
+  }
+</script>
+
 
 
 </section>

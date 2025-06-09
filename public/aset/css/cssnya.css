@@ -514,35 +514,56 @@ body {
   padding: 2rem;
 }
 
+/* Wrapper utama carousel */
 .promo-wrapper {
+  overflow: hidden; /* Sembunyikan semua overflow (termasuk scroll) */
   position: relative;
-  display: flex;
-  top : 35px;
-  align-items: center;
-  justify-content: center;
-  max-width: 950px;
+  width: 100%;
+  max-width: 960px; /* Lebar maksimum agar pas 3 item * 320px */
   margin: auto;
+  height: auto; /* Pastikan tingginya mengikuti isi, tidak menyebabkan overflow vertikal */
 }
 
+/* Kontainer horizontal tempat promo-promo */
 .promo-items {
   display: flex;
-  gap: 16px;
-  overflow: hidden;
+  gap: 16px; /* Jarak antar item */
   scroll-behavior: smooth;
-  width: 100%;
+  padding: 10px 40px; /* Ruang sisi kiri-kanan */
+  overflow-x: auto; /* Scroll horizontal jika konten melampaui */
+  overflow-y: hidden; /* Scroll vertikal dimatikan */
 }
 
+/* Setiap kartu promo */
 .promo-item {
-  flex: 0 0 calc(33.33% - 10.67px);
-  aspect-ratio: 4 / 5;
-  background-color: #ddd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  border-radius: 13px;
+  flex: 0 0 calc((100% - 32px) / 3); /* 3 item per row (2 gap: 16px * 2) */
+  aspect-ratio: 4 / 5; /* Rasio 4:5 */
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: #eee;
+
+  /* Untuk animasi muncul saat terlihat */
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
+/* Ketika item ter-observe oleh IntersectionObserver */
+.promo-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Gambar di dalam item */
+.promo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Isi penuh tapi tetap proporsional */
+  display: block;
+}
+
+/* Tombol panah navigasi */
 .arrow {
   position: absolute;
   top: 50%;
@@ -553,29 +574,34 @@ body {
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  font-size: 1.2rem;  /* ganti dari '3cap' ke satuan yang lebih stabil */
+  font-size: 1.2rem; /* Satuan yang stabil */
   z-index: 10;
   cursor: pointer;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover efek */
 .arrow:hover {
   background-color: #555;
-  transform: translateY(-50%) scale(1.1); /* efek hover elegan */
+  transform: translateY(-50%) scale(1.1); /* Tambahan efek saat hover */
 }
 
+/* Posisi tombol kiri */
 .arrow.left {
   left: -20px;
 }
 
+/* Posisi tombol kanan */
 .arrow.right {
   right: -20px;
 }
 
-/* Responsif agar arrow tetap tampil di layar kecil */
+/* Responsif: agar panah tetap terlihat di layar kecil */
 @media (max-width: 768px) {
   .arrow.left {
     left: 5px;
@@ -584,7 +610,13 @@ body {
   .arrow.right {
     right: 5px;
   }
+
+  /* Untuk 1 item per tampilan pada layar kecil (opsional) */
+  .promo-item {
+    flex: 0 0 100%;
+  }
 }
+
 
 
   .lihat-selengkapnya {
@@ -1038,17 +1070,7 @@ body {
   color: #444;
 }
 
-/* Modal Overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(4px);
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 999;
-}
+
 
 /* Login Modal */
 .login-modal {
