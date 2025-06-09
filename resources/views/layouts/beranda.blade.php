@@ -13,7 +13,7 @@
         document.body.classList.add('loaded');
     });
     </script>
-
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
 
 <body>
