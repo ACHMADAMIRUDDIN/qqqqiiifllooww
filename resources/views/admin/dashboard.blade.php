@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link href="{{ asset('img/sehat_harmoni.jpeg') }} }}" rel="icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            font-family: 'Times New Roman', Times, serif;
         }
 
         body {
@@ -23,13 +22,13 @@
         /* Sidebar */
         .sidebar {
             width: 250px;
-            background-color: #2c3e50;
+            background-color: #3490dc;
             color: white;
             padding: 20px;
         }
 
         .sidebar h2 {
-            font-size: 20px;
+            font-size: 40px;
             margin-bottom: 20px;
         }
 
@@ -38,7 +37,7 @@
             color: white;
             padding: 10px 0;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 20px;
         }
 
         .sidebar a:hover,
@@ -107,7 +106,19 @@
         }
 
         .bg-blue {
-            background-color: #1abc9c;
+            background-color: #3490dc;
+        }
+
+        .bg-yellow {
+            background-color: #3490dc;
+        }
+
+        .bg-red {
+            background-color: #3490dc;
+        }
+
+        .bg-green {
+            background-color: #3490dc;
         }
 
         .bg-yellow {
@@ -133,15 +144,33 @@
 <body>
     <div class="sidebar">
         <h2><i class="bi bi-person-fill"></i> ADMIN</h2>
-        <a href="{{ route('admin.pasien.index') }}">
-   Kelola Data Pasien
-</a>
 
-<a href="{{ route('admin.pesan.index') }}">
+        <a href="{{ route('admin.pasien.index') }}">
+            Kelola Data Pasien
+        </a>
+
+        <a href="{{ route('admin.pesan.index') }}">
             pesanan layanan
         </a>
-        <a href="#">pengaduan</a>
-        <a href="{{ route('admin.profil.index') }}">Profil Klinik</a>
+        <a href="{{ route('admin.profil.index') }}">
+            Profil Klinik
+        </a>
+
+        <a href="{{ route('admin.promo.index') }}">
+            promo
+        </a>
+        <a href="{{ route('admin.promo.index') }}">
+            riwayat
+        </a>
+        <a href="{{ route('admin.pengaduan.tampilan') }}">
+            pengaduan
+        </a>
+        <a href="{{ route('admin.jadwal.index') }}">
+            jadwal dokter
+        </a>
+        <a href="{{ route('admin.dokter.index') }}">
+            Profil Dokter
+        </a>
     </div>
     <div class="main">
         @yield('content')

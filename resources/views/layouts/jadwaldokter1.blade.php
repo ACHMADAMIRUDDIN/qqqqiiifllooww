@@ -153,20 +153,17 @@ function cariJadwal() {
 </div>
 
 @auth
-  <!-- Konten Profil Dokter dalam Box -->
-   <div class="container">
+  <div class="container">
     <div class="form-container">
       <input type="date" id="tanggal" />
       <select id="terapi">
         <option value="">-- Pilih Jenis Terapi --</option>
-        <option value="Akupuntur">Akupuntur</option>
-        <option value="Akupresur">Akupresur</option>
-        <option value="Bekam">Bekam</option>
-        <option value="Pijat">Pijat</option>
+        @foreach($jadwals->pluck('jenis_terapi')->unique() as $jenis)
+          <option value="{{ $jenis }}">{{ $jenis }}</option>
+        @endforeach
       </select>
       <button onclick="cariJadwal()">Cari</button>
     </div>
-
     <div class="result-container">
       <table>
         <thead>
@@ -175,12 +172,38 @@ function cariJadwal() {
             <th>JADWAL</th>
           </tr>
         </thead>
-        <tbody id="hasil">
-          <tr><td colspan="2">Tidak ada jadwal</td></tr>
+        <tbody id="hasil" style="display:none;">
+          @foreach($jadwals as $jadwal)
+            <tr data-terapi="{{ $jadwal->jenis_terapi }}">
+              <td>{{ $jadwal->nama_dokter }}</td>
+              <td>{{ $jadwal->jadwal }}</td>
+            </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
   </div>
+  <script>
+    function cariJadwal() {
+      var terapi = document.getElementById('terapi').value;
+      var rows = document.querySelectorAll('#hasil tr');
+      var hasil = document.getElementById('hasil');
+      var found = false;
+      rows.forEach(function(row) {
+        if (!terapi || row.getAttribute('data-terapi') === terapi) {
+          row.style.display = '';
+          found = true;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+      hasil.style.display = terapi ? '' : 'none';
+      if (terapi && !found) {
+        hasil.innerHTML = '<tr><td colspan="2">Tidak ada jadwal</td></tr>';
+        hasil.style.display = '';
+      }
+    }
+  </script>
 @else
   <div style="background:#fff;border-radius:12px;padding:2em;text-align:center;max-width:500px;margin:2em auto;box-shadow:0 2px 12px #0002;">
     <h2 style="font-weight:600;margin-bottom:1em;color:#444;">Pesan Layanan</h2>

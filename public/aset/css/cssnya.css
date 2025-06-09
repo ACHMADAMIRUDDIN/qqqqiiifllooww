@@ -761,7 +761,7 @@ body {
   background-color: #f5f5f5;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
-   position: sticky;
+  position: sticky;
   top: 0;
   z-index: 999;
 }
@@ -785,8 +785,9 @@ body {
   padding: 15px 20px;
   text-decoration: none;
   color: #333;
-  font-size: 14px;
+  font-size: 17px;
   cursor: pointer;
+
 }
 
 .menu li:hover {

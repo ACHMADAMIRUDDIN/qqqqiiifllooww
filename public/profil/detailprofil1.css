@@ -127,7 +127,7 @@ body {
   padding: 15px 20px;
   text-decoration: none;
   color: #333;
-  font-size: 14px;
+  font-size: 17px;
   cursor: pointer;
 }
 
@@ -222,6 +222,7 @@ body {
   .menu a {
     padding: 15px;
     border-bottom: 1px solid #eee;
+    
   }
 
   .menu .dropdown-content {
@@ -246,6 +247,7 @@ body {
 }
 /* Styling untuk banner "Tentang Kami" */
         .about-us-banner {
+
             width: 100%; /* Pastikan banner mengambil lebar penuh */
             height: 250px; /* Menggunakan tinggi yang Anda berikan */
             background-color: #5f94ff; /* Menggunakan warna yang Anda berikan */

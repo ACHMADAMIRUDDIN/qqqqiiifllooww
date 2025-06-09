@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-    <link rel="stylesheet" href="penga/css/csspeng.css" />
+  <link rel="stylesheet" href="penga/css/csspeng.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-      <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
+
 <body>
   <div class="top-bar">
     <div class="marquee">
@@ -16,30 +18,30 @@
     </div>
   </div>
 
-<!-- Navbar -->
+  <!-- Navbar -->
   <div class="navbar">
-<div class="logo" style="display: flex; align-items: center; gap: 10px;">
-  <img src="img/sehat_harmoni.jpeg" alt="Logo Sehat Harmoni" style="height: 40px;">
-  <span>Sehat Harmoni Indonesia</span>
-</div>
+    <div class="logo" style="display: flex; align-items: center; gap: 10px;">
+      <img src="img/sehat_harmoni.jpeg" alt="Logo Sehat Harmoni" style="height: 40px;">
+      <span>Sehat Harmoni Indonesia</span>
+    </div>
     <div class="contact">
       @auth
-       <span class="welcome-text">
-    Hallo, {{ Auth::user()->name }}
-    </span>
-    <span>
-   <form method="POST" action="{{ route('logout') }}" style="display:inline;">
-    @csrf
-     <button type="submit" class="logout-button">Logout</button>
-    </form>
-   </span>
+      <span class="welcome-text">
+        Hallo, {{ Auth::user()->name }}
+      </span>
+      <span>
+        <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+          @csrf
+          <button type="submit" class="logout-button">Logout</button>
+        </form>
+      </span>
       @else
-         <span>
+      <span>
         <a href="{{ route('login') }}" class="btn">Log in</a>
-         </span>
-        <span>
+      </span>
+      <span>
         <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
-        </span>
+      </span>
       @endauth
     </div>
   </div>
@@ -90,7 +92,7 @@
       <li class="dropdown">
         <a href="#">Informasi </a>
         <ul class="dropdown-content">
-   <li><a href="/artikel">Artikel</a></li>
+          <li><a href="/artikel">Artikel</a></li>
         </ul>
       </li>
 
@@ -100,85 +102,79 @@
   </nav>
 
 
-<div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
+  <div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
     <h1>Pengaduan</h1>
     <p>Anda Dapat Memberikan Kritik/Saran Terkait Layanan Yang Kami Berikan</p>
-</div>
- @auth
-  <div class="form-container">
-        <div class="form-header">
-            Pengaduan Pasien
-        </div>
-
-        <div class="section-title">
-            Identitas Responden :
-        </div>
-
-        <div class="form-group">
-            <label for="nama_lengkap">Nama Lengkap</label>
-            <input type="text" id="nama_lengkap" name="nama_lengkap">
-        </div>
-
-        <div class="form-group">
-            <label for="tanggal_lahir">Tanggal Lahir</label>
-            <input type="text" id="tanggal_lahir" name="tanggal_lahir">
-        </div>
-
-        <div class="form-group">
-            <label for="no_handphone">No. Handphone</label>
-            <input type="tel" id="no_handphone" name="no_handphone">
-        </div>
-
-        <div class="form-group">
-            <label for="alamat_email">Alamat Email</label>
-            <input type="email" id="alamat_email" name="alamat_email">
-        </div>
-
-        <div class="form-group">
-            <label for="jenis_kelamin">Jenis Kelamin</label>
-            <select id="jenis_kelamin" name="jenis_kelamin">
-                <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                <option value="Laki-laki">Laki-laki</option>
-                <option value="Perempuan">Perempuan</option>
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="usia">Usia</label>
-            <input type="text" id="usia" name="usia">
-        </div>
-
-        <div class="form-group">
-            <label for="pekerjaan">Pekerjaan</label>
-            <input type="text" id="pekerjaan" name="pekerjaan">
-        </div>
-
-        <div class="form-group">
-            <label for="jenis_layanan">Jenis Layanan yang Digunakan</label>
-            <input type="text" id="jenis_layanan" name="jenis_layanan">
-        </div>
-
-        <div class="form-group">
-            <label for="tanggal_layanan">Tanggal Melakukan Layanan</label>
-            <input type="date" id="tanggal_layanan" name="tanggal_layanan">
-        </div>
-
-        <div class="section-title">
-            Kritik/Saran :
-        </div>
-
-        <div class="form-group">
-            <label for="kritik_saran">Ketik di sini...</label>
-            <textarea id="kritik_saran" name="kritik_saran"></textarea>
-        </div>
-
-        <div class="submit-button-container">
-            <button type="submit" class="submit-button">Adukan</button>
-        </div>
-
-    </div>
   </div>
-@else
+
+  @auth
+  <div class="form-container">
+    <div class="form-header">
+      Pengaduan Pasien
+    </div>
+
+    @if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+
+    <form method="POST" action="{{ route('pengaduan.store') }}">
+      @csrf
+      <div class="section-title">
+        Identitas Responden :
+      </div>
+      <div class="form-group">
+        <label for="nama_lengkap">Nama Lengkap</label>
+        <input type="text" id="nama_lengkap" name="nama_lengkap" value="{{ old('nama_lengkap', Auth::user()->name) }}">
+      </div>
+      <div class="form-group">
+        <label for="tanggal_lahir">Tanggal Lahir</label>
+        <input type="date" id="tanggal_lahir" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}">
+      </div>
+      <div class="form-group">
+        <label for="no_handphone">No. Handphone</label>
+        <input type="tel" id="no_handphone" name="no_handphone" value="{{ old('no_handphone') }}">
+      </div>
+      <div class="form-group">
+        <label for="alamat_email">Alamat Email</label>
+        <input type="email" id="alamat_email" name="alamat_email" value="{{ old('alamat_email', Auth::user()->email) }}">
+      </div>
+      <div class="form-group">
+        <label for="jenis_kelamin">Jenis Kelamin</label>
+        <select id="jenis_kelamin" name="jenis_kelamin">
+          <option value="" disabled selected>Pilih Jenis Kelamin</option>
+          <option value="Laki-laki" {{ old('jenis_kelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+          <option value="Perempuan" {{ old('jenis_kelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="usia">Usia</label>
+        <input type="text" id="usia" name="usia" value="{{ old('usia') }}">
+      </div>
+      <div class="form-group">
+        <label for="pekerjaan">Pekerjaan</label>
+        <input type="text" id="pekerjaan" name="pekerjaan" value="{{ old('pekerjaan') }}">
+      </div>
+      <div class="form-group">
+        <label for="jenis_layanan">Jenis Layanan yang Digunakan</label>
+        <input type="text" id="jenis_layanan" name="jenis_layanan" value="{{ old('jenis_layanan') }}">
+      </div>
+      <div class="form-group">
+        <label for="tanggal_layanan">Tanggal Melakukan Layanan</label>
+        <input type="date" id="tanggal_layanan" name="tanggal_layanan" value="{{ old('tanggal_layanan') }}">
+      </div>
+      <div class="section-title">
+        Kritik/Saran :
+      </div>
+      <div class="form-group">
+        <label for="kritik_saran">Ketik di sini...</label>
+        <textarea id="kritik_saran" name="kritik_saran">{{ old('kritik_saran') }}</textarea>
+      </div>
+      <div class="submit-button-container">
+        <button type="submit" class="submit-button">Adukan</button>
+      </div>
+    </form>
+  </div>
+  @else
   <div style="background:#fff;border-radius:12px;padding:2em;text-align:center;max-width:500px;margin:2em auto;box-shadow:0 2px 12px #0002;">
     <h2 style="font-weight:600;margin-bottom:1em;color:#444;">Pesan Layanan</h2>
     <p style="margin-bottom:2em;font-size:1.1em;">
@@ -190,7 +186,7 @@
       <a href="{{ route('register') }}" style="background:#4f8cff;color:#fff;padding:0.7em 2.5em;border-radius:8px;font-weight:600;text-decoration:none;font-size:1.1em;box-shadow:0 2px 8px #4f8cff33;">Register</a>
     </div>
   </div>
-@endauth
+  @endauth
 
   <!-- Footer -->
   <footer>
@@ -232,7 +228,7 @@
     });
 
     document.querySelectorAll('.menu .dropdown > a').forEach(link => {
-      link.addEventListener('click', function (e) {
+      link.addEventListener('click', function(e) {
         if (window.innerWidth <= 900) {
           e.preventDefault();
           this.parentElement.classList.toggle('open');
@@ -251,4 +247,5 @@
 
   <script src="set/js/opojs.js"></script>
 </body>
+
 </html>
