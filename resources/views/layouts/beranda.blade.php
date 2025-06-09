@@ -174,72 +174,85 @@
   </section>
   <br>
   <br>
-    <section class="promo">
+    <div class="promo">
     <h2>Promo</h2>
     <h3>promo terbaru dan ter update ada di sini </h3>
 
- <div class="carousel-container">
-    <div class="carousel-slide" id="promoSlide">
-      <div class="carousel-item">
-        <img src="img/unnamed.webp" alt="Promo 1">
-        <div class="promo-title">Promo 1</div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/unnamed (1).webp" alt="Promo 2">
-        <div class="promo-title">Promo 2</div>
-      </div>
-      <div class="carousel-item">
-        <img src="img/unnamed(2).webp" alt="Promo 3">
-        <div class="promo-title">Promo 3</div>
-      </div>
+<div class="carousel-container">
+  <div class="carousel-slide" id="promoSlide">
+    <div class="carousel-item">
+      <img src="img/unnamed (1).webp" onclick="openLightbox(this)">
     </div>
-
-    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
-    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
-
-    <div class="carousel-dots" id="promoDots"></div>
+    <div class="carousel-item">
+      <img src="img/unnamed.webp" onclick="openLightbox(this)">
+    </div>
+    <div class="carousel-item">
+      <img src="img/unnamed(2).webp" onclick="openLightbox(this)">
+    </div>
   </div>
 
-  <script>
-    const slide = document.getElementById('promoSlide');
-    const allItems = Array.from(slide.querySelectorAll('.carousel-item'));
-    const dotsContainer = document.getElementById('promoDots');
-    let currentIndex = 0;
+  <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+  <div class="arrow right" onclick="nextSlide()">&#10095;</div>
 
-    allItems.forEach((_, i) => {
-      const dot = document.createElement('span');
-      dot.classList.add('dot');
-      dot.onclick = () => goToSlide(i);
-      dotsContainer.appendChild(dot);
-    });
+  <div class="carousel-dots" id="promoDots"></div>
+</div>
 
-    const dots = document.querySelectorAll('.dot');
+<div id="lightbox">
+  <span onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="">
+</div>
 
-    function updateSlide() {
-      slide.style.transform = `translateX(-${currentIndex * 100}%)`;
-      dots.forEach(dot => dot.classList.remove('active'));
-      dots[currentIndex]?.classList.add('active');
-    }
+<script>
+  const slide = document.getElementById("promoSlide");
+  const totalSlides = slide.children.length;
+  const dotsContainer = document.getElementById("promoDots");
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % allItems.length;
-      updateSlide();
-    }
+  let currentIndex = 0;
+  let dots = [];
 
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + allItems.length) % allItems.length;
-      updateSlide();
-    }
+  function showSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    slide.style.transform = `translateX(-${index * 100}%)`;
+    currentIndex = index;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
 
-    function goToSlide(index) {
-      currentIndex = index;
-      updateSlide();
-    }
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
 
-    updateSlide();
-    setInterval(nextSlide, 5000);
-  </script>
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
 
+  for (let i = 0; i < totalSlides; i++) {
+    let dot = document.createElement("span");
+    dot.className = "dot";
+    if (i === 0) dot.classList.add("active");
+    dot.onclick = () => showSlide(i);
+    dotsContainer.appendChild(dot);
+    dots.push(dot);
+  }
+
+  showSlide(0);
+
+  // Auto slide
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+
+  // Lightbox
+  function openLightbox(img) {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
 <section class="berita">
 <html lang="id">
 <head>
