@@ -20,9 +20,8 @@
                                     <th>Tanggal Lahir</th>
                                     <th>No HP</th>
                                     <th>Jenis Kelamin</th>
-                                    <th>Gejala</th>
                                     <th>Email</th>
-                                    <th>Alamat</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
 
@@ -35,7 +34,6 @@
                                         <td class="px-4 py-3">{{ $pasien->no_hp }}</td>
                                         <td class="px-4 py-3">{{ $pasien->jenis_kelamin }}</td>
                                         <td class="px-4 py-3">{{ $pasien->email }}</td>
-                                        <td class="px-4 py-3">{{ $pasien->alamat }}</td>
                                         <td class="px-4 py-3 flex space-x-2">
                                             <button href="{{ route('admin.pasien.edit', $pasien) }}"
                                                 style="background-color: #facc15; color: white; padding: 0.25rem 0.75rem; border-radius: 0.375rem; font-size: 0.875rem; transition: background-color 0.2s ease;"
