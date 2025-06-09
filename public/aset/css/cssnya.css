@@ -1385,3 +1385,44 @@ h3 {
 .info-button:nth-child(3) {
   animation-delay: 0.6s;
 }
+
+.darurat {
+  background-image: url('/image/bg_darurat.png');
+  background-size: cover;
+  height :30%;
+  background-position: center;
+  position: relative;
+}
+
+.darurat-overlay {
+  position: relative;  
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.7); /* Tetap pakai overlay dalam */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 0; 
+  z-index: 100; /* Optional: agar menutupi konten */
+  color: white; /* Agar teks terlihat jelas */
+  text-align: center;
+}
+
+.quote-icon {
+  font-size: 2em;
+  margin-bottom: -15px;
+}
+
+.darurat-text {
+  font-size: 1.2em;
+  font-family: 'Work Sans';
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+
+.testimonial-author {
+  font-style: italic;
+  font-weight: bold;
+}
