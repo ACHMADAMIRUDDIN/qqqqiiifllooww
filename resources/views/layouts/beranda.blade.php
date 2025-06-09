@@ -199,14 +199,15 @@
     <button class="arrow left" onclick="scrollPromo(-1)">‹</button>
     <button class="arrow left">&#8249;</button>
     <div class="promo-items" id="promoScroll">
-      <div class="promo-item">Promo 1</div>
-      <div class="promo-item">Promo 2</div>
-      <div class="promo-item">Promo 3</div>
-      <div class="promo-item">Promo 4</div>
-      <div class="promo-item">Promo 5</div>
-      <div class="promo-item">Promo 6</div>
-      <div class="promo-item">Promo 7</div>
-      <div class="promo-item">Promo 8</div>
+    <div class="promo-item" onclick="showImage('promo1.png')">Promo 1</div>
+    <div class="promo-item" onclick="showImage('promo2.png')">Promo 2</div>
+<div class="promo-item" onclick="showImage('promo3.png')">Promo 3</div>
+
+<!-- Modal Popup -->
+<div id="imageModal" style="display:none;" onclick="closeModal()">
+  <img id="modalImage" src="" style="max-width:90%; max-height:90%; border-radius:10px;">
+</div>
+
     </div>
     <button class="arrow right">&#8250;</button>
     <button class="arrow right" onclick="scrollPromo(1)">›</button>
@@ -225,6 +226,17 @@
       transform: translateY(0);
     }
   </style>
+  
+<script>
+function showImage(imagePath) {
+  document.getElementById("modalImage").src = imagePath;
+  document.getElementById("imageModal").style.display = "flex";
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+</script>
 
   <!-- JavaScript fungsi scroll + auto scroll + animasi ulang -->
   <script>
