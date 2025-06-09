@@ -175,82 +175,87 @@
     <h2>Promo</h2>
     <h3>promo terbaru dan ter update ada di sini </h3>
 
-<div class="carousel-container">
-  <div class="carousel-slide" id="promoSlide">
-    <div class="carousel-item">
-      <img src="img/unnamed (1).webp" onclick="openLightbox(this)">
+    <div class="carousel-container" style="max-width: 600px; margin: 0 auto;">
+      <div class="carousel-slide" id="promoSlide" style="display: flex; transition: transform 0.5s;">
+        @php
+          $promoImages = \App\Models\Promo::all();
+        @endphp
+        @foreach($promoImages as $promo)
+          <div class="carousel-item" style="flex: 0 0 100%; display: flex; justify-content: center;">
+            @if(isset($promo->image_path))
+              <img src="{{ asset('storage/' . $promo->image_path) }}" onclick="openLightbox(this)" style="width: 100%; max-width: 500px; height: 250px; object-fit:cover; border-radius: 12px; box-shadow:0 2px 12px #0002; cursor:pointer;">
+            @endif
+            @if(isset($promo->judul) && $promo->judul)
+              <div style="position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#fff;background:rgba(0,0,0,0.4);padding:0.5em 0;font-size:1.2em;font-weight:600;">
+                {{ $promo->judul }}
+              </div>
+            @endif
+          </div>
+        @endforeach
+      </div>
+
+      <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+      <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+      <div class="carousel-dots" id="promoDots"></div>
     </div>
-    <div class="carousel-item">
-      <img src="img/unnamed.webp" onclick="openLightbox(this)">
+
+    <div id="lightbox" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;">
+      <span onclick="closeLightbox()" style="position:absolute;top:30px;right:40px;font-size:3em;color:#fff;cursor:pointer;">&times;</span>
+      <img id="lightbox-img" src="" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 4px 32px #000a;">
     </div>
-    <div class="carousel-item">
-      <img src="img/unnamed(2).webp" onclick="openLightbox(this)">
-    </div>
+
+    <script>
+      const slide = document.getElementById("promoSlide");
+      const totalSlides = slide.children.length;
+      const dotsContainer = document.getElementById("promoDots");
+      let currentIndex = 0;
+      let dots = [];
+
+      function showSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        slide.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[index]) dots[index].classList.add("active");
+      }
+
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function prevSlide() {
+        showSlide(currentIndex - 1);
+      }
+
+      // Dots
+      for (let i = 0; i < totalSlides; i++) {
+        let dot = document.createElement("span");
+        dot.className = "dot";
+        if (i === 0) dot.classList.add("active");
+        dot.onclick = () => showSlide(i);
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      }
+
+      showSlide(0);
+
+      // Auto slide
+      setInterval(() => {
+        nextSlide();
+      }, 5000);
+
+      // Lightbox
+      function openLightbox(img) {
+        document.getElementById("lightbox-img").src = img.src;
+        document.getElementById("lightbox").style.display = "flex";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+      }
+    </script>
   </div>
-
-  <div class="arrow left" onclick="prevSlide()">&#10094;</div>
-  <div class="arrow right" onclick="nextSlide()">&#10095;</div>
-
-  <div class="carousel-dots" id="promoDots"></div>
-</div>
-
-<div id="lightbox">
-  <span onclick="closeLightbox()">&times;</span>
-  <img id="lightbox-img" src="">
-</div>
-
-<script>
-  const slide = document.getElementById("promoSlide");
-  const totalSlides = slide.children.length;
-  const dotsContainer = document.getElementById("promoDots");
-
-  let currentIndex = 0;
-  let dots = [];
-
-  function showSlide(index) {
-    if (index < 0) index = totalSlides - 1;
-    if (index >= totalSlides) index = 0;
-    slide.style.transform = `translateX(-${index * 100}%)`;
-    currentIndex = index;
-    dots.forEach(dot => dot.classList.remove("active"));
-    dots[index].classList.add("active");
-  }
-
-  function nextSlide() {
-    showSlide(currentIndex + 1);
-  }
-
-  function prevSlide() {
-    showSlide(currentIndex - 1);
-  }
-
-  for (let i = 0; i < totalSlides; i++) {
-    let dot = document.createElement("span");
-    dot.className = "dot";
-    if (i === 0) dot.classList.add("active");
-    dot.onclick = () => showSlide(i);
-    dotsContainer.appendChild(dot);
-    dots.push(dot);
-  }
-
-  showSlide(0);
-
-  // Auto slide
-  setInterval(() => {
-    nextSlide();
-  }, 5000);
-
-  // Lightbox
-  function openLightbox(img) {
-    document.getElementById("lightbox-img").src = img.src;
-    document.getElementById("lightbox").style.display = "flex";
-  }
-
-  function closeLightbox() {
-    document.getElementById("lightbox").style.display = "none";
-  }
-</script>
-
 </section>
 <section class="berita">
 <html lang="id">

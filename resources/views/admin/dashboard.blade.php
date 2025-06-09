@@ -143,12 +143,16 @@
     <a href="{{ route('admin.pasien.index') }}" class="sidebar-link" data-title="Kelola Data Pasien">
         <i class="bi bi-people-fill"></i> <span>Kelola Data Pasien</span>
     </a>
-    <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Promo Layanan">
+    <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Promo">
         <i class="bi bi-tags-fill"></i> <span>Promo Layanan</span>
     </a>
-    <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Riwayat Pemesanan">
+    {{-- Hapus/ubah link berikut agar tidak dobel dan tidak membingungkan --}}
+    {{-- <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Riwayat Pemesanan">
         <i class="bi bi-clock-history"></i> <span>Riwayat Pemesanan</span>
-    </a>
+    </a> --}}
+    {{-- <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="promo">
+        <i class="bi bi-chat-left-dots-fill"></i> <span>promo</span>
+    </a> --}}
     <a href="{{ route('admin.profil.index') }}" class="sidebar-link" data-title="Profil Klinik">
         <i class="bi bi-hospital-fill"></i> <span>Profil Klinik</span>
     </a>
