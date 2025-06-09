@@ -25,7 +25,7 @@
 </div>
     <div class="contact">
       @auth
-           <span class="welcome-text">
+          <span class="welcome-text">
     Hallo, {{ Auth::user()->name }}
     </span>
     <span>
@@ -75,7 +75,7 @@
 
 
 <div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
-    <h1>akupunture</h1>
+    <h1>Akupunture</h1>
     <p>
 Dimohon Sebelum Mengunjungi Klinik Dapat Menghubungi Atau Membuat Janji Temu/Mendaftar Terlebih Dahulu.</p>
 </div>
@@ -99,11 +99,10 @@ Dimohon Sebelum Mengunjungi Klinik Dapat Menghubungi Atau Membuat Janji Temu/Men
     });
   });
 </script>
-
   <!-- Konten Profil -->
   <main class="content">
     <div class="layanan-container">
-      <img class="layanan-img" src="img/images.jpeg" alt="Akupunktur">
+      <img class="layanan-img" src="img/acupuncture-2.jpg" alt="Akupunktur">
       <div class="layanan-deskripsi">
         <P>
         NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu
