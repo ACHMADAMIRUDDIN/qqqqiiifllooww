@@ -15,35 +15,7 @@ class PasienController extends Controller
         return view('admin.pasien.index', compact('pasiens'));
     }
 
-    public function create()
-    {
-        return view('admin.pasien.cd');
-    }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'nama_lengkap' => 'required|string|max:255',
-            'tanggal_lahir' => 'required|date',
-            'no_hp' => 'required|string|max:15',
-            'email' => 'required|email|unique:pasiens,email',
-            'alamat' => 'required|string',
-            'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-            'pesanan_id' => 'nullable|exists:pesanans,id_pesanan',
-        ]);
-
-        Pasien::create([
-            'nama_lengkap' => $request->nama_lengkap,
-            'tanggal_lahir' => $request->tanggal_lahir,
-            'no_hp' => $request->no_hp,
-            'email' => $request->email,
-            'alamat' => $request->alamat,
-            'jenis_kelamin' => $request->jenis_kelamin,
-            'id_pesanan' => $request->pesanan_id, // opsional jika ada
-        ]);
-
-        return redirect()->route('admin.pasien.index')->with('success', 'Pasien berhasil ditambahkan.');
-    }
 
     public function edit(Pasien $pasien)
     {
@@ -53,15 +25,21 @@ class PasienController extends Controller
     public function update(Request $request, Pasien $pasien)
     {
         $request->validate([
-            'nama_lengkap' => 'required|string|max:255',
+            'nama_lengkap' => 'required',
             'tanggal_lahir' => 'required|date',
-            'no_hp' => 'required|string|max:15',
-            'email' => 'required|email|unique:pasiens,email,' . $pasien->id_pasien . ',id_pasien',
-            'alamat' => 'required|string',
-            'jenis_kelamin' => 'required|in:Laki-laki,Perempuan',
-            'pesanan_id' => 'nullable|exists:pesanans,id_pesanan',
+            'no_hp' => 'required',
+            'email' => 'required|email',
+            'alamat' => 'required',
+            'jenis_kelamin' => 'required',
+            'gejala' => 'required',
+            'riwayat_penyakit' => 'required',
+            'keluhan' => 'required',
+            'jadwal_pemesanan' => 'required|date',
+            'jenis_layanan' => 'required',
+            'persetujuan' => 'accepted',
         ]);
 
+        // Update data pasien
         $pasien->update([
             'nama_lengkap' => $request->nama_lengkap,
             'tanggal_lahir' => $request->tanggal_lahir,
@@ -69,8 +47,19 @@ class PasienController extends Controller
             'email' => $request->email,
             'alamat' => $request->alamat,
             'jenis_kelamin' => $request->jenis_kelamin,
-            'id_pesanan' => $request->pesanan_id,
         ]);
+
+        // Update pesanan terakhir
+        $pesanan = $pasien->pesanan()->latest()->first();
+        if ($pesanan) {
+            $pesanan->update([
+                'gejala' => $request->gejala,
+                'riwayat_penyakit' => $request->riwayat_penyakit,
+                'keluhan' => $request->keluhan,
+                'jadwal_pemesanan' => $request->jadwal_pemesanan,
+                'jenis_layanan' => $request->jenis_layanan,
+            ]);
+        }
 
         return redirect()->route('admin.pasien.index')->with('success', 'Pasien berhasil diperbarui.');
     }
@@ -79,5 +68,10 @@ class PasienController extends Controller
     {
         $pasien->delete();
         return redirect()->route('admin.pasien.index')->with('success', 'Pasien berhasil dihapus.');
+    }
+
+    public function show(Pasien $pasien)
+    {
+        return view('admin.pasien.detail', compact('pasien'));
     }
 }

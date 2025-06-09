@@ -16,6 +16,8 @@ use App\Http\Controllers\Admin\JadwalDokterController;
 use App\Models\JadwalDokter;
 use App\Http\Controllers\Admin\DokterController;
 use App\Models\Dokter;
+use App\Exports\PasienWithPemesananExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 
 Route::get('/', fn () => view('layouts.beranda'))->name('beranda');
@@ -124,5 +126,9 @@ Route::get('/jadwal-dokter', function () {
     $jadwals = JadwalDokter::all();
     return view('layouts.jadwaldokter1', compact('jadwals'));
 })->name('jadwaldokter.pasien');
+
+Route::get('/admin/export', function () {
+    return Excel::download(new PasienWithPemesananExport, 'pasien_pemesanan_7hari.xlsx');
+})->name('admin.export');
 
 require __DIR__.'/auth.php';
