@@ -47,7 +47,7 @@
   @yield('content')
 
 
-  <!-- Menu Navigasi -->
+    <!-- Menu Navigasi -->
   <nav class="menu">
     <div class="hamburger" id="hamburger-menu">
       <span></span>
@@ -58,34 +58,18 @@
       <li><a href="/beranda">Beranda</a></li>
       <li><a href="/tentangkami">Tentang Kami</a></li>
       <li class="dropdown">
-        <a href="#">Dokter Kami </a>
+        <a href="#">Terapis</a>
         <ul class="dropdown-content">
-          <li><a href="/jadwaldokter1">jadwal dokter</a></li>
-          <li><a href="/profildokter">profil dokter</a></li>
+          <li><a href="/jadwaldokter1">Jadwal Terapis</a></li>
+          <li><a href="/profildokter">Profil Terapis</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a href="#">Layanan </a>
-        <ul class="dropdown-content">
-          <li><a href="/pesanlayanan">pesan layanan</a></li>
-          <li><a href="/apalah">Akupunture</a></li>
-          <li><a href="/akupresure">akupresure</a></li>
-          <li><a href="/bekam">bekam</a></li>
-          <li><a href="/pijatt">pijat</a></li>
-        </ul>
+      <li >
+        <a href="/pesanlayanan">Layanan Terapis</a> 
       </li>
-      <li class="dropdown">
-        <a href="#">Informasi </a>
-        <ul class="dropdown-content">
-   <li><a href="/artikel">Artikel</a></li>
-        </ul>
-      </li>
-  
-      <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
   </nav>
-
 
 <div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
     <h1>Artikel</h1>

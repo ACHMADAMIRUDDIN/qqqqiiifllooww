@@ -47,7 +47,7 @@
   @yield('content')
 
 
-  <!-- Menu Navigasi -->
+     <!-- Menu Navigasi -->
   <nav class="menu">
     <div class="hamburger" id="hamburger-menu">
       <span></span>
@@ -58,30 +58,15 @@
       <li><a href="/beranda">Beranda</a></li>
       <li><a href="/tentangkami">Tentang Kami</a></li>
       <li class="dropdown">
-        <a href="#">Dokter Kami </a>
+        <a href="#">Terapis</a>
         <ul class="dropdown-content">
-          <li><a href="/jadwaldokter1">jadwal dokter</a></li>
-          <li><a href="/profildokter">profil dokter</a></li>
+          <li><a href="/jadwaldokter1">Jadwal Terapis</a></li>
+          <li><a href="/profildokter">Profil Terapis</a></li>
         </ul>
       </li>
-      <li class="dropdown">
-        <a href="#">Layanan </a>
-        <ul class="dropdown-content">
-          <li><a href="/pesanlayanan">pesan layanan</a></li>
-          <li><a href="/apalah">Akupunture</a></li>
-          <li><a href="/akupresure">akupresure</a></li>
-          <li><a href="/bekam">bekam</a></li>
-          <li><a href="/pijatt">pijat</a></li>
-        </ul>
+      <li >
+        <a href="/pesanlayanan">Layanan Terapis</a> 
       </li>
-      <li class="dropdown">
-        <a href="#">Informasi </a>
-        <ul class="dropdown-content">
-   <li><a href="/artikel">Artikel</a></li>
-        </ul>
-      </li>
-
-      <li><a href="/iki">Kontak</a></li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
   </nav>
