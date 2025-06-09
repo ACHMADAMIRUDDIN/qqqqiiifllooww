@@ -138,54 +138,177 @@
       <h2>Tentang Kami</h2>
       <h3>SEJARAH</h3>
       <p>
-        Rumah Sakit Universitas Muhammadiyah Malang mulai dibangun pada tahun 2009. Proses pembangunannya dilaksanakan
-        setelah mendapatkan ijin mendirikan bangunan (IMB) dari Pemerintah Kabupaten Malang melalui unit pelayanan
-        terpadu...
+        Sehat Harmony Indonesia adalah suatu pengobatan alternatif peduli terhadap HIV/AIDS dan NAPSA.
+        Sehat Harmoni Indonesia merupakan asuhan suhu Drs. Hariadi seorang Master Trainer Akupunktur dan Geomancer Fengshui,
+        yang aktif mengisi acara Feng Shui di Malang TV, Dhamma TV, dan siaran di radio-radio swasta di Indonesia. 
       </p>
       <a href="{{ route('tentangkami') }}" class="btn-selengkapnya">Selengkapnya ➝</a>
     </div>
 
 
     <div class="tentang-img">
-      <video autoplay muted loop playsinline>
-        <source src="aset/img/WhatsApp Video 2025-05-07 at 14.12.40_482a688e.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
+      <div class="video-container" style="position: relative; padding-bottom:56.25%; height: 100; overflow: hidden; max-width: 100%;">
+  <iframe 
+    src="https://www.youtube.com/embed/0-chLJbtL8Q?autoplay=1&mute=1&controls=1" 
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
+
     </div>
   </section>
 
 
-  <section class="darurat" style="background-image: url('aset/img/2705523986e1892362b489f56fc4ec94.jpg');">
-    <div class="darurat-overlay">
+<section class="darurat">
+  <div class="darurat-overlay">
+    <div class="darurat-box">
       <div class="quote-icon">❝</div>
       <p class="darurat-text">
-        Apakah Anda membutuhkan Perawatan Medis Darurat?<br>
+        Apakah Anda membutuhkan penanganan dari kami?<br>
         Hubungi : 0341-561666
       </p>
       <p class="testimonial-author">John Doe</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="promo">
-    <h2>Promo</h2>
 
+
+
+<section class="promo">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promo Tersedia</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Promo Tersedia</div>
+    <div class="mix-subtitle">Promo Terbatas, Jangan Sampai Terlewatkan!</div>
+  </div>
+
+</body>
+</html>
+
+  <div class="promo-wrapper">
+    <button class="arrow left" onclick="scrollPromo(-1)">‹</button>
+    <button class="arrow left">&#8249;</button>
     <div class="promo-items" id="promoScroll">
       <div class="promo-item">Promo 1</div>
       <div class="promo-item">Promo 2</div>
       <div class="promo-item">Promo 3</div>
       <div class="promo-item">Promo 4</div>
       <div class="promo-item">Promo 5</div>
-          <div class="promo-item">Promo 5</div>
-              <div class="promo-item">Promo 5</div>
-                  <div class="promo-item">Promo 5</div>
-                      <div class="promo-item">Promo 5</div>
+      <div class="promo-item">Promo 6</div>
+      <div class="promo-item">Promo 7</div>
+      <div class="promo-item">Promo 8</div>
     </div>
+    <button class="arrow right">&#8250;</button>
+    <button class="arrow right" onclick="scrollPromo(1)">›</button>
+  </div>
 
+  <!-- CSS animasi -->
+  <style>
+    .promo-item {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .promo-item.animate {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+
+  <!-- JavaScript fungsi scroll + auto scroll + animasi ulang -->
+  <script>
+    const scrollContainer = document.getElementById('promoScroll');
+    const promoItems = scrollContainer.querySelectorAll('.promo-item');
+    let currentIndex = 0;
+
+    function scrollPromo(direction) {
+      const itemWidth = promoItems[0].offsetWidth + 16;
+      const maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+
+      currentIndex += direction;
+      let scrollPosition = currentIndex * itemWidth;
+
+      if (scrollPosition < 0) {
+        currentIndex = 0;
+        scrollPosition = 0;
+      } else if (scrollPosition > maxScroll) {
+        currentIndex = 0;
+        scrollPosition = 0;
+      }
+
+      scrollContainer.scrollTo({
+        left: scrollPosition,
+        behavior: 'smooth',
+      });
+    }
+
+    // Auto scroll
+    let autoScroll = setInterval(() => {
+      scrollPromo(1);
+    }, 3000);
+
+    scrollContainer.addEventListener('mouseenter', () => {
+      clearInterval(autoScroll);
+    });
+
+    scrollContainer.addEventListener('mouseleave', () => {
+      autoScroll = setInterval(() => {
+        scrollPromo(1);
+      }, 3000);
+    });
+
+    // Observer untuk animasi saat item masuk area scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        } else {
+          entry.target.classList.remove('animate');
+        }
+      });
+    }, {
+      root: scrollContainer,
+      threshold: 0.5
+    });
+
+    promoItems.forEach(item => {
+      observer.observe(item);
+    });
+  </script>
+</section>
+
+
+</section>
     <button class="lihat-selengkapnya" id="lihatBtn" style="display: none;">Lihat Selengkapnya</button>
   </section>
 
-  <section class="berita">
-    <h2>Berita</h2>
+<section class="berita">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artikel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Artikel</div>
+    <div class="mix-subtitle">Artikel berisikan Informasi Kesehatan dan Akupunkture</div>
+  </div>
+
+</body>
 
     <div class="berita-items" id="beritaScroll">
       <div class="berita-item">
@@ -254,9 +377,25 @@
     <button class="lihat-selengkapnya" id="lihatBeritaBtn" style="display: none;">Lihat Selengkapnya</button>
   </section>
 
+<section class="Maps">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Maps</div>
+    <div class="mix-subtitle">Maps ini berisikann lokasi dari klinik Sehat Harmoni Malang Beserta Rincian Alamatnya </div>
+  </div>
+
+
   <div class="outer-container">
     <section class="maps-details-container">
-      <h3 class="maps-title">Maps Ini Berisikann Lokasi Dari Klinik Sehat Harmoni Malang</h3>
+
       <div class="maps-details-wrapper">
         <div class="map-container">
           <iframe
