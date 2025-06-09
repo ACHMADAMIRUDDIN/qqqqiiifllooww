@@ -7,8 +7,10 @@
   <title>Document</title>
   <link rel="stylesheet" href="penga/css/csspeng.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+      <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />  
+  <!-- Favicon -->
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
 
 <body>

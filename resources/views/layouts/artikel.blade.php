@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profil Dokter</title>
   <link rel="stylesheet" href="css/artikel.css">
+    <!-- Favicon -->
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
 <body>
 <div class="top-bar">
