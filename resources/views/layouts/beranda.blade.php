@@ -76,12 +76,7 @@
       </li>
       <li class="dropdown">
         <a href="/pesanlayanan">Layanan </a>
-        <ul class="dropdown-content">
-          <li><a href="/apalah">Akupunture</a></li>
-          <li><a href="/akupresure">akupresure</a></li>
-          <li><a href="/bekam">bekam</a></li>
-          <li><a href="/pijatt">pijat</a></li>
-        </ul>
+        
       </li>
       <li class="dropdown">
         <a href="#">Informasi </a>
