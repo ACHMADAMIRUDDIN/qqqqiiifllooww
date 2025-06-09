@@ -138,28 +138,35 @@
       <h2>Tentang Kami</h2>
       <h3>SEJARAH</h3>
       <p>
-        Rumah Sakit Universitas Muhammadiyah Malang mulai dibangun pada tahun 2009. Proses pembangunannya dilaksanakan
-        setelah mendapatkan ijin mendirikan bangunan (IMB) dari Pemerintah Kabupaten Malang melalui unit pelayanan
-        terpadu...
+        Sehat Harmony Indonesia adalah suatu pengobatan alternatif peduli terhadap HIV/AIDS dan NAPSA.
+        Sehat Harmoni Indonesia merupakan asuhan suhu Drs. Hariadi seorang Master Trainer Akupunktur dan Geomancer Fengshui,
+        yang aktif mengisi acara Feng Shui di Malang TV, Dhamma TV, dan siaran di radio-radio swasta di Indonesia. 
       </p>
       <a href="{{ route('tentangkami') }}" class="btn-selengkapnya">Selengkapnya ➝</a>
     </div>
 
 
     <div class="tentang-img">
-      <video autoplay muted loop playsinline>
-        <source src="aset/img/WhatsApp Video 2025-05-07 at 14.12.40_482a688e.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
+      <div class="video-container" style="position: relative; padding-bottom:56.25%; height: 100; overflow: hidden; max-width: 100%;">
+  <iframe 
+    src="https://www.youtube.com/embed/0-chLJbtL8Q?autoplay=1&mute=1&controls=1" 
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
+
     </div>
   </section>
 
 
-  <section class="darurat" style="background-image: url('aset/img/2705523986e1892362b489f56fc4ec94.jpg');">
-    <div class="darurat-overlay">
+<section class="darurat">
+  <div class="darurat-overlay">
+    <div class="darurat-box">
       <div class="quote-icon">❝</div>
       <p class="darurat-text">
-        Apakah Anda membutuhkan Perawatan Medis Darurat?<br>
+        Apakah Anda membutuhkan penanganan dari kami?<br>
         Hubungi : 0341-561666
       </p>
       <p class="testimonial-author">John Doe</p>
@@ -233,8 +240,22 @@
     setInterval(nextSlide, 5000);
   </script>
 
-  <section class="berita">
-    <h2>Berita</h2>
+<section class="berita">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artikel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Artikel</div>
+    <div class="mix-subtitle">Artikel berisikan Informasi Kesehatan dan Akupunkture</div>
+  </div>
+
+</body>
 
     <br>
     <div class="berita-items" id="beritaScroll">
@@ -303,6 +324,22 @@
 
     <button class="lihat-selengkapnya" id="lihatBeritaBtn" style="display: none;">Lihat Selengkapnya</button>
   </section>
+
+<section class="Maps">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Maps</div>
+    <div class="mix-subtitle">Maps ini berisikann lokasi dari klinik Sehat Harmoni Malang Beserta Rincian Alamatnya </div>
+  </div>
+
 
   <div class="outer-container">
     <section class="maps-details-container">
