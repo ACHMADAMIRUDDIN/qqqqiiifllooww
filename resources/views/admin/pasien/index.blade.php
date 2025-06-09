@@ -9,85 +9,21 @@
 
     <div class="overflow-x-auto bg-white shadow-md rounded-lg">
         <table class="min-w-full table-auto">
-            <thead class="bg-gray-100 text-gray-700">
-                <tr>
-<table id="basic-datatables"
-                                            class="display table table-striped table-hover text-center">
-                                            <thead class="table-dark">
-                                                <tr>
-                                                    <th>ID</th>
-													<th>Nama Lengkap</th>
-                                                    <th>Tanggal Lahir</th>
-                                                    <th>No HP</th>
-                                                    <th>Jenis Kelamin</th>
-                                                    <th>Gejala</th>
-                                                    <th>Riwayat Penyakit</th>
-                                                    <th>Aksi</th>
-                                                </tr>
-                                            </thead>
-
-                                            <tbody>
-                                                <tr>
-                                                    <td>-</td>
-													<td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-
-                                                    <td class="action-buttons">
-                                                        <button class="btn btn-sm btn-warning">
-                                                            <i class="fas fa-edit"></i> Edit
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger">
-                                                            <i class="fas fa-trash-alt"></i> Hapus
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>-</td>
-													<td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-
-                                                    <td class="action-buttons">
-                                                        <button class="btn btn-sm btn-warning">
-                                                            <i class="fas fa-edit"></i> Edit
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger">
-                                                            <i class="fas fa-trash-alt"></i> Hapus
-                                                        </button>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>-</td>
-													<td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td>-</td>
-                                                    <td class="action-buttons">
-                                                        <button class="btn btn-sm btn-warning">
-                                                            <i class="fas fa-edit"></i> Edit
-                                                        </button>
-                                                        <button class="btn btn-sm btn-danger">
-                                                            <i class="fas fa-trash-alt"></i> Hapus
-                                                        </button>
-                                                    </td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
+            <thead>
+                <tr class="bg-gray-800 text-white text-center">
+                    <th class="px-4 py-3 text-sm font-medium">ID</th>
+                    <th class="px-4 py-3 text-sm font-medium">Nama Lengkap</th>
+                    <th class="px-4 py-3 text-sm font-medium">Tanggal Lahir</th>
+                    <th class="px-4 py-3 text-sm font-medium">No HP</th>
+                    <th class="px-4 py-3 text-sm font-medium">Jenis Kelamin</th>
+                    <th class="px-4 py-3 text-sm font-medium">Gejala</th>
+                    <th class="px-4 py-3 text-sm font-medium">Riwayat Penyakit</th>
+                    <th class="px-4 py-3 text-sm font-medium">Aksi</th>
                 </tr>
             </thead>
-            <tbody class="text-gray-800">
-                @foreach ($pasiens as $pasien)
-                <tr class="border-t hover:bg-gray-50">
+            <tbody class="text-gray-800 text-center">
+                @forelse ($pasiens as $pasien)
+                <tr class="border-t hover:bg-gray-200">
                     <td class="px-4 py-3">{{ $pasien->id_pasien }}</td>
                     <td class="px-4 py-3">{{ $pasien->nama_lengkap }}</td>
                     <td class="px-4 py-3">{{ $pasien->tanggal_lahir }}</td>
@@ -95,7 +31,7 @@
                     <td class="px-4 py-3">{{ $pasien->jenis_kelamin }}</td>
                     <td class="px-4 py-3">{{ $pasien->pesanan->gejala ?? '-' }}</td>
                     <td class="px-4 py-3">{{ $pasien->pesanan->riwayat_penyakit ?? '-' }}</td>
-                    <td class="px-4 py-3 flex space-x-2">
+                    <td class="px-4 py-3 flex justify-center space-x-2">
                         <a href="{{ route('admin.pasien.edit', $pasien) }}"
                            class="bg-yellow-400 hover:bg-yellow-500 text-white px-3 py-1 rounded text-sm transition">Edit</a>
                         <form action="{{ route('admin.pasien.destroy', $pasien) }}" method="POST" onsubmit="return confirm('Hapus?')">
@@ -104,7 +40,11 @@
                         </form>
                     </td>
                 </tr>
-                @endforeach
+                @empty
+                <tr>
+                    <td colspan="8" class="px-4 py-6 text-center text-gray-500">No data available in table</td>
+                </tr>
+                @endforelse
             </tbody>
         </table>
     </div>

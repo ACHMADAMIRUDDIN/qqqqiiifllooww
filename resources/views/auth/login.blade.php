@@ -114,7 +114,9 @@
     <!-- Login Form -->
     <form method="POST" action="{{ route('login') }}" class="form-container">
         @csrf
-
+    <div class="logo-container">
+        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
+    </div>
         <div class="form-title">Login</div>
 
         <!-- Email -->

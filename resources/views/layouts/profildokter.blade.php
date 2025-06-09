@@ -116,30 +116,14 @@
   <!-- Konten Profil -->
   @auth
   <section class="profil-dokter-grid">
+    @foreach($dokters as $dokter)
     <div class="card fade-in-up">
-      <img src="image/gojo storu.jpg" alt="dr. Aisyah Rahma S." />
-      <h3>dr. Aisyah Rahma S.</h3>
-      <p>Dokter Umum</p>
-<a href="{{ route('detailprofil1') }}" class="btn">Lihat Profil</a>
+      <img src="{{ asset('storage/'.$dokter->foto) }}" alt="{{ $dokter->nama }}" />
+      <h3>{{ $dokter->nama }}</h3>
+      <p>{{ $dokter->keterangan }}</p>
+      <a href="{{ route('detailprofil', $dokter->id) }}" class="btn">Lihat Profil</a>
     </div>
-    <div class="card fade-in-up">
-      <img src="image/gojo storu.jpg" alt="Dr. Lani" />
-      <h3>dr. Lani Dewi A.</h3>
-      <p>Dokter Gigi</p>
-<a href="{{ route('detailprofil2') }}" class="btn">Lihat Profil</a>
-    </div>
-    <div class="card fade-in-up">
-        <img src="image/gojo storu.jpg" alt="Dr. Lani" />
-        <h3>dr. Lani Dewi A.</h3>
-        <p>Dokter Gigi</p>
-<a href="{{ route('detailprofil3') }}" class="btn">Lihat Profil</a>
-      </div>
-      <div class="card fade-in-up">
-        <img src="image/gojo storu.jpg" alt="Dr. Lani" />
-        <h3>dr. Lani Dewi A.</h3>
-        <p>Dokter Gigi</p>
-<a href="{{ route('detailprofil3') }}" class="btn">Lihat Profil</a>
-      </div>
+    @endforeach
   </section>
   @else
   <div style="background:#fff;border-radius:12px;padding:2em;text-align:center;max-width:500px;margin:2em auto;box-shadow:0 2px 12px #0002;">

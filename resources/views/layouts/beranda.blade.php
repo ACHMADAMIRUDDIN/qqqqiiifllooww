@@ -68,7 +68,7 @@
           <li><a href="/profildokter">Profil Terapis</a></li>
         </ul>
       </li>
-      <li class="dropdown">
+      <li >
         <a href="/pesanlayanan">Layanan </a>
         
       </li>

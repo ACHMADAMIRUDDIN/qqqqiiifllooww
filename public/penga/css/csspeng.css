@@ -187,8 +187,9 @@ body {
   padding: 15px 20px;
   text-decoration: none;
   color: #333;
-  font-size: 14px;
+  font-size: 17px;
   cursor: pointer;
+
 }
 
 .menu li:hover {
@@ -601,7 +602,9 @@ body {
             margin: auto; /* Memusatkan kontainer di dalam flex container body */
             margin-bottom: 50px; /* Jarak antara container dengan footer */
         }
-
+.form-container form {
+    width: 100%;
+}
         .form-header {
             background-color: #5a8dee; /* Warna biru pada header */
             color: #fff;

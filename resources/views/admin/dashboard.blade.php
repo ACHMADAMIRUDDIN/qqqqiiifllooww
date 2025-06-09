@@ -9,7 +9,7 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
+      font-family:'Times New Roman', Times, serif;
     }
 
     body {
@@ -21,13 +21,13 @@
     /* Sidebar */
     .sidebar {
       width: 250px;
-      background-color: #2c3e50;
+      background-color: #3490dc;
       color: white;
       padding: 20px;
     }
 
     .sidebar h2 {
-      font-size: 20px;
+      font-size: 40px;
       margin-bottom: 20px;
     }
 
@@ -36,7 +36,7 @@
       color: white;
       padding: 10px 0;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 20px;
     }
 
     .sidebar a:hover,
@@ -104,10 +104,10 @@
       cursor: pointer;
     }
 
-    .bg-blue { background-color: #1abc9c; }
-    .bg-yellow { background-color: #f1c40f; }
-    .bg-red { background-color: #e74c3c; }
-    .bg-green { background-color: #27ae60; }
+    .bg-blue { background-color: #3490dc; }
+    .bg-yellow { background-color: #3490dc; }
+    .bg-red { background-color: #3490dc; }
+    .bg-green { background-color: #3490dc; }
 
     @media (max-width: 768px) {
       .sidebar {
@@ -119,18 +119,41 @@
 <body>
   <div class="sidebar">
     <h2><i class="bi bi-person-fill"></i> ADMIN</h2>
+
 <a href="{{ route('admin.pasien.index') }}"
-   onclick="return confirm('Yakin ingin masuk ke halaman Kelola Pasien?')">
-   Kelola Pasien
+  >
+   Kelola Data Pasien
 </a>
  
 <a href="{{ route('admin.pesan.index') }}" 
-   onclick="return confirm('Yakin ingin masuk ke halaman pesanan layanan?')">
+   >
    pesanan layanan
 </a>
-    <a href="#">pengaduan</a>
-    <a href="#">Data Pasien</a>
-    <a href="#">Profil Klinik</a>
+<a href="{{ route('admin.profil.index') }}" 
+  >
+   Profil Klinik
+</a>
+
+<a href="{{ route('admin.promo.index') }}" 
+   >
+   promo
+</a>
+<a href="{{ route('admin.promo.index') }}" 
+  >
+  riwayat 
+</a>
+<a href="{{ route('admin.pengaduan.tampilan') }}" 
+  >
+  pengaduan
+</a>
+<a href="{{ route('admin.jadwal.index') }}" 
+  >
+  jadwal dokter
+</a>
+<a href="{{ route('admin.dokter.index') }}"
+  >
+  Profil Dokter
+</a>
   </div>
 <div class="main">
     @yield('content')
