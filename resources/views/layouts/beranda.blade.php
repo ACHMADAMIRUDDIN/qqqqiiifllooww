@@ -169,6 +169,7 @@
   <br>
     <section class="promo">
     <h2>Promo</h2>
+    <h3>promo terbaru dan ter update ada di sini </h3>
 
  <div class="carousel-container">
     <div class="carousel-slide" id="promoSlide">
