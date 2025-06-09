@@ -630,3 +630,29 @@ th {
     width: 48%;
   }
 }
+  .form-container,
+  .result-container {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.6s ease-out forwards;
+  }
+
+  .result-container {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes fadeSlideIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Optional styling to make it look nicer */
+   
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }

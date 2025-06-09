@@ -135,55 +135,139 @@
       <h2>Tentang Kami</h2>
       <h3>SEJARAH</h3>
       <p>
-        Rumah Sakit Universitas Muhammadiyah Malang mulai dibangun pada tahun 2009. Proses pembangunannya dilaksanakan
-        setelah mendapatkan ijin mendirikan bangunan (IMB) dari Pemerintah Kabupaten Malang melalui unit pelayanan
-        terpadu...
+        Sehat Harmony Indonesia adalah suatu pengobatan alternatif peduli terhadap HIV/AIDS dan NAPSA.
+        Sehat Harmoni Indonesia merupakan asuhan suhu Drs. Hariadi seorang Master Trainer Akupunktur dan Geomancer Fengshui,
+        yang aktif mengisi acara Feng Shui di Malang TV, Dhamma TV, dan siaran di radio-radio swasta di Indonesia. 
       </p>
       <a href="{{ route('tentangkami') }}" class="btn-selengkapnya">Selengkapnya ➝</a>
     </div>
 
 
     <div class="tentang-img">
-      <video autoplay muted loop playsinline>
-        <source src="aset/img/WhatsApp Video 2025-05-07 at 14.12.40_482a688e.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
+      <div class="video-container" style="position: relative; padding-bottom:56.25%; height: 100; overflow: hidden; max-width: 100%;">
+  <iframe 
+    src="https://www.youtube.com/embed/0-chLJbtL8Q?autoplay=1&mute=1&controls=1" 
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
+
     </div>
   </section>
 
 
-  <section class="darurat" style="background-image: url('aset/img/2705523986e1892362b489f56fc4ec94.jpg');">
-    <div class="darurat-overlay">
+<section class="darurat">
+  <div class="darurat-overlay">
+    <div class="darurat-box">
       <div class="quote-icon">❝</div>
       <p class="darurat-text">
-        Apakah Anda membutuhkan Perawatan Medis Darurat?<br>
+        Apakah Anda membutuhkan penanganan dari kami?<br>
         Hubungi : 0341-561666
       </p>
       <p class="testimonial-author">John Doe</p>
     </div>
   </section>
-
-  <section class="promo">
+  <br>
+  <br>
+    <div class="promo">
     <h2>Promo</h2>
+    <h3>promo terbaru dan ter update ada di sini </h3>
 
-    <div class="promo-items" id="promoScroll">
-      <div class="promo-item">Promo 1</div>
-      <div class="promo-item">Promo 2</div>
-      <div class="promo-item">Promo 3</div>
-      <div class="promo-item">Promo 4</div>
-      <div class="promo-item">Promo 5</div>
-          <div class="promo-item">Promo 5</div>
-              <div class="promo-item">Promo 5</div>
-                  <div class="promo-item">Promo 5</div>
-                      <div class="promo-item">Promo 5</div>
+<div class="carousel-container">
+  <div class="carousel-slide" id="promoSlide">
+    <div class="carousel-item">
+      <img src="img/unnamed (1).webp" onclick="openLightbox(this)">
     </div>
+    <div class="carousel-item">
+      <img src="img/unnamed.webp" onclick="openLightbox(this)">
+    </div>
+    <div class="carousel-item">
+      <img src="img/unnamed(2).webp" onclick="openLightbox(this)">
+    </div>
+  </div>
 
-    <button class="lihat-selengkapnya" id="lihatBtn" style="display: none;">Lihat Selengkapnya</button>
-  </section>
+  <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+  <div class="arrow right" onclick="nextSlide()">&#10095;</div>
 
-  <section class="berita">
-    <h2>Berita</h2>
+  <div class="carousel-dots" id="promoDots"></div>
+</div>
 
+<div id="lightbox">
+  <span onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="">
+</div>
+
+<script>
+  const slide = document.getElementById("promoSlide");
+  const totalSlides = slide.children.length;
+  const dotsContainer = document.getElementById("promoDots");
+
+  let currentIndex = 0;
+  let dots = [];
+
+  function showSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    slide.style.transform = `translateX(-${index * 100}%)`;
+    currentIndex = index;
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[index].classList.add("active");
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  for (let i = 0; i < totalSlides; i++) {
+    let dot = document.createElement("span");
+    dot.className = "dot";
+    if (i === 0) dot.classList.add("active");
+    dot.onclick = () => showSlide(i);
+    dotsContainer.appendChild(dot);
+    dots.push(dot);
+  }
+
+  showSlide(0);
+
+  // Auto slide
+  setInterval(() => {
+    nextSlide();
+  }, 5000);
+
+  // Lightbox
+  function openLightbox(img) {
+    document.getElementById("lightbox-img").src = img.src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+<section class="berita">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artikel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Artikel</div>
+    <div class="mix-subtitle">Artikel berisikan Informasi Kesehatan dan Akupunkture</div>
+  </div>
+
+</body>
+
+    <br>
     <div class="berita-items" id="beritaScroll">
       <div class="berita-item">
         <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 1">
@@ -251,9 +335,26 @@
     <button class="lihat-selengkapnya" id="lihatBeritaBtn" style="display: none;">Lihat Selengkapnya</button>
   </section>
 
+<section class="Maps">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Maps</div>
+    <div class="mix-subtitle">Maps ini berisikann lokasi dari klinik Sehat Harmoni Malang Beserta Rincian Alamatnya </div>
+  </div>
+
+
   <div class="outer-container">
     <section class="maps-details-container">
       <h3 class="maps-title">Maps Ini Berisikann Lokasi Dari Klinik Sehat Harmoni Malang</h3>
+      <br>
       <div class="maps-details-wrapper">
         <div class="map-container">
           <iframe

@@ -89,11 +89,11 @@ Route::middleware('auth')->group(function () {
 
    Route::get('/dashboard', function () {
        $user = Auth::user();
-       Log::info('User  Role: ' . implode(', ', $user->getRoleNames()->toArray()));
+       Log::info('UserRole: ' . implode(', ', $user->getRoleNames()->toArray()));
 
        if ($user->hasRole('admin')) {
            return redirect()->route('admin.dashboard');
-       } elseif ($user->hasRole('user')) {
+       } elseif ($user->HasRole('user')) {
            return redirect()->route('beranda');
        }
 
