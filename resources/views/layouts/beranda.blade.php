@@ -165,28 +165,77 @@
       <p class="testimonial-author">John Doe</p>
     </div>
   </section>
-
-  <section class="promo">
+  <br>
+  <br>
+    <section class="promo">
     <h2>Promo</h2>
 
-    <div class="promo-items" id="promoScroll">
-      <div class="promo-item">Promo 1</div>
-      <div class="promo-item">Promo 2</div>
-      <div class="promo-item">Promo 3</div>
-      <div class="promo-item">Promo 4</div>
-      <div class="promo-item">Promo 5</div>
-          <div class="promo-item">Promo 5</div>
-              <div class="promo-item">Promo 5</div>
-                  <div class="promo-item">Promo 5</div>
-                      <div class="promo-item">Promo 5</div>
+ <div class="carousel-container">
+    <div class="carousel-slide" id="promoSlide">
+      <div class="carousel-item">
+        <img src="img/unnamed.webp" alt="Promo 1">
+        <div class="promo-title">Promo 1</div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/unnamed (1).webp" alt="Promo 2">
+        <div class="promo-title">Promo 2</div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/unnamed(2).webp" alt="Promo 3">
+        <div class="promo-title">Promo 3</div>
+      </div>
     </div>
 
-    <button class="lihat-selengkapnya" id="lihatBtn" style="display: none;">Lihat Selengkapnya</button>
-  </section>
+    <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+    <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+
+    <div class="carousel-dots" id="promoDots"></div>
+  </div>
+
+  <script>
+    const slide = document.getElementById('promoSlide');
+    const allItems = Array.from(slide.querySelectorAll('.carousel-item'));
+    const dotsContainer = document.getElementById('promoDots');
+    let currentIndex = 0;
+
+    allItems.forEach((_, i) => {
+      const dot = document.createElement('span');
+      dot.classList.add('dot');
+      dot.onclick = () => goToSlide(i);
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlide() {
+      slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+      dots.forEach(dot => dot.classList.remove('active'));
+      dots[currentIndex]?.classList.add('active');
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % allItems.length;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + allItems.length) % allItems.length;
+      updateSlide();
+    }
+
+    function goToSlide(index) {
+      currentIndex = index;
+      updateSlide();
+    }
+
+    updateSlide();
+    setInterval(nextSlide, 5000);
+  </script>
 
   <section class="berita">
     <h2>Berita</h2>
 
+    <br>
     <div class="berita-items" id="beritaScroll">
       <div class="berita-item">
         <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 1">
@@ -257,6 +306,7 @@
   <div class="outer-container">
     <section class="maps-details-container">
       <h3 class="maps-title">Maps Ini Berisikann Lokasi Dari Klinik Sehat Harmoni Malang</h3>
+      <br>
       <div class="maps-details-wrapper">
         <div class="map-container">
           <iframe

@@ -128,6 +128,12 @@
    onclick="return confirm('Yakin ingin masuk ke halaman pesanan layanan?')">
    pesanan layanan
 </a>
+
+<a href="{{ route('admin.profil.index') }}" 
+   onclick="return confirm('Yakin ingin masuk ke halaman pesanan layanan?')">
+   profil
+</a>
+
     <a href="#">pengaduan</a>
     <a href="#">Data Pasien</a>
     <a href="#">Profil Klinik</a>
