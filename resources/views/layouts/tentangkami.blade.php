@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="set/css/opocs.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
       <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />  
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <!-- Favicon -->
   <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
@@ -79,7 +79,7 @@
         </ul>
       </li>
       <li >
-        <a href="/pesanlayanan">Layanan Terapis</a> 
+        <a href="/pesanlayanan">Layanan Terapis</a>
       </li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -92,20 +92,17 @@
 
       <div class="page-content-wrapper">
         <div class="swiper-container">
-            <div class="swiper-wrapper align-items-center">
-                <div class="swiper-slide">
-                    <img src="set/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Gambar 1">
-                </div>
-                <div class="swiper-slide">
-                    <img src="set/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Gambar 2">
-                </div>
-                <div class="swiper-slide">
-                    <img src="set/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Gambar 3">
-                </div>
-                <div class="swiper-slide">
-                    <img src="set/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Gambar 4">
-                </div>
+    <div class="swiper-wrapper align-items-center">
+        @php
+            $profil_klinik = App\Models\Profil_Klinik::first();
+        @endphp
+        @foreach ($profil_klinik->gambarKlinik as $gambar)
+            <div class="swiper-slide">
+                <img src="{{ asset('storage/' . $gambar->gambar) }}" alt="Gambar Klinik">
             </div>
+        @endforeach
+    </div>
+</div>
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
             <div class="swiper-pagination"></div>
@@ -144,12 +141,12 @@
             });
         };
     </script>
- <div class="content-section">
-        <p>Sehat Harmony Indonesia adalah suatu pengobatan alternatif peduli terhadap HIV/AIDS dan NAPSA.</p>
-        <p>Sehat Harmoni Indonesia merupakan asuhan suhu Drs. Hariadi seorang MasterÂ Trainer Akupunktur dan Geomancer Fengshui, yang aktif mengisi acara Feng Shui di Malang TV, Dhamma TV, dan siaran di radio-radio swasta di Indonesia. Beliau juga seorang penulis artikel kesehatan dan Feng Shui di Malang Post, Liberty, Kaltim Post, Nusa Bali, dan majalah Indonesia Media (Los Angeles). Sehat Harmoni membuka pengobatan sosial setiap Minggu pagi pukul 07.00-10.00 WIB mulai tahun 1998 sampai sekarang. Kurang lebih 65-70 pasien yang datang dan berobat di pengobatan ini sudah merasakan khasiat dan manfaatnya.</p>
-        <p>Sehat Harmoni Indonesia juga mengadakan pendidikan kursus akupressure, akupunktur, kop, dan moksa yang diadakan tiap 3 bulan sekali, sudah diadakan sampai angkatan 32, dan menghasilkan lebih dari 1000 tenaga ahli di bidang pengobatan alternatif yang sukses membuka praktek di seluruh Indonesia.</p>
-    </div>
+    @if ($profil_klinik)
 
+    <div class="content-section">
+           <p>{{ $profil_klinik->deskripsi }}</p>
+       </div>
+@endif
     <div class="contact-info">
         <p>Sekretariat Sehat Harmoni Indonesia berada di Jl. Brigjen Slamet Riadi 14 Malang, Jawa Timur, Indonesia 65112.</p>
         <p>Telp (0341) 367093Â Â Fax. (0341) 345854</p>

@@ -119,7 +119,7 @@ public function editGambar($id)
 public function updateGambar(Request $request, $id)
 {
     $request->validate([
-        'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        'gambar' => 'required|image|mimes:jpeg,png,jpg',
     ]);
 
     $gambar = GambarKlinik::findOrFail($id);

@@ -27,22 +27,28 @@ class MendaftarController extends Controller
         'persetujuan' => 'accepted',
     ]);
 
-    // Buat pasien terlebih dahulu
-    $pasien = Pasien::create([
-        'nama_lengkap' => $request->nama_lengkap,
-        'tanggal_lahir' => $request->tanggal_lahir,
-        'no_hp' => $request->no_hp,
-        'email' => $request->email,
-        'alamat' => $request->alamat,
-        'jenis_kelamin' => $request->jenis_kelamin,
-    ]);
+    // Cek apakah pasien sudah ada berdasarkan email
+    $pasien = Pasien::where('email', $request->email)->first();
 
-    // Lalu buat pesanan dan hubungkan ke pasien
+    if (!$pasien) {
+        // Jika belum ada, buat pasien baru
+        $pasien = Pasien::create([
+            'nama_lengkap' => $request->nama_lengkap,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'no_hp' => $request->no_hp,
+            'email' => $request->email,
+            'alamat' => $request->alamat,
+            'jenis_kelamin' => $request->jenis_kelamin,
+        ]);
+    }
+
+    // Simpan pesanan baru untuk pasien ini
     Pesanan::create([
-        'id_pasien' => $pasien->id_pasien,
+        'id_pasien' => $pasien->id_pasien, // pastikan kolom ini sesuai nama field foreign key-nya
         'gejala' => $request->gejala,
         'riwayat_penyakit' => $request->riwayat_penyakit,
         'keluhan' => $request->keluhan,
+        'keluhan_utama' => $request->keluhan_utama,
         'jadwal_pemesanan' => $request->jadwal_pemesanan,
         'jenis_layanan' => $request->jenis_layanan,
     ]);
