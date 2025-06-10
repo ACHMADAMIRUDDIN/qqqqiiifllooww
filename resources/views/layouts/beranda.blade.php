@@ -13,7 +13,7 @@
         document.body.classList.add('loaded');
     });
     </script>
-
+  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
 
 <body>
@@ -140,125 +140,247 @@
       <h2>Tentang Kami</h2>
       <h3>SEJARAH</h3>
       <p>
-        Rumah Sakit Universitas Muhammadiyah Malang mulai dibangun pada tahun 2009. Proses pembangunannya dilaksanakan
-        setelah mendapatkan ijin mendirikan bangunan (IMB) dari Pemerintah Kabupaten Malang melalui unit pelayanan
-        terpadu...
+        Sehat Harmony Indonesia adalah suatu pengobatan alternatif peduli terhadap HIV/AIDS dan NAPSA.
+        Sehat Harmoni Indonesia merupakan asuhan suhu Drs. Hariadi seorang Master Trainer Akupunktur dan Geomancer Fengshui,
+        yang aktif mengisi acara Feng Shui di Malang TV, Dhamma TV, dan siaran di radio-radio swasta di Indonesia. 
       </p>
       <a href="{{ route('tentangkami') }}" class="btn-selengkapnya">Selengkapnya ➝</a>
     </div>
 
 
     <div class="tentang-img">
-      <video autoplay muted loop playsinline>
-        <source src="aset/img/WhatsApp Video 2025-05-07 at 14.12.40_482a688e.mp4" type="video/mp4">
-        Browser Anda tidak mendukung tag video.
-      </video>
+      <div class="video-container" style="position: relative; padding-bottom:56.25%; height: 100; overflow: hidden; max-width: 100%;">
+  <iframe 
+    src="https://www.youtube.com/embed/0-chLJbtL8Q?autoplay=1&mute=1&controls=1" 
+    frameborder="0"
+    allow="autoplay; encrypted-media"
+    allowfullscreen
+    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+  </iframe>
+</div>
+
     </div>
   </section>
 
 
-  <section class="darurat" style="background-image: url('aset/img/2705523986e1892362b489f56fc4ec94.jpg');">
-    <div class="darurat-overlay">
+<section class="darurat">
+  <div class="darurat-overlay">
+    <div class="darurat-box">
       <div class="quote-icon">❝</div>
       <p class="darurat-text">
-        Apakah Anda membutuhkan Perawatan Medis Darurat?<br>
+        Apakah Anda membutuhkan penanganan dari kami?<br>
         Hubungi : 0341-561666
       </p>
       <p class="testimonial-author">John Doe</p>
     </div>
   </section>
 
-  <section class="promo">
+  <section>
+    <div class="promo">
     <h2>Promo</h2>
+    <h3>promo terbaru dan ter update ada di sini </h3>
 
-    <div class="promo-items" id="promoScroll">
-      <div class="promo-item">Promo 1</div>
-      <div class="promo-item">Promo 2</div>
-      <div class="promo-item">Promo 3</div>
-      <div class="promo-item">Promo 4</div>
-      <div class="promo-item">Promo 5</div>
-          <div class="promo-item">Promo 5</div>
-              <div class="promo-item">Promo 5</div>
-                  <div class="promo-item">Promo 5</div>
-                      <div class="promo-item">Promo 5</div>
+    <div class="carousel-container" style="max-width: 600px; margin: 0 auto;">
+      <div class="carousel-slide" id="promoSlide" style="display: flex; transition: transform 0.5s;">
+        @php
+          $promoImages = \App\Models\Promo::all();
+        @endphp
+        @foreach($promoImages as $promo)
+          <div class="carousel-item" style="flex: 0 0 100%; display: flex; justify-content: center; position:relative;">
+            @if(isset($promo->image_path))
+              <img src="{{ asset('storage/' . $promo->image_path) }}" onclick="openLightbox(this)" style="width: 100%; max-width: 600px; height: 320px; object-fit:cover; border-radius: 12px; box-shadow:0 2px 12px #0002; cursor:pointer;">
+              <div style="position:absolute;bottom:0;left:0;right:0;text-align:center;color:#fff;padding:0.5em 0;font-size:1.2em;font-weight:600;border-radius:0 0 12px 12px;">
+                {{ $promo->judul }}
+              </div>
+            @endif
+          </div>
+        @endforeach
+      </div>
+      <div class="arrow left" onclick="prevSlide()">&#10094;</div>
+      <div class="arrow right" onclick="nextSlide()">&#10095;</div>
+      <div class="carousel-dots" id="promoDots"></div>
     </div>
+    <div id="lightbox" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;">
+      <span onclick="closeLightbox()" style="position:absolute;top:30px;right:40px;font-size:3em;color:#fff;cursor:pointer;">&times;</span>
+      <img id="lightbox-img" src="" style="max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 4px 32px #000a;">
+    </div>
+    <script>
+      const slide = document.getElementById("promoSlide");
+      const totalSlides = slide.children.length;
+      const dotsContainer = document.getElementById("promoDots");
+      let currentIndex = 0;
+      let dots = [];
 
-    <button class="lihat-selengkapnya" id="lihatBtn" style="display: none;">Lihat Selengkapnya</button>
-  </section>
+      function showSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        slide.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+        dots.forEach(dot => dot.classList.remove("active"));
+        if (dots[index]) dots[index].classList.add("active");
+      }
 
-  <section class="berita">
-    <h2>Berita</h2>
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
 
+      function prevSlide() {
+        showSlide(currentIndex - 1);
+      }
+
+      // Dots
+      for (let i = 0; i < totalSlides; i++) {
+        let dot = document.createElement("span");
+        dot.className = "dot";
+        if (i === 0) dot.classList.add("active");
+        dot.onclick = () => showSlide(i);
+        dotsContainer.appendChild(dot);
+        dots.push(dot);
+      }
+
+      showSlide(0);
+
+      // Auto slide
+      setInterval(() => {
+        nextSlide();
+      }, 5000);
+
+      // Lightbox
+      function openLightbox(img) {
+        document.getElementById("lightbox-img").src = img.src;
+        document.getElementById("lightbox").style.display = "flex";
+      }
+
+      function closeLightbox() {
+        document.getElementById("lightbox").style.display = "none";
+      }
+    </script>
+  </div>
+</section>
+<section class="berita">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artikel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Artikel</div>
+    <div class="mix-subtitle">Artikel berisikan Informasi Kesehatan dan Akupunkture</div>
+  </div>
+
+</body>
+
+    <br>
     <div class="berita-items" id="beritaScroll">
       <div class="berita-item">
-        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 1">
+        <img src="https://www.sehatharmoni.com/wp-content/uploads/2016/11/DSC02141-1024x684.jpg" alt="Berita 1">
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita1') }}" class="news-title-link">
-    Akupunktur
+    KURSUS PIJAT REFLEKSI ANGKATAN 57
   </a>
 </h3>
-          <p>Deskripsi singkat berita 1 yang menarik dan informatif.</p>
+          <p>Pada hari Sabtu - Minggu tanggal 29-30 Oktober 2016 
+            dilaksanakan Kursus Pijat Refleksi Indonesia yang diselenggarakan
+            oleh...</p>
         </div>
       </div>
 
       <div class="berita-item">
-        <img src="aset/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Berita 2">
+        <img src="https://www.nhlbi.nih.gov/sites/default/files/inline-images/19-1243%20NHLBI%20OY2%20Q1%20FHT%20Insomnia_900x600px%20%281%29.jpg" alt="Berita 2">
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita2') }}" class="news-title-link">
-    Akupresur
+    MENYEMBUHKAN INSOMNIA DENGAN PIJAT REFLEKSI KAKI, MOKSA, DAN OBAT TRADISIONAL
   </a>
 </h3>
-          <p>Deskripsi singkat berita 2 yang menarik dan informatif.</p>
+          <p>Insomnia adalah keadaan di mana seseorang sulit masuk tidur,
+            atau kesulitan mempertahankan tidur dalam kurun waktu tertentu...</p>
         </div>
       </div>
 
       <div class="berita-item">
-        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
+        <img src="https://storage.googleapis.com/rspi-assets-production/rspi-api/uploads/MTcyNzY2NDgxMTIzNA==.jpg" alt="Berita 3">
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita3') }}" class="news-title-link">
-    Bekam
+    Kenali dan Obati Nyeri Pada Perut
   </a>
 </h3>
-          <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
+          <p>Kenali dan Obati Nyeri Pada Perut
+             nyeri perutPenyakit ini adalah jenis penyakit yang datang dan pergi selama periode yang panjang.
+             Rasa nyeri ini dapat disebabkan oleh berbagai hal.</p>
         </div>
       </div>
 
            <div class="berita-item">
-        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
+        <img src="https://img.grouponcdn.com/deal/3iqpBM7c1WQcvwZzSddLUeWzGdFE/3i-2048x1229/v1/c349x211q85.jpg" alt="Berita 3">
         <div class="berita-deskripsi">
 <h3>
   <a href="/pijatt" class="news-title-link">
-    Pijat
+    Menurunkan Berat Badan Dengan Berdiet & Terapi Pijatan
   </a>
 </h3>
-          <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
+          <p>Menurunkan berat badan bagi yang kelebihan berat badan dan mempertahankan berat badan bagi yang berat badannya ideal, merupakan cara yang baik untuk berdiet. Perlu diperhatikan pada saat mengkonsumsi makanan,
+            kita haruslah menahan diri untuk makan secukupnya saja.</p>
         </div>
       </div>
 
            <div class="berita-item">
-        <img src="aset/img/016ee41e29dbf2358a431465693b7c16.jpg" alt="Berita 3">
+        <img src="https://suwun.co.id/blog/wp-content/uploads/2022/10/pijat-pundak.jpg" alt="Berita 3">
         <div class="berita-deskripsi">
 <h3>
   <a href="{{ route('detailberita3') }}" class="news-title-link">
-    Judul Berita 1
+    Cegah & Sembuhkan Penyakit Anemia Gizi Dengan Pijatan
   </a>
 </h3>
-          <p>Deskripsi singkat berita 3 yang menarik dan informatif.</p>
+          <p>Agar manusia memiliki kemampuan kerja fisik yang baik, maka tentunya harus didukung oleh tingkat keadaan gizi yang baik pula.
+            Tingkat keadaan gizi yang baik akan mendukung hasil kerja yang efisien dan optimal</p>
         </div>
       </div>
 
+               <div class="berita-item">
+        <img src="https://drhausdermatology.com/wp-content/uploads/2022/05/shutterstock_2069155256-1024x678.jpg" alt="Berita 3">
+        <div class="berita-deskripsi">
+<h3>
+  <a href="{{ route('detailberita3') }}" class="news-title-link">
+   Jerawat Atasi Dengan Pijatan
+  </a>
+</h3>
+          <p>Jerawat merupakan penyakit radang kronis dengan karakteristik ditandai oleh komedones (black heads),
+            papula, pustula, dan kadang-kadang terbentuk kistik, mengenai folikel dan kelenjar sebaseus.</p>
+        </div>
+      </div>
       <!-- Tambahkan berita lainnya -->
     </div>
 
     <button class="lihat-selengkapnya" id="lihatBeritaBtn" style="display: none;">Lihat Selengkapnya</button>
   </section>
 
+<section class="Maps">
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="mix-section">
+    <div class="mix-title">Maps</div>
+    <div class="mix-subtitle">Maps ini berisikann lokasi dari klinik Sehat Harmoni Malang Beserta Rincian Alamatnya </div>
+  </div>
+
+
   <div class="outer-container">
     <section class="maps-details-container">
       <h3 class="maps-title">Maps Ini Berisikann Lokasi Dari Klinik Sehat Harmoni Malang</h3>
+      <br>
       <div class="maps-details-wrapper">
         <div class="map-container">
           <iframe

@@ -192,32 +192,28 @@
 
     <!-- ===== SIDEBAR ===== -->
     <div id="sidebar" class="sidebar">
-        <a href="{{ route('admin.dashboard') }}" class="sidebar-link" data-title="Dashboard"
-            style="text-decoration: none; color: white;">
-            <h2><i class="bi bi-person-fill"></i> ADMIN</h2>
-        </a>
-        <a href="{{ route('admin.pasien.index') }}" class="sidebar-link" data-title="Kelola Data Pasien">
-            <i class="bi bi-people-fill"></i> <span>Kelola Data Pasien</span>
-        </a>
-        <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Promo Layanan">
-            <i class="bi bi-tags-fill"></i> <span>Promo Layanan</span>
-        </a>
-        <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Riwayat Pemesanan">
-            <i class="bi bi-clock-history"></i> <span>Riwayat Pemesanan</span>
-        </a>
-        <a href="{{ route('admin.profil_klinik.index') }}" class="sidebar-link" data-title="Profil Klinik">
+    <a href="{{ route('admin.dashboard') }}" class="sidebar-link" data-title="Dashboard" style="text-decoration: none; color: white;">
+        <h2><i class="bi bi-person-fill"></i> ADMIN</h2>
+    </a>
+    <a href="{{ route('admin.pasien.index') }}" class="sidebar-link" data-title="Kelola Data Pasien">
+        <i class="bi bi-people-fill"></i> <span>Kelola Data Pasien</span>
+    </a>
+    <a href="{{ route('admin.promo.index') }}" class="sidebar-link" data-title="Promo">
+        <i class="bi bi-tags-fill"></i> <span>Promo Layanan</span>
+    </a>
+    <a href="{{ route('admin.profil_klinik.index') }}" class="sidebar-link" data-title="Profil Klinik">
             <i class="bi bi-hospital-fill"></i> <span>Profil Klinik</span>
-        </a>
-        <a href="{{ route('admin.dokter.index') }}" class="sidebar-link" data-title="Profil Dokter">
-            <i class="bi bi-person-badge-fill"></i> <span>Profil Dokter</span>
-        </a>
-        <a href="{{ route('admin.jadwal.index') }}" class="sidebar-link" data-title="Jadwal Dokter">
-            <i class="bi bi-calendar-event-fill"></i> <span>Jadwal Dokter</span>
-        </a>
-        <a href="{{ route('admin.pengaduan.tampilan') }}" class="sidebar-link" data-title="Daftar Pengaduan Pengguna">
-            <i class="bi bi-chat-left-dots-fill"></i> <span>Pengaduan</span>
-        </a>
-    </div>
+    </a>
+    <a href="{{ route('admin.dokter.index') }}" class="sidebar-link" data-title="Profil Dokter">
+        <i class="bi bi-person-badge-fill"></i> <span>Profil Dokter</span>
+    </a>
+    <a href="{{ route('admin.jadwal.index') }}" class="sidebar-link" data-title="Jadwal Dokter">
+        <i class="bi bi-calendar-event-fill"></i> <span>Jadwal Dokter</span>
+    </a>
+    <a href="{{ route('admin.pengaduan.tampilan') }}" class="sidebar-link" data-title="Daftar Pengaduan Pengguna">
+        <i class="bi bi-chat-left-dots-fill"></i> <span>Pengaduan</span>
+    </a>
+</div>
 
 
     <!-- ===== MAIN CONTENT ===== -->

@@ -477,48 +477,145 @@ body {
     font-size: 13px;
   }
 
-  .promo {
+   .promo {
     padding: 40px 20px;
     background-color: #f9f9f9;
     text-align: center;
   }
 
-  .promo h2{
+  .promo h2 {
     margin-bottom: 20px;
-    font-size: 20px;
+    font-size: 22px;
     color: #1e1e2f;
   }
 
-  .promo-items {
-    display: flex;
-    overflow-x: auto;
-    gap: 16px;
-    scroll-behavior: smooth;
-    padding: 10px 0;
-  }
+   
+ .carousel-container {
+  position: relative;
+  width: 620px;
+  height: 320px;
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  margin: 40px auto;
+}
 
-  .promo-item {
-    min-width: 200px;
-    height: 240px;
-    background-color: #d9d9d9;
-    border-radius: 8px;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-  }
+.carousel-slide {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
 
-  .lihat-selengkapnya {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 6px;
-    color: #fff;
-    cursor: pointer;
-    font-size: 14px;
-  }
+.carousel-item {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ganti ke 'contain' kalau ingin gambar tidak terpotong */
+}
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #618fff;
+  
+      border-radius: 50%;
+      padding: 0.3rem 0.6rem;
+      
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .arrow:hover {
+      background-color: #ffffff;
+      color: #618fff;
+      transition: background-color 0.3s ease;
+      opacity: 0.5;
+    }
+
+    .arrow.left { left: 3px; }
+    .arrow.right { right: 3px; }
+
+    .carousel-dots {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .dot {
+      height: 10px;
+      width: 10px;
+      margin: 0 5px;
+      background-color: #ccc;
+      border-radius: 50%;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      background-color:#618fff;
+    }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    #lightbox img {
+      max-width: 90%;
+      max-height: 80vh;
+    }
+
+    #lightbox span {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: #fff;
+      cursor: pointer;
+    }
+/* Tombol Lihat Selengkapnya */
+.lihat-selengkapnya {
+  margin-top: 10px;
+  padding: 10px 16px;
+  background-color: #0097a7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* ✅ RESPONSIVE GRID SLIDES */
+@media (min-width: 641px) {
+  .promo-item { flex: 0 0 50%; }
+}
+
+@media (min-width: 1024px) {
+  .promo-item { flex: 0 0 33.333%; }
+}
 
   .berita {
     padding: 40px 20px;
@@ -533,46 +630,43 @@ body {
   }
 
   .berita-items {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
-    padding: 10px 0;
-    scroll-behavior: smooth;
-  }
+  display: flex;
+  overflow-x: auto; /* jika ingin scroll horizontal */
+  gap: 1rem;
+}
 
-  .berita-item {
-    min-width: 250px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    overflow: hidden;
-    flex-shrink: 0;
-    text-align: left;
-  }
+.berita-item {
+  flex: 0 0 300px; /* Lebar tetap per item */
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
 
-  .berita-item img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    display: block;
-  }
+.berita-item img {
+  width: 100%;
+  height: auto;
+}
 
-  .berita-deskripsi {
-    padding: 15px;
-  }
+.berita-deskripsi {
+  padding: 1rem;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
 
-  .berita-deskripsi h3 {
-    margin: 0 0 10px;
-    font-size: 16px;
-    color: #333;
-  }
+.news-title-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
 
-  .berita-deskripsi p {
-    font-size: 14px;
-    color: #666;
-  }
 
-  .lihat-selengkapnya {
+
+  /*.lihat-selengkapnya {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #007bff;
@@ -581,7 +675,7 @@ body {
     color: #fff;
     cursor: pointer;
     font-size: 14px;
-  }
+  } 
 
     /* maps */
 .outer-container {
@@ -961,17 +1055,7 @@ body {
   color: #444;
 }
 
-/* Modal Overlay */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  backdrop-filter: blur(4px);
-  background: rgba(0, 0, 0, 0.3);
-  z-index: 999;
-}
+
 
 /* Login Modal */
 .login-modal {
@@ -1284,3 +1368,69 @@ h3 {
     margin-right: 10px;
     font-style: oblique;
   }
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.info-button {
+  opacity: 0;
+  animation: slideFadeIn 0.4s ease-out forwards;
+}
+
+.info-button:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.info-button:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.info-button:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+.darurat {
+  background-image: url('/image/bg_darurat.png');
+  background-size: cover;
+  height :30%;
+  background-position: center;
+  position: relative;
+}
+
+.darurat-overlay {
+  position: relative;  
+  width: 100%;
+  min-width: 100%;
+  height: 100%;
+  background-color: rgba(0, 123, 255, 0.7); /* Tetap pakai overlay dalam */
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 0; 
+  z-index: 100; /* Optional: agar menutupi konten */
+  color: white; /* Agar teks terlihat jelas */
+  text-align: center;
+}
+
+.quote-icon {
+  font-size: 2em;
+  margin-bottom: -15px;
+}
+
+.darurat-text {
+  font-size: 1.2em;
+  font-family: 'Work Sans';
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+
+.testimonial-author {
+  font-style: italic;
+  font-weight: bold;
+}
