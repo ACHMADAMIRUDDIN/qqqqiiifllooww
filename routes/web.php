@@ -108,7 +108,6 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
 
     Route::resource('pasien', PasienController::class);
     Route::resource('pesan', PesanController::class);
-    Route::resource('profil', ProfilController::class)->only(['index', 'update']);
     Route::resource('promo', PromoController::class); // Pastikan baris ini ada
     Route::resource('pemesanan', PemesananController::class)->only(['index', 'update']);
     Route::resource('jadwal', JadwalDokterController::class);
