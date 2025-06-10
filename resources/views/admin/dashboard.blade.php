@@ -129,7 +129,53 @@ body {
     margin-left: 60px;
 }
 
-        
+.dashboard-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-bottom: 32px;
+    justify-content: center;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px #0001;
+    padding: 32px 24px 24px 24px;
+    min-width: 220px;
+    flex: 1 1 220px;
+    max-width: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #2563eb;
+    margin-bottom: 0.2em;
+    letter-spacing: 1px;
+}
+
+.stat-label {
+    font-size: 1.1em;
+    color: #2563eb;
+    font-weight: 500;
+    margin-top: 0.2em;
+}
+
+@media (max-width: 900px) {
+    .dashboard-stats {
+        flex-direction: column;
+        gap: 18px;
+    }
+
+    .stat-card {
+        max-width: 100%;
+    }
+}
     </style>
 </head>
 
@@ -173,7 +219,6 @@ body {
     <div class="main">
         @yield('content')
     </div>
-
     <!-- ===== SCRIPT ===== -->
     <script>
         function toggleSidebar() {

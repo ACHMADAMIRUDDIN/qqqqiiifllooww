@@ -18,6 +18,8 @@ use App\Http\Controllers\Admin\DokterController;
 use App\Models\Dokter;
 use App\Exports\PasienWithPemesananExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Http\Controllers\Admin\AdminDashboardController;
+use App\Http\Controllers\Admin\AdminyaController;
 
 
 Route::get('/', fn() => view('layouts.beranda'))->name('beranda');
@@ -104,10 +106,10 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
-    Route::get('/dashboard', fn() => view('admin.dashboard'))->name('dashboard');
+    Route::get('/dashboard', [AdminDashboardController::class, 'index'])->name('dashboard');
 
     // Tambahkan route berikut agar route('admin.adminya.index') tersedia:
-    Route::get('/adminya', fn() => view('admin.adminya.index'))->name('adminya.index');
+    Route::get('/adminya', [AdminyaController::class, 'index'])->name('adminya.index');
 
     Route::resource('pasien', PasienController::class);
     Route::resource('pesan', PesanController::class);
