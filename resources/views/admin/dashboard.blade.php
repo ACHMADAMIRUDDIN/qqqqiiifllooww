@@ -9,174 +9,186 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            min-height: 5000px;
-        }
+   /* ===== Reset & Body ===== */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    min-height: 100vh;
+    background-color: #f4f6f8;
+}
 
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background-color: #5f94ff;
-            display: flex;
-            align-items: center;
-            padding: 0 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1000;
-        }
+/* ===== Navbar ===== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: #5f94ff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
 
-        .toggle-menu {
-            font-size: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            margin-right: 20px;
-        }
+.toggle-menu {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 20px;
+    color: white;
+}
 
-        .navbar-center a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
+/* ===== Navbar Center Links ===== */
+.navbar-center a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #ffffff;
+}
 
-        .sidebar {
-            position: fixed;
-            top: 60px;
-            left: 0;
-            width: 220px;
-            height: 100%;
-            background-color: #5f94ff;
-            padding: 20px;
-            transition: width 0.3s;
-            overflow: hidden;
-        }
+/* ===== Sidebar ===== */
+.sidebar {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    height: 100%;
+    background-color: #5f94ff;
+    padding: 20px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+}
 
-        .sidebar.minimized {
-            width: 60px;
-        }
+.sidebar.minimized {
+    width: 60px;
+}
 
-        .sidebar h2 {
-            font-size: 18px;
-            margin-bottom: 20px;
-            color: white;
-        }
+.sidebar h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+}
 
-        .sidebar.minimized h2 {
-            display: none;
-        }
+.sidebar.minimized h2 {
+    display: none;
+}
 
-        .sidebar a {
-            display: flex;
-            align-items: center;
-            margin-bottom: 12px;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-            white-space: nowrap;
-            padding: 10px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-        }
+/* Sidebar Links */
+.sidebar a {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+    text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    padding: 10px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
 
-        .sidebar a i {
-            margin-right: 10px;
-            font-size: 18px;
-            transition: transform 0.3s ease;
-        }
+.sidebar a i {
+    margin-right: 10px;
+    font-size: 18px;
+    transition: transform 0.3s ease;
+}
 
-        .sidebar a span {
-            transition: color 0.3s ease;
-        }
+.sidebar a span {
+    transition: color 0.3s ease;
+}
 
-        .sidebar a:hover {
-            background-color: #ffffff33;
-            /* sedikit transparan putih */
-            color: #fff;
-            border-radius: 5px;
-            transition: all 0.2s;
-        }
+.sidebar a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
 
-        .sidebar a:hover i {
-            transform: scale(1.1);
-            color: #fff;
-        }
+.sidebar a:hover i,
+.sidebar a:hover span {
+    color: #fff;
+    transform: scale(1.1);
+}
 
-        .sidebar a:hover span {
-            color: #fff;
-        }
+.sidebar.minimized a span {
+    display: none;
+}
 
-        .sidebar.minimized a span {
-            display: none;
-        }
+/* ===== Main Content ===== */
+.main {
+    margin-top: 80px;
+    margin-left: 250px;
+    padding: 32px;
+    min-height: 100vh;
+    background-color: #f4f6f8;
+    color: #2c3e50;
+    box-sizing: border-box;
+    transition: margin-left 0.3s ease;
+}
 
-        .main {
-            margin-top: 60px;
-            margin-left: 220px;
-            padding: 20px;
-            transition: margin-left 0.3s;
-        }
+.sidebar.minimized + .main {
+    margin-left: 60px;
+}
 
-        .sidebar.minimized+.main {
-            margin-left: 60px;
-        }
+/* ===== Container & Form ===== */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            font-family: Arial, sans-serif;
-        }
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+textarea,
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
 
-        textarea,
-        input[type="text"],
-        input[type="file"] {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+/* ===== Images ===== */
+img {
+    max-width: 300px;
+    margin-bottom: 10px;
+    display: block;
+}
 
-        img {
-            max-width: 300px;
-            margin-bottom: 10px;
-            display: block;
-        }
+/* ===== Buttons ===== */
+.btn {
+    padding: 10px 15px;
+    border: none;
+    background-color: #2e8b57;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+}
 
-        .btn {
-            padding: 10px 15px;
-            border: none;
-            background-color: #2e8b57;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-            text-decoration: none;
-        }
+.btn:hover {
+    background-color: #256f47;
+}
 
-        .btn:hover {
-            background-color: #256f47;
-        }
+.btn-danger {
+    background-color: #d9534f;
+}
 
-        .btn-danger {
-            background-color: #d9534f;
-        }
+.btn-danger:hover {
+    background-color: #c9302c;
+}
 
-        .btn-danger:hover {
-            background-color: #c9302c;
-        }
+.text-danger {
+    color: red;
+}
 
-        .text-danger {
-            color: red;
-        }
+
     </style>
 </head>
 
@@ -192,7 +204,7 @@
 
     <!-- ===== SIDEBAR ===== -->
     <div id="sidebar" class="sidebar">
-    <a href="{{ route('admin.dashboard') }}" class="sidebar-link" data-title="Dashboard" style="text-decoration: none; color: white;">
+    <a href="{{ route('admin.adminya.index') }}" class="sidebar-link" data-title="admin" style="text-decoration: none; color: white;">
         <h2><i class="bi bi-person-fill"></i> ADMIN</h2>
     </a>
     <a href="{{ route('admin.pasien.index') }}" class="sidebar-link" data-title="Kelola Data Pasien">

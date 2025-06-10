@@ -93,7 +93,9 @@
                 @csrf
 
                 <h3>Data Pasien:</h3>
-
+    @if(session('success'))
+    <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
                 <label for="nama_lengkap">Nama Lengkap</label>
                 <input type="text" name="nama_lengkap" required>
 

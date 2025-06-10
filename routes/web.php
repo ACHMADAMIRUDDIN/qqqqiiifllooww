@@ -106,12 +106,15 @@ Route::middleware('auth')->group(function () {
 Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', fn() => view('admin.dashboard'))->name('dashboard');
 
+    // Tambahkan route berikut agar route('admin.adminya.index') tersedia:
+    Route::get('/adminya', fn() => view('admin.adminya.index'))->name('adminya.index');
+
     Route::resource('pasien', PasienController::class);
     Route::resource('pesan', PesanController::class);
-    Route::resource('promo', PromoController::class); // Pastikan baris ini ada
+    Route::resource('promo', PromoController::class);
     Route::resource('pemesanan', PemesananController::class)->only(['index', 'update']);
     Route::resource('jadwal', JadwalDokterController::class);
-    Route::resource('dokter', DokterController::class); // Tambahkan baris ini
+    Route::resource('dokter', DokterController::class);
     Route::resource('profil_klinik', ProfilKlinikController::class);
 
     Route::delete('profil_klinik/gambar/{id}', [ProfilKlinikController::class, 'destroyGambar'])->name('gambar_klinik.destroy');
