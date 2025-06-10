@@ -41,17 +41,18 @@
 
                 <tbody class="text-gray-800">
                     @foreach ($pasiens as $pasien)
-                        <tr class="border-t hover:bg-gray-50">
-                            <td class="px-4 py-3">{{ $pasien->id_pasien }}</td>
-                            <td class="px-4 py-3">{{ $pasien->nama_lengkap }}</td>
-                            <td class="px-4 py-3">{{ $pasien->tanggal_lahir }}</td>
-                            <td class="px-4 py-3">{{ $pasien->no_hp }}</td>
-                            <td class="px-4 py-3">{{ $pasien->jenis_kelamin }}</td>
-                            <td class="px-4 py-3">{{ $pasien->email }}</td>
-                            <td class="px-4 py-3 flex space-x-2">
+                        <tr class="hover:bg-gray-50">
+                            <td>{{ $pasien->id_pasien }}</td>
+                            <td>{{ $pasien->nama_lengkap }}</td>
+                            <td>{{ $pasien->tanggal_lahir }}</td>
+                            <td>{{ $pasien->no_hp }}</td>
+                            <td>{{ $pasien->jenis_kelamin }}</td>
+                            <td>{{ $pasien->email }}</td>
+                            <td
+                                style="display: flex; justify-content: center; gap: 12px; align-items: center; padding: 8px;">
                                 <form action="{{ route('admin.pasien.edit', $pasien) }}" method="GET">
-                                    <button href="{{ route('admin.pasien.edit', $pasien) }}"
-                                        style="background-color: #facc15; color: white; padding: 0.25rem 0.75rem; border-radius: 0.375rem; font-size: 0.875rem; transition: background-color 0.2s ease;"
+                                    <button
+                                        style="background-color: #facc15; color: white; padding: 4px 6px; border-radius: 6px; font-size: 12px; transition: background-color 0.2s ease;"
                                         onmouseover="this.style.backgroundColor='#eab308';"
                                         onmouseout="this.style.backgroundColor='#facc15';">Edit</button>
                                 </form>
@@ -61,10 +62,10 @@
                                     <button
                                         style="background-color: #fa1515; color: white; padding: 0.25rem 0.75rem; border-radius: 0.375rem; font-size: 0.875rem; transition: background-color 0.2s ease;"
                                         onmouseover="this.style.backgroundColor='#b91c1c';"
-                                        onmouseout="this.style.backgroundColor='#fa1515';"">Hapus</button>
+                                        onmouseout="this.style.backgroundColor='#fa1515';">Hapus</button>
                                 </form>
                                 <form action="{{ route('admin.pasien.show', $pasien) }}" method="GET">
-                                    <button href="{{ route('admin.pasien.show', $pasien) }}"
+                                    <button
                                         style="background-color: #3b82f6; color: white; padding: 0.25rem 0.75rem; border-radius: 0.375rem; font-size: 0.875rem; transition: background-color 0.2s ease;"
                                         onmouseover="this.style.backgroundColor='#2563eb';"
                                         onmouseout="this.style.backgroundColor='#3b82f6';">Detail</button>

@@ -49,6 +49,11 @@
         <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
     </span>
       @endauth
+      @auth
+      @role('admin')
+      <a href="{{ route('dashboard') }}" class="btn"><i class="bi bi-gear-fill">Admin</i></a>
+      @endrole
+      @endauth
     </div>
   </div>
 
@@ -75,7 +80,7 @@
         </ul>
       </li>
       <li >
-        <a href="/pesanlayanan">Layanan Terapis</a> 
+        <a href="/pesanlayanan">Layanan Terapis</a>
       </li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
