@@ -120,7 +120,10 @@
 
 <body>
 
-
+    <!-- Logo -->
+    <div class="logo-container">
+        <img src="{{ asset('img/sehat_harmoni.jpeg') }}" alt="Logo Sehat Harmoni">
+    </div>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
