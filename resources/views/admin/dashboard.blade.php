@@ -129,66 +129,7 @@ body {
     margin-left: 60px;
 }
 
-/* ===== Container & Form ===== */
-.container {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 20px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-textarea,
-input[type="text"],
-input[type="file"] {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 14px;
-}
-
-/* ===== Images ===== */
-img {
-    max-width: 300px;
-    margin-bottom: 10px;
-    display: block;
-}
-
-/* ===== Buttons ===== */
-.btn {
-    padding: 10px 15px;
-    border: none;
-    background-color: #2e8b57;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.btn:hover {
-    background-color: #256f47;
-}
-
-.btn-danger {
-    background-color: #d9534f;
-}
-
-.btn-danger:hover {
-    background-color: #c9302c;
-}
-
-.text-danger {
-    color: red;
-}
-
-
+        
     </style>
 </head>
 
