@@ -20,6 +20,7 @@ use App\Exports\PasienWithPemesananExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminyaController;
+use App\Http\Controllers\MessageController;
 
 
 Route::get('/', fn() => view('layouts.beranda'))->name('beranda');
@@ -88,6 +89,9 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/pesanlayanan', fn() => view('layouts.pesanlayanan'))->name('pesanlayanan');
     Route::get('/pesan-fisioterapi', fn() => view('layouts.pesanlayanan'))->name('pesan.fisioterapi');
+    Route::get('/chat', [MessageController::class, 'index'])->name('chat.index');
+    Route::get('/chat/messages/{user}', [MessageController::class, 'fetch'])->name('chat.fetch');
+    Route::post('/chat/messages', [MessageController::class, 'send'])->name('chat.send');
 });
 
 

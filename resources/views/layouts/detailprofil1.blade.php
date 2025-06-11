@@ -783,6 +783,7 @@ body {
     </div>
   </div>
 </div>
+
   <!-- Footer -->
  <footer>
   <div class="footer-container">
