@@ -5,7 +5,7 @@
     <form method="POST" action="{{ route('admin.dokter.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
-            <label>Nama Dokter</label>
+            <label>Nama Terapis</label>
             <input type="text" name="nama" class="form-control" required>
         </div>
         <div class="mb-3">

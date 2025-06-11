@@ -503,7 +503,8 @@ footer {
 .submit-button:hover {
   background-color: #357ae8;
 }
-        .btn {
+       
+         .btn {
         display: inline-block;
         padding: 8px 16px;
         background-color: #3490dc; /* Biru */
@@ -525,7 +526,7 @@ footer {
       .btn-secondary:hover {
       background-color: #064a7e;
       }
-      .logout-button {
+  .logout-button {
     background-color: #3490dc;
     font-style: italic;
     color: white;
@@ -540,6 +541,11 @@ footer {
     background-color: #174166;
   }
 
+  .welcome-text {
+    font-weight: bold;
+    margin-right: 10px;
+    font-style: oblique;
+  }
   .welcome-text {
     font-weight: bold;
     margin-right: 10px;

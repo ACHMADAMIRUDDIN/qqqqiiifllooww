@@ -6,7 +6,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Nama Dokter</th>
+                <th>Nama Terapis</th>
                 <th>Jenis Terapi</th>
                 <th>Jadwal</th>
                 <th>Aksi</th>

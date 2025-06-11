@@ -20,6 +20,18 @@
             font-family: 'Segoe UI', sans-serif;
         }
 
+        .logo-container {
+            text-align: justify;
+            justify-items: center;
+            margin-top: 4px;
+        }
+
+        .logo-container img {
+            width: 150px;
+            height: auto;
+            justify-items: center;
+        }
+
         .form-container {
             max-width: 400px;
             margin: 50px auto;
@@ -93,6 +105,9 @@
 
     <form method="POST" action="{{ route('register') }}" class="form-container">
         @csrf
+        <div class="logo-container">
+        <img src="{{ asset('img/sehat_harmoni.jpeg') }}" alt="Logo" class="logo">
+    </div>
 
         <div class="form-title">Register</div>
 
@@ -131,6 +146,7 @@
             </svg>
             <input id="password_confirmation" type="password" name="password_confirmation" required placeholder="Confirm Password">
         </div>
+        
 
         <button type="submit" class="btn-submit">Register</button>
 

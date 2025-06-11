@@ -158,10 +158,10 @@ body {
             <i class="bi bi-hospital-fill"></i> <span>Profil Klinik</span>
     </a>
     <a href="{{ route('admin.dokter.index') }}" class="sidebar-link" data-title="Profil Dokter">
-        <i class="bi bi-person-badge-fill"></i> <span>Profil Dokter</span>
+        <i class="bi bi-person-badge-fill"></i> <span>Profil Terapis</span>
     </a>
     <a href="{{ route('admin.jadwal.index') }}" class="sidebar-link" data-title="Jadwal Dokter">
-        <i class="bi bi-calendar-event-fill"></i> <span>Jadwal Dokter</span>
+        <i class="bi bi-calendar-event-fill"></i> <span>Jadwal Terapis</span>
     </a>
     <a href="{{ route('admin.pengaduan.tampilan') }}" class="sidebar-link" data-title="Daftar Pengaduan Pengguna">
         <i class="bi bi-chat-left-dots-fill"></i> <span>Pengaduan</span>
