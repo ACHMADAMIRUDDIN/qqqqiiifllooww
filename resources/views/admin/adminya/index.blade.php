@@ -1,5 +1,7 @@
 @extends('admin.dashboard')
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 @section('content')
 <div class="dashboard-stats" style="display:flex;flex-wrap:wrap;gap:24px;margin-bottom:32px;justify-content:center;">
     <div class="stat-card" style="background:#fff;border-radius:16px;box-shadow:0 2px 12px #0001;padding:32px 24px 24px 24px;min-width:220px;flex:1 1 220px;max-width:320px;text-align:center;display:flex;flex-direction:column;align-items:center;">

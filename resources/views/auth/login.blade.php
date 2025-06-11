@@ -18,16 +18,20 @@
         body {
             background-color: #e6f2ff;
             font-family: 'Segoe UI', sans-serif;
+            margin-top: 110px;
+
         }
 
         .logo-container {
-            text-align: center;
-            margin-top: 40px;
+            text-align: justify;
+            justify-items: center;
+            margin-top: 4px;
         }
 
         .logo-container img {
             width: 150px;
             height: auto;
+            justify-items: center;
         }
 
         .form-container {
@@ -121,9 +125,8 @@
 <body>
 
     <!-- Logo -->
-    <div class="logo-container">
-        <img src="{{ asset('img/sehat_harmoni.jpeg') }}" alt="Logo Sehat Harmoni">
-    </div>
+    
+    
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
 
@@ -131,7 +134,7 @@
     <form method="POST" action="{{ route('login') }}" class="form-container">
         @csrf
     <div class="logo-container">
-        <img src="{{ asset('images/logo.png') }}" alt="Logo" class="logo">
+        <img src="{{ asset('img/sehat_harmoni.jpeg') }}" alt="Logo" class="logo">
     </div>
         <div class="form-title">Login</div>
 

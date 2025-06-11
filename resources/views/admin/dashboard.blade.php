@@ -7,6 +7,7 @@
     <title>Admin Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 
     <style>
    /* ===== Reset & Body ===== */
@@ -204,10 +205,10 @@ body {
             <i class="bi bi-hospital-fill"></i> <span>Profil Klinik</span>
     </a>
     <a href="{{ route('admin.dokter.index') }}" class="sidebar-link" data-title="Profil Dokter">
-        <i class="bi bi-person-badge-fill"></i> <span>Profil Dokter</span>
+        <i class="bi bi-person-badge-fill"></i> <span>Profil Terapis</span>
     </a>
     <a href="{{ route('admin.jadwal.index') }}" class="sidebar-link" data-title="Jadwal Dokter">
-        <i class="bi bi-calendar-event-fill"></i> <span>Jadwal Dokter</span>
+        <i class="bi bi-calendar-event-fill"></i> <span>Jadwal Terapis</span>
     </a>
     <a href="{{ route('admin.pengaduan.tampilan') }}" class="sidebar-link" data-title="Daftar Pengaduan Pengguna">
         <i class="bi bi-chat-left-dots-fill"></i> <span>Pengaduan</span>

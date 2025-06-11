@@ -135,7 +135,7 @@ function cariJadwal() {
   </script>
 
 <div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
-    <h1>Jadwal Dokter</h1>
+    <h1>Jadwal Terapis</h1>
     <p>Dimohon Sebelum Mengunjungi Klinik Dapat Menghubungi Atau Mendaftar Terlebih Dahulu</p>
 </div>
 
@@ -155,7 +155,7 @@ function cariJadwal() {
       <table>
         <thead>
           <tr>
-            <th>NAMA DOKTER</th>
+            <th>NAMA TERAPIS</th>
             <th>JADWAL</th>
           </tr>
         </thead>

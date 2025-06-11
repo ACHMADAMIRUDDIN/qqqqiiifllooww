@@ -1,8 +1,9 @@
 @extends('admin.dashboard')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 @section('content')
 <div class="container py-4">
-    <a href="{{ route('admin.dokter.create') }}" class="btn btn-primary mb-3">Tambah Dokter</a>
+    <a href="{{ route('admin.dokter.create') }}" class="btn btn-primary mb-3">Tambah Profil Terapis</a>
     <div id="basic-datatables" class="overflow-x-auto bg-white shadow-md rounded-lg">
 
         <table class="table table-bordered">

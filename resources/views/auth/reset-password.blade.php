@@ -21,13 +21,15 @@
         }
 
         .logo-container {
-            text-align: center;
-            margin-top: 40px;
+            text-align: justify;
+            justify-items: center;
+            margin-top: 4px;
         }
 
         .logo-container img {
             width: 150px;
             height: auto;
+            justify-items: center;
         }
 
         .form-container {
@@ -85,6 +87,9 @@
     <!-- Reset Password Form -->
     <form method="POST" action="{{ route('password.store') }}" class="form-container">
         @csrf
+                <div class="logo-container">
+        <img src="{{ asset('img/sehat_harmoni.jpeg') }}" alt="Logo" class="logo">
+    </div>
 
         <div class="form-title">Reset Password</div>
 
