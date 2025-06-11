@@ -1,6 +1,7 @@
 @extends('admin.dashboard')
 
 @section('content')
+<link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 <style>
     .container {
         padding: 2rem;

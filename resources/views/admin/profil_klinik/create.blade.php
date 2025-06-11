@@ -1,6 +1,7 @@
 @extends('admin.dashboard')
 
 @section('content')
+<link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 <div class="container">
     <h2>Tambah Profil Klinik</h2>
 

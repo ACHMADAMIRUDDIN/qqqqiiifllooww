@@ -1,6 +1,7 @@
 @extends('admin.dashboard')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 @section('content')
     <div class="max-w-7xl mx-auto px-4 py-8">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">

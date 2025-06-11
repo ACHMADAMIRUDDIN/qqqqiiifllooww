@@ -1,5 +1,6 @@
 @extends('admin.dashboard')
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 @section('content')
 <h2>Admin - Tambah Promo</h2>
 
