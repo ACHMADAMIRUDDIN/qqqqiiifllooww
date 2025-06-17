@@ -31,7 +31,7 @@ public function store(Request $request)
 {
     $validated = $request->validate([
         'deskripsi' => 'required|string|max:1000',
-        'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
+        'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg,webp'
     ]);
 
     $profil = Profil_klinik::create([
@@ -61,7 +61,7 @@ public function update(Request $request, Profil_klinik $profil_klinik)
 {
     $request->validate([
         'deskripsi' => 'required|string|max:1000',
-        'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg|max:2048'
+        'gambar.*' => 'nullable|image|mimes:jpeg,png,jpg,webp'
     ]);
 
     $profil_klinik->update(['deskripsi' => $request->deskripsi]);
@@ -98,7 +98,7 @@ public function createGambar(Profil_klinik $profil_klinik)
 public function storeGambar(Request $request, Profil_klinik $profil_klinik)
 {
     $request->validate([
-        'gambar' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        'gambar' => 'required|image|mimes:jpeg,png,jpg,webp',
     ]);
 
     $path = $request->file('gambar')->store('gambar_klinik', 'public');
@@ -119,7 +119,7 @@ public function editGambar($id)
 public function updateGambar(Request $request, $id)
 {
     $request->validate([
-        'gambar' => 'required|image|mimes:jpeg,png,jpg',
+        'gambar' => 'required|image|mimes:jpeg,png,jpg,webp',
     ]);
 
     $gambar = GambarKlinik::findOrFail($id);
