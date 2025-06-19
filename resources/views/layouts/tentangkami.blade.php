@@ -51,15 +51,6 @@
 
 
 
-  <!-- Login Modal -->
-  <div id="loginModal" class="login-modal">
-    <div class="login-box">
-      <h2>Login</h2>
-      <input type="text" placeholder="Email atau Username" />
-      <input type="password" placeholder="Password" />
-      <button>Masuk</button>
-    </div>
-  </div>
 
    <!-- Menu Navigasi -->
   <nav class="menu">
@@ -178,166 +169,7 @@
         <p><i class="fas fa-fax"></i> FAX : -</p>
       </div>
     </div>
-    <!-- Tombol Chat -->
-<!-- Chat Toggle Button (Pasien) -->
-<button id="chatToggleButton" onclick="toggleChat()" class="chat-button"
-  style="position:fixed;bottom:25px;right:25px;background:#2563eb;color:#fff;border:none;padding:10px 16px;border-radius:40px;box-shadow:0 4px 10px rgba(0,0,0,0.2);font-size:15px;cursor:pointer;z-index:999;transition:background 0.3s;width:54px;height:54px;display:flex;align-items:center;justify-content:center;">
-  💬
-</button>
 
-<!-- Chat Box -->
-<div id="chatBox" style="display:none;position:fixed;bottom:90px;right:30px;z-index:1000;width:320px;max-width:95vw;background:#fff;border-radius:16px;box-shadow:0 4px 24px #0003;overflow:hidden;flex-direction:column;">
-  <!-- Header -->
-  <div style="background:#2563eb;color:#fff;padding:1em 1.2em;font-weight:600;display:flex;justify-content:space-between;align-items:center;">
-    <span>Chat Admin</span>
-    <button onclick="toggleChat()" style="background:none;border:none;color:#fff;font-size:1.3em;cursor:pointer;">&times;</button>
-  </div>
-  <!-- Messages -->
-  <div id="chat-messages" style="height:220px;overflow-y:auto;padding:1em;background:#f8fafc;display:flex;flex-direction:column;gap:10px;font-size:14px;">
-    <!-- Contoh pesan -->
-    <!-- <div style="align-self:flex-start;background:#e5e7eb;padding:8px 12px;border-radius:12px 12px 12px 0;max-width:80%;">Halo, ada yang bisa kami bantu?</div>
-    <div style="align-self:flex-end;background:#2563eb;color:#fff;padding:8px 12px;border-radius:12px 12px 0 12px;max-width:80%;">Ya, saya ingin tanya...</div> -->
-  </div>
-  <!-- Form Input -->
-  <form id="chat-form" style="display:flex;gap:8px;padding:0.7em 1em 1em 1em;background:#000;">
-    <input type="text" id="chat-input" class="form-control" placeholder="Ketik pesan..." autocomplete="off"
-           style="flex:1;border:1px solid #555;border-radius:8px;padding:8px;background:#222;color:#fff;">
-    <button type="submit" class="btn btn-primary"
-            style="background:#2563eb;border:none;border-radius:8px;padding:8px 14px;color:white;">
-      Kirim
-    </button>
-  </form>
-</div>
-
-<script src="https://js.pusher.com/7.2/pusher.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/laravel-echo/1.11.3/echo.iife.js"></script>
-@php
-    // Ambil semua pasien (selain admin id 1)
-    $admin = \App\Models\User::find(1);
-    $pasiens = \App\Models\User::where('id', '!=', 1)->get();
-@endphp
-<script>
-@auth
-let isAdmin = {{ auth()->id() == 1 ? 'true' : 'false' }};
-let selectedUserId = null;
-let selectedUserName = '';
-
-function renderPasienDropdown() {
-    if (!isAdmin) return;
-    let dropdown = `<select id="pasien-dropdown" style="width:100%;margin-bottom:10px;padding:6px 10px;border-radius:8px;border:1px solid #ccc;">`;
-    dropdown += `<option value="">Pilih Pasien</option>`;
-    @foreach($pasiens as $pasien)
-        dropdown += `<option value="{{ $pasien->id }}">{{ addslashes($pasien->name) }} ({{ $pasien->email }})</option>`;
-    @endforeach
-    dropdown += `</select>`;
-    document.getElementById('chat-messages').insertAdjacentHTML('beforebegin', dropdown);
-    document.getElementById('pasien-dropdown').onchange = function() {
-        selectedUserId = this.value;
-        selectedUserName = this.options[this.selectedIndex].text;
-        document.getElementById('chat-input').disabled = !selectedUserId;
-        document.querySelector('#chat-form button[type="submit"]').disabled = !selectedUserId;
-        loadChat();
-    };
-}
-
-function setPasienMode() {
-    selectedUserId = 1;
-    selectedUserName = "Admin Klinik";
-    document.getElementById('chat-input').disabled = false;
-    document.querySelector('#chat-form button[type="submit"]').disabled = false;
-}
-
-function loadChat() {
-    if (!selectedUserId) {
-        if (isAdmin) {
-            document.getElementById('chat-messages').innerHTML = '<div style="color:#888;text-align:center;">Pilih pasien untuk mulai chat</div>';
-        }
-        document.getElementById('chat-input').disabled = true;
-        document.querySelector('#chat-form button[type="submit"]').disabled = true;
-        return;
-    }
-    fetch(`/chat/messages/${selectedUserId}`)
-        .then(res => {
-            if (!res.ok) throw new Error('Gagal load pesan');
-            return res.json();
-        })
-        .then(messages => {
-            const box = document.getElementById('chat-messages');
-            box.innerHTML = '';
-            messages.forEach(msg => {
-                let isMe = msg.sender_id == {{ auth()->id() }};
-                box.innerHTML += `<div style="margin-bottom:8px;text-align:${isMe?'right':'left'};">
-                    <span style="display:inline-block;background:${isMe?'#2563eb':'#e5e7eb'};color:${isMe?'#fff':'#222'};padding:7px 14px;border-radius:12px;max-width:80%;font-size:1em;">
-                        ${msg.message}
-                    </span>
-                    <div style="font-size:0.8em;color:#888;margin-top:2px;">${isMe?'Saya':selectedUserName} - ${msg.created_at}</div>
-                </div>`;
-            });
-            box.scrollTop = box.scrollHeight;
-            document.getElementById('chat-input').disabled = !selectedUserId;
-            document.querySelector('#chat-form button[type="submit"]').disabled = !selectedUserId;
-        })
-        .catch(() => {
-            document.getElementById('chat-messages').innerHTML = '<div style="color:#c00;text-align:center;">Gagal memuat pesan. Hubungi admin.</div>';
-        });
-}
-document.getElementById('chat-form').onsubmit = function(e) {
-    e.preventDefault();
-    if (!selectedUserId) return alert(isAdmin ? 'Pilih pasien terlebih dahulu' : 'Tidak ada lawan chat.');
-    const input = document.getElementById('chat-input');
-    if (!input.value.trim()) return;
-    fetch('/chat/messages', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-        },
-        body: JSON.stringify({receiver_id: selectedUserId, message: input.value})
-    })
-    .then(res => {
-        if (!res.ok) throw new Error('Gagal mengirim pesan');
-        return res.json();
-    })
-    .then(msg => {
-        loadChat();
-        input.value = '';
-    })
-    .catch(() => {
-        alert('Gagal mengirim pesan. Hubungi admin.');
-    });
-};
-function toggleChat() {
-    const chatBox = document.getElementById("chatBox");
-    chatBox.style.display = (chatBox.style.display === "none" || chatBox.style.display === "") ? "flex" : "none";
-    if (chatBox.style.display === "flex") {
-        if (isAdmin) {
-            if (!document.getElementById('pasien-dropdown')) renderPasienDropdown();
-            document.getElementById('chat-input').disabled = !selectedUserId;
-            document.querySelector('#chat-form button[type="submit"]').disabled = !selectedUserId;
-        } else {
-            setPasienMode();
-            loadChat();
-        }
-    }
-}
-// Pusher/Echo listen
-window.Echo = new window.Echo({
-    broadcaster: 'pusher',
-    key: '{{ config('broadcasting.connections.pusher.key') }}',
-    cluster: '{{ config('broadcasting.connections.pusher.options.cluster') }}',
-    forceTLS: true,
-    encrypted: true,
-    authEndpoint: '/broadcasting/auth'
-});
-window.Echo.private('chat.{{ auth()->id() }}')
-    .listen('MessageSent', (e) => {
-        // Hanya reload jika pesan dari/ke lawan chat yang sedang aktif
-        if (selectedUserId == e.message.sender_id || selectedUserId == e.message.receiver_id) {
-            loadChat();
-        }
-    });
-@endauth
-</script>
 
   </footer>
 
@@ -362,13 +194,7 @@ window.Echo.private('chat.{{ auth()->id() }}')
       });
     });
 
-    // Fungsi toggle login modal
-    function toggleLogin() {
-      const overlay = document.getElementById("overlay");
-      const modal = document.getElementById("loginModal");
-      overlay.classList.toggle("active");
-      modal.classList.toggle("active");
-    }
+
   </script>
 
   <script src="set/js/opojs.js"></script>

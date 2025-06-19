@@ -24,6 +24,16 @@
                     Tambah Gambar
                 </a>
 
+                {{-- Pastikan $profil_klinik tidak null sebelum akses gambarKlinik --}}
+                @if(isset($profil_klinik) && $profil_klinik && $profil_klinik->gambarKlinik)
+                    {{-- tampilkan gambar --}}
+                    @foreach($profil_klinik->gambarKlinik as $gambar)
+                        <img src="{{ asset('storage/'.$gambar->path) }}" alt="Gambar Klinik" style="max-width:200px;">
+                    @endforeach
+                @else
+                    <div>Tidak ada gambar klinik.</div>
+                @endif
+
                 @forelse ($profil_klinik->gambarKlinik as $gambar)
                     <div class="mb-2">
                         <img src="{{ asset('storage/' . $gambar->gambar) }}" alt="Foto Klinik"

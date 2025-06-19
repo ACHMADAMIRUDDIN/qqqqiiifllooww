@@ -21,6 +21,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Admin\AdminDashboardController;
 use App\Http\Controllers\Admin\AdminyaController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\Admin\BeritaController;
 
 
 Route::get('/', fn() => view('layouts.beranda'))->name('beranda');
@@ -89,9 +90,7 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/pesanlayanan', fn() => view('layouts.pesanlayanan'))->name('pesanlayanan');
     Route::get('/pesan-fisioterapi', fn() => view('layouts.pesanlayanan'))->name('pesan.fisioterapi');
-    Route::get('/chat', [MessageController::class, 'index'])->name('chat.index');
-    Route::get('/chat/messages/{user}', [MessageController::class, 'fetch'])->name('chat.fetch');
-    Route::post('/chat/messages', [MessageController::class, 'send'])->name('chat.send');
+
 });
 
 
@@ -122,6 +121,7 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::resource('jadwal', JadwalDokterController::class);
     Route::resource('dokter', DokterController::class);
     Route::resource('profil_klinik', ProfilKlinikController::class);
+    Route::resource('berita', BeritaController::class)->only(['index', 'create', 'store', 'destroy']);
 
     Route::delete('profil_klinik/gambar/{id}', [ProfilKlinikController::class, 'destroyGambar'])->name('gambar_klinik.destroy');
     Route::get('profil_klinik/gambar/{id}/edit', [ProfilKlinikController::class, 'edit'])->name('profil_klinik.edit');
@@ -137,6 +137,20 @@ Route::put('profil_klinik/gambar/{id}', [ProfilKlinikController::class, 'updateG
         $pengaduans = \App\Models\Pengaduan::latest()->get();
         return view('admin.pengaduan.tampilan', compact('pengaduans'));
     })->name('pengaduan.tampilan');
+
+    // Tambahkan route berikut agar route('admin.datapemesan.pemesanan') tersedia:
+    Route::get('/datapemesan/pemesan', function () {
+        $pesanans = \App\Models\Pesanan::with('pasien')->get();
+        $totalPemesanan = $pesanans->count();
+        return view('admin.datapemesan.pemesan', compact('pesanans', 'totalPemesanan'));
+    })->name('datapemesan.pemesan');
+
+    // Tambahkan route berikut agar route('admin.user.user') tersedia:
+    Route::get('/user/user', function () {
+        $users = \App\Models\User::all();
+        $totalUsers = $users->count();
+        return view('admin.user.user', compact('users', 'totalUsers'));
+    })->name('user.user');
 });
 
 // Route untuk pasien melihat jadwal dokter
@@ -148,5 +162,11 @@ Route::get('/jadwal-dokter', function () {
 Route::get('/admin/export', function () {
     return Excel::download(new PasienWithPemesananExport, 'pasien_pemesanan_7hari.xlsx');
 })->name('admin.export');
+
+// Frontend berita
+Route::get('/berita', function () {
+    $beritas = \App\Models\Berita::latest()->get();
+    return view('layouts.berita', compact('beritas'));
+})->name('berita');
 
 require __DIR__ . '/auth.php';

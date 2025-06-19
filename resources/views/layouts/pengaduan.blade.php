@@ -223,13 +223,7 @@
       });
     });
 
-    // Fungsi toggle login modal
-    function toggleLogin() {
-      const overlay = document.getElementById("overlay");
-      const modal = document.getElementById("loginModal");
-      overlay.classList.toggle("active");
-      modal.classList.toggle("active");
-    }
+
   </script>
 
   <script src="set/js/opojs.js"></script>
