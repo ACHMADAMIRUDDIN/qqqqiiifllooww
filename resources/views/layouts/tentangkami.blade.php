@@ -97,7 +97,7 @@
         <div class="swiper-container">
             <div class="swiper-wrapper align-items-center">
                 @php
-                    $profil_klinik = App\Models\Profil_Klinik::first();
+                    $profil_klinik = App\Models\Profil_klinik::first();
                 @endphp
                 @foreach ($profil_klinik->gambarKlinik as $gambar)
                     <div class="swiper-slide">
