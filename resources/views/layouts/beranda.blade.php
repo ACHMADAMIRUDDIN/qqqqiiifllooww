@@ -105,7 +105,7 @@
         });
     </script>
     <header class="header">
-        <img src="aset/img/2705523986e1892362b489f56fc4ec94.jpg" alt="Header Image" class="header-img">
+        <img src="sehat/10.jpg" alt="Header Image" class="header-img">
 
         <div class="header-overlay">
             <h1>Konsultasi Keluhan Anda (Admin Kami)</h1>
@@ -154,7 +154,7 @@
         <div class="tentang-img">
             <div class="video-container"
                 style="position: relative; padding-bottom:56.25%; height: 100; overflow: hidden; max-width: 100%;">
-                <iframe src="https://www.youtube.com/embed/0-chLJbtL8Q?autoplay=1&mute=1&controls=1" frameborder="0"
+                <iframe src="https://www.youtube.com/embed/p6dbZunanmo" frameborder="0"
                     allow="autoplay; encrypted-media" allowfullscreen
                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                 </iframe>

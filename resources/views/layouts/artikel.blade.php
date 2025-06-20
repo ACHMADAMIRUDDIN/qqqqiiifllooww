@@ -66,7 +66,7 @@
         </ul>
       </li>
       <li >
-        <a href="/pesanlayanan">Layanan Terapis</a> 
+        <a href="/pesanlayanan">Layanan Terapis</a>
       </li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -90,7 +90,7 @@
 
   </script>
 
-<div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
+<div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('sehat/10.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
     <h1>Artikel</h1>
     <p>Baca berbagai artikel seputar kesehatan, gaya hidup sehat, dan tips menjaga keseimbangan tubuh secara alami.</p>
 </div>

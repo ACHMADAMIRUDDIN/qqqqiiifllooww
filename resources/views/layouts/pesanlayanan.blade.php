@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesan Layanan - Sehat Harmoni Indonesia</title>
     <link rel="stylesheet" href="New folder/css/pesanlayanan.css">
-  <!-- Favicon -->
-  <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
+    <!-- Favicon -->
+    <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
 
 <body>
@@ -24,26 +24,26 @@
             <span>Sehat Harmoni Indonesia</span>
         </div>
         <div class="contact">
-      @auth
-      <span class="welcome-text">
-        Hallo, {{ Auth::user()->name }}
-      </span>
-      <span>
-        <form method="POST" action="{{ route('logout') }}" style="display:inline;">
-          @csrf
-          <button type="submit" class="logout-button">Logout</button>
-        </form>
-      </span>
-      @else
-      <span>
-        <a href="{{ route('login') }}" class="btn">Log in</a>
-      </span>
-      <span>
-        <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
-      </span>
-      @endauth
+            @auth
+                <span class="welcome-text">
+                    Hallo, {{ Auth::user()->name }}
+                </span>
+                <span>
+                    <form method="POST" action="{{ route('logout') }}" style="display:inline;">
+                        @csrf
+                        <button type="submit" class="logout-button">Logout</button>
+                    </form>
+                </span>
+            @else
+                <span>
+                    <a href="{{ route('login') }}" class="btn">Log in</a>
+                </span>
+                <span>
+                    <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+                </span>
+            @endauth
+        </div>
     </div>
-  </div>
 
 
     {{-- Tempatkan konten halaman di sini --}}
@@ -54,36 +54,67 @@
 
 
     <!-- Menu Navigasi -->
-  <nav class="menu">
-    <div class="hamburger" id="hamburger-menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-    <ul id="nav-ul">
-      <li><a href="/beranda">Beranda</a></li>
-      <li><a href="/tentangkami">Tentang Kami</a></li>
-      <li class="dropdown">
-        <a href="#">Terapis</a>
-        <ul class="dropdown-content">
-          <li><a href="/jadwaldokter1">Jadwal Terapis</a></li>
-          <li><a href="/profildokter">Profil Terapis</a></li>
+    <nav class="menu">
+        <div class="hamburger" id="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-ul">
+            <li><a href="/beranda">Beranda</a></li>
+            <li><a href="/tentangkami">Tentang Kami</a></li>
+            <li class="dropdown">
+                <a href="#">Terapis</a>
+                <ul class="dropdown-content">
+                    <li><a href="/jadwaldokter1">Jadwal Terapis</a></li>
+                    <li><a href="/profildokter">Profil Terapis</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/pesanlayanan">Layanan Terapis</a>
+            </li>
+            <li><a href="/pengaduan">Layanan Pengaduan</a></li>
         </ul>
-      </li>
-      <li >
-        <a href="/pesanlayanan">Layanan Terapis</a>
-      </li>
-      <li><a href="/pengaduan">Layanan Pengaduan</a></li>
-    </ul>
-  </nav>
+    </nav>
 
     <div class="about-us-banner"
-        style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
+        style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('sehat/10.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
         <h1>Pesan Layanan</h1>
         <p>Sebelum Melakukan Pemesanan Cek Jadwal Dokter Terlebih Dahulu</p>
     </div>
 
     <!-- Formulir -->
+    @if (session('success'))
+        <div style="text-align: center; margin-bottom: 20px;">
+            <div
+                style="display: inline-block; background-color: #d4edda; color: #155724; padding: 8px 15px; border-radius: 5px; font-size: 1.1em; border: 1px solid #c3e6cb;">
+                {{ session('success') }}
+            </div>
+        </div>
+    @endif
+
+    @if (session('info'))
+        <div style="text-align: center; margin-bottom: 20px;">
+            <div
+                style="display: inline-block; background-color: #cce5ff; color: #004085; padding: 8px 15px; border-radius: 5px; font-size: 1.1em; border: 1px solid #b8daff;">
+                {{ session('info') }}
+            </div>
+        </div>
+    @endif
+
+    @if ($errors->any())
+        <div style="text-align: center; margin-bottom: 20px;">
+            <div
+                style="display: inline-block; background-color: #f8d7da; color: #721c24; padding: 8px 15px; border-radius: 5px; font-size: 1.1em; border: 1px solid #f5c6cb; text-align: left;">
+                <ul style="margin: 0; padding-left: 20px;">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        </div>
+    @endif
+
 
     <section class="form-section">
         <h2 class="form-title">Pesan Layanan</h2>
@@ -93,9 +124,9 @@
                 @csrf
 
                 <h3>Data Pasien:</h3>
-    @if(session('success'))
-    <div class="alert alert-success">{{ session('success') }}</div>
-    @endif
+                {{-- Pesan Sukses --}}
+
+
                 <label for="nama_lengkap">Nama Lengkap</label>
                 <input type="text" name="nama_lengkap" required>
 
@@ -216,31 +247,31 @@
     </div>
     </footer>
 
-  <!-- JS Hamburger dan Dropdown -->
-  <script>
-    const hamburger = document.getElementById('hamburger-menu');
-    const navUl = document.getElementById('nav-ul');
-    hamburger.addEventListener('click', () => {
-      navUl.classList.toggle('active');
-    });
+    <!-- JS Hamburger dan Dropdown -->
+    <script>
+        const hamburger = document.getElementById('hamburger-menu');
+        const navUl = document.getElementById('nav-ul');
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+        });
 
-    document.querySelectorAll('.menu .dropdown > a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        if (window.innerWidth <= 900) {
-          e.preventDefault();
-          this.parentElement.classList.toggle('open');
+        document.querySelectorAll('.menu .dropdown > a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (window.innerWidth <= 900) {
+                    e.preventDefault();
+                    this.parentElement.classList.toggle('open');
+                }
+            });
+        });
+
+        // Fungsi toggle login modal
+        function toggleLogin() {
+            const overlay = document.getElementById("overlay");
+            const modal = document.getElementById("loginModal");
+            overlay.classList.toggle("active");
+            modal.classList.toggle("active");
         }
-      });
-    });
-
-    // Fungsi toggle login modal
-    function toggleLogin() {
-      const overlay = document.getElementById("overlay");
-      const modal = document.getElementById("loginModal");
-      overlay.classList.toggle("active");
-      modal.classList.toggle("active");
-    }
-  </script>
+    </script>
 </body>
 
 </html>

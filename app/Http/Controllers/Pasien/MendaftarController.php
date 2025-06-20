@@ -53,9 +53,10 @@ class MendaftarController extends Controller
         'jenis_layanan' => $request->jenis_layanan,
     ]);
 
-       return redirect()->back()
-    ->with('status', 'Terima Kasih, Pesanan Anda Berhasil Dikirim')
-    ->with('info', 'Mohon Tunggu Konfirmasi Dari Admin');
+       return redirect()->back()->with([
+        'success' => 'Terima kasih, pesanan Anda berhasil dikirim!',
+        'info' => 'Mohon tunggu konfirmasi dari admin.'
+    ]);
     }
 }
 

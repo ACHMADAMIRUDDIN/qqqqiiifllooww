@@ -303,7 +303,7 @@ body {
   .menu a {
     padding: 15px;
     border-bottom: 1px solid #eee;
-    
+
   }
 
   .menu .dropdown-content {
@@ -491,16 +491,16 @@ body {
     object-fit: cover;
     border-radius: 5px;
   }
-  
+
   .card h3 {
     margin: 10px 0 5px;
   }
-  
+
   .card p {
     color: #666;
     font-size: 14px;
   }
-  
+
   .btn {
     margin-top: 10px;
     display: inline-block;
@@ -520,43 +520,43 @@ body {
     padding: 90px 50px;
     text-align: center;
   }
-  
+
   .card-content {
     display: flex;
     gap: 24px;
     align-items: flex-start;
   }
-  
+
   .image-section img {
     width: 140px;
     height: 180px;
     border-radius: 10px;
     object-fit: cover;
   }
-  
+
   .info-section {
     flex: 1;
   }
-  
+
   .info-section h2 {
     color: #1f3bb3;
     margin: 0;
     font-size: 20px;
   }
-  
+
   .info-section hr {
     border: none;
     border-bottom: 3px solid #1f3bb3;
     width: 180px;
     margin: 6px 0 14px 0;
   }
-  
+
   .info-section p {
     margin: 4px 0;
     line-height: 1.5;
     font-size: 14px;
   }
-  
+
   .profil-dokter {
   display: flex;
   flex-direction: column;
@@ -719,7 +719,7 @@ body {
         </ul>
       </li>
       <li >
-        <a href="/pesanlayanan">Layanan Terapis</a> 
+        <a href="/pesanlayanan">Layanan Terapis</a>
       </li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -753,7 +753,7 @@ body {
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-image: linear-gradient(to bottom, rgba(0,0,0,0.15) 60%, rgba(255,255,255,0.85) 100%), url('{{ asset('set/img/2705523986e1892362b489f56fc4ec94.jpg') }}');
+        background-image: linear-gradient(to bottom, rgba(0,0,0,0.15) 60%, rgba(255,255,255,0.85) 100%), url('{{ asset('sehat/10.jpg') }}');
         background-size: cover;
         background-position: center;
         background-blend-mode: multiply;

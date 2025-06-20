@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="kontak/css/cssle.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
       <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />  
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <!-- Favicon -->
   <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
@@ -25,7 +25,7 @@
   <span>Sehat Harmoni Indonesia</span>
 </div>
     <div class="contact">
-     
+
      @auth
            <span class="welcome-text">
     Hallo, {{ Auth::user()->name }}
@@ -73,14 +73,14 @@
         </ul>
       </li>
       <li >
-        <a href="/pesanlayanan">Layanan Terapis</a> 
+        <a href="/pesanlayanan">Layanan Terapis</a>
       </li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
   </nav>
 
 
-<div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
+<div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('sehat/10.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
     <h1>Kontak</h1>
     <p>
 Dimohon Sebelum Mengunjungi Klinik Dapat Menghubungi Atau Membuat Janji Temu/Mendaftar Terlebih Dahulu.</p>

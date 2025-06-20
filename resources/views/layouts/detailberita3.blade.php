@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>berita3 - Sehat Harmoni Indonesia</title>
-  <link rel="stylesheet" href="detailberita/detailberita3.css">  
+  <link rel="stylesheet" href="detailberita/detailberita3.css">
   <!-- Favicon -->
   <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
@@ -67,14 +67,14 @@
         </ul>
       </li>
       <li >
-        <a href="/pesanlayanan">Layanan Terapis</a> 
+        <a href="/pesanlayanan">Layanan Terapis</a>
       </li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
   </nav>
 
 
-<div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('set/img/2705523986e1892362b489f56fc4ec94.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
+<div class="about-us-banner" style="background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(255, 255, 255, 0.8) 100%), url('sehat/10.jpg'); background-size: cover; background-position: center; background-blend-mode: multiply; background-color: #5f94ff; color: white;">
     <h1>BERITA TER UPDATE</h1>
     <p>
 atasi Covid-19 di Klinik Sehat Harmoni Malang bersama dengan kami menjadi salah satu tempat terbaik untuk menjaga kesehatan.</p>
@@ -105,20 +105,20 @@ atasi Covid-19 di Klinik Sehat Harmoni Malang bersama dengan kami menjadi salah 
       <img class="berita-img" src="img/acupuncture-2.jpg" alt="Akupunktur">
       <div class="berita-deskripsi">
         <P>
-        NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu 
-        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan. 
+        NAkupresur adalah teknik perawatan kesehatan yang menggunakan penekanan pada titik-titik tertentu
+        di tubuh dengan tujuan untuk meningkatkan kesehatan dan kesejahteraan.
         Teknik ini mirip dengan akupuntur, tetapi tanpa penggunaan jarum.
         Akupresur melibatkan pemberian tekanan pada titik-titik akupuntur menggunakan jari,
-        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh. 
+        bagian tubuh lain, atau alat bantu, untuk merangsang aliran energi dan memulihkan keseimbangan tubuh.
         </P>
       </div>
       @auth
-      
+
       @else
         <div style="background:#fff;border-radius:12px;padding:2em;text-align:center;max-width:500px;margin:2em auto;box-shadow:0 2px 12px #0002;">
           <h2 style="font-weight:600;margin-bottom:1em;color:#444;">Pesan Layanan</h2>
           <p style="margin-bottom:2em;font-size:1.1em;">
-            Anda harus <a href="{{ route('login') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">login</a> atau 
+            Anda harus <a href="{{ route('login') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">login</a> atau
             <a href="{{ route('register') }}" style="color:#2563eb;text-decoration:underline;font-weight:500;">register</a> terlebih dahulu untuk mengisi form pemesanan layanan.
           </p>
           <div style="display:flex;gap:1em;justify-content:center;">
