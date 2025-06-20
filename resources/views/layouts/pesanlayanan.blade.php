@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pesan Layanan - Sehat Harmoni Indonesia</title>
-    <link rel="stylesheet" href="New folder/css/pesanlayanan.css">  
+    <link rel="stylesheet" href="New folder/css/pesanlayanan.css">
   <!-- Favicon -->
   <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 </head>
@@ -71,7 +71,7 @@
         </ul>
       </li>
       <li >
-        <a href="/pesanlayanan">Layanan Terapis</a> 
+        <a href="/pesanlayanan">Layanan Terapis</a>
       </li>
       <li><a href="/pengaduan">Layanan Pengaduan</a></li>
     </ul>
@@ -133,7 +133,7 @@
                 <textarea name="keluhan_utama" placeholder="Keluhan Utama" required></textarea>
 
                 <label for="jadwal_pemesanan">Tanggal Pemesanan</label>
-                <input type="date" name="jadwal_pemesanan" required>
+                <input type="datetime-local" name="jadwal_pemesanan" required>
 
                 <label for="jenis_layanan">Jenis Layanan</label>
                 <select name="jenis_layanan" required>

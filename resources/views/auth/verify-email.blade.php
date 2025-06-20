@@ -5,60 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>Email Verification</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="icon" href="{{ asset('/favicon/SHI.png') }}" type="image/png" />
 
     <style>
         body {
             background-color: #e6f2ff;
             font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
         }
 
         .logo-container {
-            text-align: justify;
-            justify-items: center;
-            margin-top: 4px;
+            text-align: center;
+            margin-top: 20px;
         }
 
         .logo-container img {
             width: 150px;
             height: auto;
-            justify-items: center;
         }
 
         .form-container {
             max-width: 450px;
-            margin: 20px auto;
+            margin: 30px auto;
             padding: 30px;
-            background-color: white;
+            background-color: #ffffff;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
         }
 
         .form-title {
             text-align: center;
             font-size: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #0066cc;
+            font-weight: 600;
         }
 
         .text-note {
             font-size: 14px;
-            color: #333;
+            color: #333333;
             margin-bottom: 20px;
             text-align: center;
+            line-height: 1.6;
         }
 
         .status-message {
-            color: green;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 10px;
+            border-radius: 5px;
             text-align: center;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             font-size: 14px;
         }
 
@@ -66,16 +70,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .btn, .btn-logout {
+            flex: 1;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
         }
 
         .btn {
-            padding: 10px 15px;
             background-color: #007acc;
-            color: white;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 14px;
+            color: white;
         }
 
         .btn:hover {
@@ -83,16 +96,19 @@
         }
 
         .btn-logout {
-            background: none;
+            background-color: transparent;
             border: none;
             color: #007acc;
-            font-size: 14px;
             text-decoration: underline;
-            cursor: pointer;
         }
 
         .btn-logout:hover {
             color: #005999;
+        }
+
+        form {
+            margin: 0;
+            width: 100%;
         }
     </style>
 </head>
@@ -100,15 +116,16 @@
 <body>
 
     <!-- Logo -->
- <div class="logo-container">
-        <img src="{{ asset('img/sehat_harmoni.jpeg') }}" alt="Logo" class="logo">
+    <div class="logo-container">
+        <img src="{{ asset('img/sehat_harmoni.jpeg') }}" alt="Logo">
     </div>
 
+    <!-- Verification Message -->
     <div class="form-container">
         <div class="form-title">Email Verification</div>
 
         <div class="text-note">
-            {{ __('Thanks for signing up! Before getting started, could you verify your email address by clicking on the link we just emailed to you? If you didn\'t receive the email, we will gladly send you another.') }}
+            {{ __('Thanks for signing up! Before getting started, please verify your email address by clicking the link we just emailed to you. If you didn\'t receive the email, we can send you another.') }}
         </div>
 
         @if (session('status') == 'verification-link-sent')
@@ -118,7 +135,7 @@
         @endif
 
         <div class="button-group">
-            <!-- Resend Link -->
+            <!-- Resend Verification -->
             <form method="POST" action="{{ route('verification.send') }}">
                 @csrf
                 <button class="btn" type="submit">{{ __('Resend Verification Email') }}</button>

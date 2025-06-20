@@ -542,6 +542,7 @@ body {
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
   /* Latar belakang tombol saat hover */
+  color: #3490dc;
 }
 
 /* Styling untuk pagination (titik-titik di bawah) */
