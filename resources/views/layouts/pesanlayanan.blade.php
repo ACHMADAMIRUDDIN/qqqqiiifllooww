@@ -216,6 +216,31 @@
     </div>
     </footer>
 
+  <!-- JS Hamburger dan Dropdown -->
+  <script>
+    const hamburger = document.getElementById('hamburger-menu');
+    const navUl = document.getElementById('nav-ul');
+    hamburger.addEventListener('click', () => {
+      navUl.classList.toggle('active');
+    });
+
+    document.querySelectorAll('.menu .dropdown > a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 900) {
+          e.preventDefault();
+          this.parentElement.classList.toggle('open');
+        }
+      });
+    });
+
+    // Fungsi toggle login modal
+    function toggleLogin() {
+      const overlay = document.getElementById("overlay");
+      const modal = document.getElementById("loginModal");
+      overlay.classList.toggle("active");
+      modal.classList.toggle("active");
+    }
+  </script>
 </body>
 
 </html>

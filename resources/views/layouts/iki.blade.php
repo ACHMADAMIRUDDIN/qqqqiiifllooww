@@ -53,15 +53,7 @@
   <!-- Overlay -->
   <div id="overlay" class="overlay" onclick="toggleLogin()"></div>
 
-  <!-- Login Modal -->
-  <div id="loginModal" class="login-modal">
-    <div class="login-box">
-      <h2>Login</h2>
-      <input type="text" placeholder="Email atau Username" />
-      <input type="password" placeholder="Password" />
-      <button>Masuk</button>
-    </div>
-  </div>
+
 
     <!-- Menu Navigasi -->
   <nav class="menu">

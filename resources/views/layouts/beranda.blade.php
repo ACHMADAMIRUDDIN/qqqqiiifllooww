@@ -179,7 +179,7 @@
     <section>
         <div class="promo">
             <h2>Promo</h2>
-            <h3>promo terbaru dan ter-update ada di sini </h3>
+            <h3>promo terbaru dan ter update ada di sini </h3>
 
             <div class="carousel-container" style="max-width: 600px; margin: 0 auto;">
                 <div class="carousel-slide" id="promoSlide" style="display: flex; transition: transform 0.5s;">
@@ -262,143 +262,45 @@
                     document.getElementById("lightbox").style.display = "none";
                 }
             </script>
+
         </div>
     </section>
+    @php
+        $beritas = \App\Models\Berita::latest()->get();
+    @endphp
+
     <section class="berita">
-        <html lang="id">
-
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Artikel</title>
-            <link rel="stylesheet" href="style.css">
-        </head>
-
-        <body>
-
-            <div class="mix-section">
-                <div class="mix-title">
-                    <h2>Artikel</h2>
-                </div>
-                <div class="mix-subtitle">Informasi Kesehatan dan Akupunkture</div>
-            </div>
-
-        </body>
-
+        <div class="mix-section">
+            <div class="mix-title">Artikel</div>
+            <div class="mix-subtitle">Artikel berisikan Informasi Kesehatan dan Akupunkture</div>
+        </div>
         <br>
         <div class="berita-items" id="beritaScroll">
-            <div class="berita-item">
-                <img src="https://www.sehatharmoni.com/wp-content/uploads/2016/11/DSC02141-1024x684.jpg"
-                    alt="Berita 1">
-                <div class="berita-deskripsi">
-                    <h3>
-                        <a href="{{ route('detailberita1') }}" class="news-title-link">
-                            KURSUS PIJAT REFLEKSI ANGKATAN 57
-                        </a>
-                    </h3>
-                    <p>Pada hari Sabtu - Minggu tanggal 29-30 Oktober 2016
-                        dilaksanakan Kursus Pijat Refleksi Indonesia yang diselenggarakan
-                        oleh...</p>
+            @foreach ($beritas as $berita)
+                <div class="berita-item">
+                    @if ($berita->thumbnail)
+                        <img src="{{ asset('storage/' . $berita->thumbnail) }}" alt="Thumbnail">
+                    @endif
+                    <div class="berita-deskripsi">
+                        <h3>
+                            <a href="{{ asset('storage/' . $berita->pdf_path) }}" target="_blank"
+                                class="news-title-link">
+                                {{ $berita->judul }}
+                            </a>
+                        </h3>
+                        <p>{{ $berita->deskripsi }}</p>
+                    </div>
                 </div>
-            </div>
-
-            <div class="berita-item">
-                <img src="https://www.nhlbi.nih.gov/sites/default/files/inline-images/19-1243%20NHLBI%20OY2%20Q1%20FHT%20Insomnia_900x600px%20%281%29.jpg"
-                    alt="Berita 2">
-                <div class="berita-deskripsi">
-                    <h3>
-                        <a href="{{ route('detailberita2') }}" class="news-title-link">
-                            MENYEMBUHKAN INSOMNIA DENGAN PIJAT REFLEKSI KAKI, MOKSA, DAN OBAT TRADISIONAL
-                        </a>
-                    </h3>
-                    <p>Insomnia adalah keadaan di mana seseorang sulit masuk tidur,
-                        atau kesulitan mempertahankan tidur dalam kurun waktu tertentu...</p>
-                </div>
-            </div>
-
-            <div class="berita-item">
-                <img src="https://storage.googleapis.com/rspi-assets-production/rspi-api/uploads/MTcyNzY2NDgxMTIzNA==.jpg"
-                    alt="Berita 3">
-                <div class="berita-deskripsi">
-                    <h3>
-                        <a href="{{ route('detailberita3') }}" class="news-title-link">
-                            Kenali dan Obati Nyeri Pada Perut
-                        </a>
-                    </h3>
-                    <p>Kenali dan Obati Nyeri Pada Perut
-                        nyeri perutPenyakit ini adalah jenis penyakit yang datang dan pergi selama periode yang panjang.
-                        Rasa nyeri ini dapat disebabkan oleh berbagai hal.</p>
-                </div>
-            </div>
-
-            <div class="berita-item">
-                <img src="https://img.grouponcdn.com/deal/3iqpBM7c1WQcvwZzSddLUeWzGdFE/3i-2048x1229/v1/c349x211q85.jpg"
-                    alt="Berita 3">
-                <div class="berita-deskripsi">
-                    <h3>
-                        <a href="/pijatt" class="news-title-link">
-                            Menurunkan Berat Badan Dengan Berdiet & Terapi Pijatan
-                        </a>
-                    </h3>
-                    <p>Menurunkan berat badan bagi yang kelebihan berat badan dan mempertahankan berat badan bagi yang
-                        berat badannya ideal, merupakan cara yang baik untuk berdiet. Perlu diperhatikan pada saat
-                        mengkonsumsi makanan,
-                        kita haruslah menahan diri untuk makan secukupnya saja.</p>
-                </div>
-            </div>
-
-            <div class="berita-item">
-                <img src="https://suwun.co.id/blog/wp-content/uploads/2022/10/pijat-pundak.jpg" alt="Berita 3">
-                <div class="berita-deskripsi">
-                    <h3>
-                        <a href="{{ route('detailberita3') }}" class="news-title-link">
-                            Cegah & Sembuhkan Penyakit Anemia Gizi Dengan Pijatan
-                        </a>
-                    </h3>
-                    <p>Agar manusia memiliki kemampuan kerja fisik yang baik, maka tentunya harus didukung oleh tingkat
-                        keadaan gizi yang baik pula.
-                        Tingkat keadaan gizi yang baik akan mendukung hasil kerja yang efisien dan optimal</p>
-                </div>
-            </div>
-
-            <div class="berita-item">
-                <img src="https://drhausdermatology.com/wp-content/uploads/2022/05/shutterstock_2069155256-1024x678.jpg"
-                    alt="Berita 3">
-                <div class="berita-deskripsi">
-                    <h3>
-                        <a href="{{ route('detailberita3') }}" class="news-title-link">
-                            Jerawat Atasi Dengan Pijatan
-                        </a>
-                    </h3>
-                    <p>Jerawat merupakan penyakit radang kronis dengan karakteristik ditandai oleh komedones (black
-                        heads),
-                        papula, pustula, dan kadang-kadang terbentuk kistik, mengenai folikel dan kelenjar sebaseus.</p>
-                </div>
-            </div>
-            <!-- Tambahkan berita lainnya -->
+            @endforeach
         </div>
-
-        <button class="lihat-selengkapnya" id="lihatBeritaBtn" style="display: none;">Lihat Selengkapnya</button>
     </section>
 
     <section class="Maps">
-        <html lang="id">
 
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Maps</title>
-            <link rel="stylesheet" href="style.css">
-        </head>
+
+
 
         <body>
-
-            {{-- <div class="mix-section">
-    <div class="mix-title">Maps</div>
-    <div class="mix-subtitle">Maps ini berisikann lokasi dari klinik Sehat Harmoni Malang Beserta Rincian Alamatnya </div>
-  </div> --}}
-
-
             <div class="outer-container">
                 <section class="maps-details-container">
                     <h3 class="maps-title">Lokasi Klinik Sehat Harmoni Malang</h3>
@@ -412,10 +314,9 @@
                         </div>
                         <div class="details-container">
                             <h3 class="details-title">Rincian</h3>
-                            <br>
 
                             <p class="detail-item"><span class="detail-label"><i class="bi bi-geo-alt-fill"></i>
-                                    ALAMAT</span> : Jl. Brigjen Slamet Riadi 14 Malang, Jawa Timur, Indonesia 65112.</p>
+                                    ALAMAT</span>: Jl. Brigjen Slamet Riadi 14 Malang, Jawa Timur, Indonesia 65112.</p>
                             <p class="detail-item"><span class="detail-label"><i class="bi bi-telephone-fill"></i>
                                     NO. TELEPON</span>: (0341) 367093</p>
                             <p class="detail-item"><span class="detail-label"><i class="bi bi-whatsapp"></i>
@@ -453,7 +354,8 @@
                     </div>
                     <div class="footer-column kontak">
                         <h4>Kontak</h4>
-                        <p><i class="bi bi-geo-alt-fill"></i>Jl. Tiogamas No.45, Dusun Rambaan, Landungsari, Kec. Dau, Kota Malang, Jawa Timur 65144</p>
+                        <p><i class="bi bi-geo-alt-fill"></i>Jl. Tiogamas No.45, Dusun Rambaan, Landungsari, Kec. Dau,
+                            Kota Malang, Jawa Timur 65144</p>
                         <p><i class="bi bi-phone"></i>NO. TELEPON : (0341) 367093</p>
                         <p><i class="bi bi-whatsapp"></i>WHATSAPP : (0341) 367093</p>
                         <p><i class="bi bi-envelope"></i><a style="color: #ffffff;"
@@ -467,5 +369,3 @@
             </div>
             <script src="aset/js/jsnya.js"></script>
         </body>
-
-        </html>

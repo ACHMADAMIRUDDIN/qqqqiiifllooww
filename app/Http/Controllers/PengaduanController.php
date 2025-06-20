@@ -24,6 +24,7 @@ class PengaduanController extends Controller
 
         \App\Models\Pengaduan::create($request->all());
 
-        return back()->with('success', 'Pengaduan berhasil dikirim.');
+        // Notifikasi ke admin dashboard (tanda seru)
+        return back()->with('success', 'Pengaduan berhasil dikirim.')->with('notif_user', true);
     }
 }

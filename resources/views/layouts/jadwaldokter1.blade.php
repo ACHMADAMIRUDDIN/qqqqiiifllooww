@@ -88,29 +88,8 @@
       });
     });
 
-    // Fungsi toggle login modal
-    function toggleLogin() {
-      const overlay = document.getElementById("overlay");
-      const modal = document.getElementById("loginModal");
-      overlay.classList.toggle("active");
-      modal.classList.toggle("active");
-    }
-    const dataJadwal = {
-  Akupuntur: [
-    { nama: "Dr. Yoga", jadwal: "08:00 - 10:00" },
-    { nama: "Dr. Lina", jadwal: "13:00 - 15:00" }
-  ],
-  Akupresur: [
-    { nama: "Dr. Budi", jadwal: "09:00 - 11:00" }
-  ],
-  Bekam: [
-    { nama: "Dr. Rina", jadwal: "10:00 - 12:00" }
-  ],
-  Pijat: [
-    { nama: "Dr. Toni", jadwal: "11:00 - 13:00" }
-  ]
-};
-
+    
+    
 function cariJadwal() {
   const tanggal = document.getElementById("tanggal").value;
   const terapi = document.getElementById("terapi").value;
@@ -156,6 +135,7 @@ function cariJadwal() {
         <thead>
           <tr>
             <th>NAMA TERAPIS</th>
+            <th>JENIS TERAPI</th>
             <th>JADWAL</th>
           </tr>
         </thead>
@@ -163,6 +143,7 @@ function cariJadwal() {
           @foreach($jadwals as $jadwal)
             <tr data-terapi="{{ $jadwal->jenis_terapi }}">
               <td>{{ $jadwal->nama_dokter }}</td>
+               <td>{{ $jadwal->jenis_terapi }}</td>
               <td>{{ $jadwal->jadwal }}</td>
             </tr>
           @endforeach

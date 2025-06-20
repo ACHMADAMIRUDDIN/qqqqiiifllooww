@@ -213,6 +213,19 @@ body {
     <a href="{{ route('admin.pengaduan.tampilan') }}" class="sidebar-link" data-title="Daftar Pengaduan Pengguna">
         <i class="bi bi-chat-left-dots-fill"></i> <span>Pengaduan</span>
     </a>
+
+        <a href="{{ route('admin.berita.index') }}" class="sidebar-link" data-title="berita">
+  <i class="bi bi-newspaper"></i> <span>Berita</span>
+
+    </a>
+
+
+        <a href="{{ route('admin.datapemesan.pemesan') }}" class="sidebar-link" data-title="Daftar Pemesanan">
+    </a>
+        </a>
+        <a href="{{ route('admin.user.user') }}" class="sidebar-link" data-title="Daftar Pemesanan">
+    </a>
+
 </div>
 
 
