@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Segoe UI", sans-serif;
     opacity: 0;
     transform: translateY(30px);
     transition: opacity 0.8s ease, transform 0.8s ease;
@@ -17,170 +17,175 @@ body.loaded {
 }
 
 .top-blue {
-  background-color: #618fff;
-  color: white;
-  padding: 10px 30px;
-  font-size: 14px;
-  overflow: hidden; /* Hide text that goes beyond the container */
-  white-space: nowrap; /* Prevent text from wrapping */
+    background-color: #618fff;
+    color: white;
+    padding: 10px 30px;
+    font-size: 14px;
+    overflow: hidden; /* Hide text that goes beyond the container */
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 .location {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .marquee-container {
-  display: inline-block; /* Ensures the container only takes the width of its content */
-  padding-left: 100%; /* Start the text off-screen to the right */
-  animation: marquee 25s linear infinite; /* Adjust the duration for speed */
+    display: inline-block; /* Ensures the container only takes the width of its content */
+    padding-left: 100%; /* Start the text off-screen to the right */
+    animation: marquee 25s linear infinite; /* Adjust the duration for speed */
 }
 
 .marquee-text {
-  display: inline-block; /* Allows for proper animation */
+    display: inline-block; /* Allows for proper animation */
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
-  /* BARIS KEDUA PUTIH (Modified) */
+/* BARIS KEDUA PUTIH (Modified) */
 .top-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: white;
-  border-bottom: 1px solid #ddd;
-  flex-wrap: wrap; /* For responsiveness */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    flex-wrap: wrap; /* For responsiveness */
 }
 
 .header-left .company-name {
-  color: #618fff;
-  font-size: 36px;
-  margin: 0;
-  font-size: 28px; /* Reduce font size on smaller screens */
+    color: #618fff;
+    font-size: 36px;
+    margin: 0;
+    font-size: 28px; /* Reduce font size on smaller screens */
 }
 
-
 .header-right {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .contact-info {
-  display: flex;
-  gap: 20px; /* Spacing between contact items */
+    display: flex;
+    gap: 20px; /* Spacing between contact items */
 }
 
 .contact-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.icon-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-  color: white;
-}
-
-.icon-box.call {
-  background-color: #618fff;
-}
-
-.icon-box.whatsapp {
-  background-color: #25D366; /* Green for WhatsApp */
-}
-
-.icon-box.profile {
-  background-color: #f0ad4e; /* Example profile color */
-}
-
-.text-box .label {
-  display: block;
-  font-size: 12px;
-  color: #777;
-}
-
-.text-box .value {
-  font-size: 14px;
-  color: #333;
-}
-
-/* Responsive adjustments */
-@media (max-width: 599px) { /* Apply stacking for widths below 600px */
-  .top-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .header-right {
-    justify-content: center;
-  }
-
-  .contact-info {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .contact-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-left .company-name {
-    font-size: 28px; /* Reduce font size on smaller screens */
-  }
-}
-
-@media (min-width: 600px) { /* Apply horizontal layout for widths 600px and above */
-  .top-header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-  }
-
-  .header-right {
-    justify-content: flex-end;
-  }
-
-  .contact-info {
-    flex-direction: row;
-    gap: 20px;
-  }
-
-  .contact-item {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .header-left .company-name {
-    font-size: 36px; /* Original larger font size */
-  }
-}
-
-  /* KANAN - KONTAK */
-  .right {
-    display: flex;
-    gap: 20px;
-  }
-
-  .contact-box {
     display: flex;
     align-items: center;
     gap: 8px;
-  }
+}
 
-  .contact-box .icon {
+.icon-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    color: white;
+}
+
+.icon-box.call {
+    background-color: #618fff;
+}
+
+.icon-box.whatsapp {
+    background-color: #25d366; /* Green for WhatsApp */
+}
+
+.icon-box.profile {
+    background-color: #f0ad4e; /* Example profile color */
+}
+
+.text-box .label {
+    display: block;
+    font-size: 12px;
+    color: #777;
+}
+
+.text-box .value {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 599px) {
+    /* Apply stacking for widths below 600px */
+    .top-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .header-right {
+        justify-content: center;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-left .company-name {
+        font-size: 28px; /* Reduce font size on smaller screens */
+    }
+}
+
+@media (min-width: 600px) {
+    /* Apply horizontal layout for widths 600px and above */
+    .top-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .header-right {
+        justify-content: flex-end;
+    }
+
+    .contact-info {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .contact-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header-left .company-name {
+        font-size: 36px; /* Original larger font size */
+    }
+}
+
+/* KANAN - KONTAK */
+.right {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.contact-box .icon {
     background-color: #618fff;
     color: white;
     padding: 6px;
@@ -191,187 +196,187 @@ body.loaded {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .contact-box .info .label {
+.contact-box .info .label {
     font-size: 11px;
     color: #555;
-  }
+}
 
-  .contact-box .info .value {
+.contact-box .info .value {
     font-size: 13px;
     font-weight: bold;
     color: #000;
-  }
+}
 /* RESET (Keep this) */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+    font-family: "Segoe UI", sans-serif;
 }
 
 .header-main {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
-
-
-  /*gambar*/
-  .slider {
+/*gambar*/
+.slider {
     position: relative;
     max-width: 100%;
     overflow: hidden;
-  }
+}
 
-  .slides {
+.slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
     width: 300%;
-  }
+}
 
-  .slides img {
+.slides img {
     width: 100px;
     object-fit: contain;
-  }
+}
 
-  .prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(0,0,0,0.4);
+    background: rgba(0, 0, 0, 0.4);
     color: white;
     font-size: 24px;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
     z-index: 1;
-  }
+}
 
-  .prev {
+.prev {
     left: 10px;
-  }
+}
 
-  .next {
+.next {
     right: 10px;
-  }
+}
 
-  @media (max-width: 768px) {
-    .prev, .next {
-      font-size: 18px;
-      padding: 8px 12px;
+@media (max-width: 768px) {
+    .prev,
+    .next {
+        font-size: 18px;
+        padding: 8px 12px;
     }
-  }
-  * {
+}
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
-  }
-  body {
+}
+body {
     background-color: #fff;
     color: #333;
-  }
-  header {
+}
+header {
     width: 100%;
-  }
+}
 
-  * {
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
+}
 
-   /* Tombol Container (Desktop) */
+/* Tombol Container (Desktop) */
 .info-buttons {
-  position: relative;
-  margin-top: -300px;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 0px 20px;
-  max-width: 100%;
-  z-index: 2;
-  bottom: -100px;
+    position: relative;
+    margin-top: -300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0px 20px;
+    max-width: 100%;
+    z-index: 2;
+    bottom: -100px;
 }
 
 /* Tombol Individual */
 .info-button {
-  background-color: #618fff;
-  color: white;
-  border-radius: 12px;
-  padding: 20px;
-  width: 300px;
-  min-height: 200px;
-  font-size: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+    background-color: #618fff;
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    width: 300px;
+    min-height: 200px;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .info-button h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
 
 .info-button p {
-  margin-bottom: 8px;
-  color: #f0f0f0;
+    margin-bottom: 8px;
+    color: #f0f0f0;
 }
 
 .info-button a {
-  margin-top: auto;
-  color: #ffffff;
-  font-weight: bold;
-  text-decoration: none;
+    margin-top: auto;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
 }
 
 .info-button:hover {
-  background-color: #09456a;
+    background-color: #09456a;
 }
 
 /* Responsif Tablet dan Mobile */
 @media (max-width: 1024px) {
-  .info-buttons {
-    position: relative;
-    transform: none;
-    left: 0;
-    bottom: 0;
-    margin-top: 20px;
-    padding: 20px;
-  }
+    .info-buttons {
+        position: relative;
+        transform: none;
+        left: 0;
+        bottom: 0;
+        margin-top: 20px;
+        padding: 20px;
+    }
 
-  .info-button {
-    width: 100%;
-    max-width: 500px;
-    min-height: auto;
-  }
+    .info-button {
+        width: 100%;
+        max-width: 500px;
+        min-height: auto;
+    }
 }
 /* tentang kami */
-  .tentang-kami {
+.tentang-kami {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -379,39 +384,39 @@ body {
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 70px; /* Tambahkan margin-top untuk memberi jarak dari tombol */
-  }
+}
 
-  .tentang-kami {
+.tentang-kami {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     gap: 40px;
     padding: 60px 20px;
     flex-wrap: wrap;
-  }
+}
 
-  .tentang-text {
+.tentang-text {
     flex: 1 1 400px;
-  }
+}
 
-  .tentang-text h2 {
+.tentang-text h2 {
     font-size: 32px;
     margin-bottom: 10px;
-  }
+}
 
-  .tentang-text h3 {
+.tentang-text h3 {
     font-size: 20px;
     font-weight: bold;
     margin-top: 20px;
     color: #444;
-  }
+}
 
-  .tentang-text p {
+.tentang-text p {
     line-height: 1.6;
     color: #555;
-  }
+}
 
-  .btn-selengkapnya {
+.btn-selengkapnya {
     display: inline-block;
     margin-top: 20px;
     padding: 12px 24px;
@@ -420,28 +425,27 @@ body {
     border-radius: 8px;
     font-weight: bold;
     text-decoration: none;
-  }
-  .btn-selengkapnya:hover {
+}
+.btn-selengkapnya:hover {
     background-color: #09456a;
-  }
+}
 
-  .tentang-img {
+.tentang-img {
     flex: 1 1 300px;
     min-width: 250px;
     height: 300px;
     overflow: hidden;
     border-radius: 8px;
-  }
+}
 
-  .tentang-img video {
+.tentang-img video {
     width: 100%;
     height: 100%;
     object-fit: cover;
     cursor: pointer;
-  }
+}
 
-  .darurat {
-
+.darurat {
     background-size: cover;
     background-position: center;
     height: 160px;
@@ -449,80 +453,79 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-  }
+}
 
-  .darurat-overlay {
-
+.darurat-overlay {
     padding: 20px 30px;
     border-radius: 8px;
     text-align: center;
     color: #080808;
     max-width: 600px;
     width: 90%;
-  }
+}
 
-  .quote-icon {
+.quote-icon {
     font-size: 36px;
     color: #cde8ff;
     margin-bottom: 12px;
-  }
+}
 
-  .darurat-text {
+.darurat-text {
     font-size: 16px;
     font-weight: 500;
     line-height: 1.6;
-  }
-  .testimonial-author {
+}
+.testimonial-author {
     font-weight: bold;
     font-size: 13px;
-  }
+}
 
-   .promo {
+.promo {
     padding: 40px 20px;
     background-color: #f9f9f9;
     text-align: center;
-  }
+}
 
-  .promo h2 {
+.promo h2 {
     margin-bottom: 20px;
     font-size: 22px;
     color: #1e1e2f;
-  }
+}
 
-   
-  /* Container & Layout */
-  .carousel-container {
+/* Container & Layout */
+.carousel-container {
     max-width: 100%;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
     padding: 0 1rem;
-  }
+}
 
-  .carousel-slide {
+.carousel-slide {
     display: flex;
     transition: transform 0.5s;
-  }
+}
 
-  .carousel-item {
-    flex: 0 0 100%;
+.carousel-item {
     display: flex;
     justify-content: center;
-    position: relative;
-  }
+    align-items: center;
+    background-color: #f8f8f8;
+}
 
-  .carousel-item img {
+.carousel-item img {
+    display: block;
     width: 100%;
-    max-width: 100%;
-    height: auto;
-    max-height: 320px;
+    /* Gambar mengisi lebar slide */
+    height: 100%;
+    /* Gambar mengisi tinggi slide */
     object-fit: cover;
+    /* Pastikan gambar menutupi area tanpa terdistorsi */
     border-radius: 12px;
-    box-shadow: 0 2px 12px #0002;
     cursor: pointer;
-  }
+}
 
-  .carousel-item div {
+.carousel-item div {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -534,9 +537,9 @@ body {
     font-weight: 600;
     border-radius: 0 0 12px 12px;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-  }
+}
 
-  .arrow {
+.arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -548,22 +551,22 @@ body {
     background: rgba(255, 255, 255, 0.7);
     padding: 4px 8px;
     border-radius: 50%;
-  }
+}
 
-  .arrow.left {
+.arrow.left {
     left: 10px;
-  }
+}
 
-  .arrow.right {
+.arrow.right {
     right: 10px;
-  }
+}
 
-  .carousel-dots {
+.carousel-dots {
     text-align: center;
     margin-top: 12px;
-  }
+}
 
-  .dot {
+.dot {
     display: inline-block;
     width: 12px;
     height: 12px;
@@ -571,14 +574,14 @@ body {
     background-color: #ccc;
     border-radius: 50%;
     cursor: pointer;
-  }
+}
 
-  .dot.active {
+.dot.active {
     background-color: #2563eb;
-  }
+}
 
-  /* Lightbox */
-  #lightbox {
+/* Lightbox */
+#lightbox {
     display: none;
     position: fixed;
     z-index: 9999;
@@ -589,105 +592,108 @@ body {
     background: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
-  }
+}
 
-  #lightbox span {
+#lightbox span {
     position: absolute;
     top: 30px;
     right: 40px;
     font-size: 3em;
     color: #fff;
     cursor: pointer;
-  }
+}
 
-  #lightbox img {
+#lightbox img {
     max-width: 90vw;
     max-height: 90vh;
     border-radius: 12px;
     box-shadow: 0 4px 32px #000a;
-  }
+}
 
-  /* Responsive Tweaks */
-  @media (max-width: 768px) {
+/* Responsive Tweaks */
+.carousel-container {
+    max-width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 100%;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
     .carousel-item img {
-      max-height: 240px;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
+}
 
-    .carousel-item div {
-      font-size: 1em;
-      padding: 0.4em 0;
-    }
-
-    .arrow {
-      font-size: 1.5em;
-      padding: 3px 6px;
-    }
-  }
-
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .carousel-item img {
-      max-height: 180px;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
+}
 
-    .carousel-item div {
-      font-size: 0.9em;
-    }
-
-    .arrow {
-      font-size: 1.2em;
-      padding: 2px 5px;
-    }
-  }
-  .berita {
+.berita {
     padding: 40px 20px;
     background-color: #f9f9f9;
     text-align: center;
-  }
+}
 
-  .berita h2 {
+.berita h2 {
     margin-bottom: 20px;
     font-size: 22px;
     color: #1e1e2f;
-  }
+}
 
-  .berita-items {
-  display: flex;
-  overflow-x: auto; /* jika ingin scroll horizontal */
-  gap: 1rem;
+.berita-items {
+    display: flex;
+    overflow-x: auto; /* jika ingin scroll horizontal */
+    gap: 1rem;
 }
 
 .berita-item {
-  flex: 0 0 300px; /* Lebar tetap per item */
-  max-width: 300px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-  display: flex;
-  flex-direction: column;
+    flex: 0 0 300px; /* Lebar tetap per item */
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
 }
 
 .berita-item img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: auto;
 }
 
 .berita-deskripsi {
-  padding: 1rem;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
+    padding: 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
 }
 
 .news-title-link {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
-
-
-  /*.lihat-selengkapnya {
+/*.lihat-selengkapnya {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #007bff;
@@ -696,87 +702,87 @@ body {
     color: #fff;
     cursor: pointer;
     font-size: 14px;
-  } 
+  }
 
     /* maps */
 .outer-container {
-  /* Add styles for the background container here */
+    /* Add styles for the background container here */
 
-  padding: 20px; /* Add some padding around the inner section */
-  border-radius: 10px; /* Optional: Add rounded corners */
-  margin-bottom: 20px; /* Add space below the outer container */
+    padding: 20px; /* Add some padding around the inner section */
+    border-radius: 10px; /* Optional: Add rounded corners */
+    margin-bottom: 20px; /* Add space below the outer container */
 }
 
 .maps-details-container {
-  /* Existing styles for the inner container */
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+    /* Existing styles for the inner container */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
 }
 
 .maps-title {
-  color: #333;
-  margin-bottom: 15px;
-  text-align: center;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
 }
 
 .maps-details-wrapper {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
 }
 
 .map-container {
-  flex: 1;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .details-container {
-  flex: 1;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 6px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .details-title {
-  color: #333;
-  margin-bottom: 10px;
+    color: #333;
+    margin-bottom: 10px;
 }
 
 .detail-item {
-  margin-bottom: 8px;
-  color: #555;
+    margin-bottom: 8px;
+    color: #555;
 }
 
 .detail-label {
-  font-weight: bold;
-  color: #333;
-  margin-right: 5px;
+    font-weight: bold;
+    color: #333;
+    margin-right: 5px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-  .maps-details-wrapper {
-    flex-direction: column;
-  }
+    .maps-details-wrapper {
+        flex-direction: column;
+    }
 
-  .map-container,
-  .details-container {
-    width: 100%;
-  }
+    .map-container,
+    .details-container {
+        width: 100%;
+    }
 
-  .map-container iframe {
-    width: 100%;
-    height: auto;
-  }
+    .map-container iframe {
+        width: 100%;
+        height: auto;
+    }
 }
 
 /* Footer */
-  footer {
+footer {
     background-color: #4a69bd; /* Warna biru seperti di foto */
     color: white;
     padding: 30px 20px;
@@ -842,300 +848,291 @@ body {
         text-align: left;
     }
 }
-  .copyright {
+.copyright {
     text-align: center;
-    background-color: #6D8EFF;
+    background-color: #6d8eff;
     color: white;
     padding: 10px;
-  }
+}
 
-  /* Responsive Design */
-  body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  background: #f9f9f9;
+/* Responsive Design */
+body {
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background: #f9f9f9;
 }
 
 .top-bar {
-  background-color: #5f94ff;
-  color: white;
-  padding: 5px 0;
-  font-size: 12px;
-  text-align: center;
+    background-color: #5f94ff;
+    color: white;
+    padding: 5px 0;
+    font-size: 12px;
+    text-align: center;
 }
 
-
-
 .contact {
-  display: flex;
-  gap: 20px;
-  font-size: 14px;
+    display: flex;
+    gap: 20px;
+    font-size: 14px;
 }
 
 .menu {
-  background-color: #f5f5f5;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  position: sticky;
-  top: 0;
-  z-index: 999;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 .menu ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .menu li {
-  position: relative;
+    position: relative;
 }
 
 .menu a {
-  display: block;
-  padding: 15px 20px;
-  text-decoration: none;
-  color: #333;
-  font-size: 17px;
-  cursor: pointer;
-
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    font-size: 17px;
+    cursor: pointer;
 }
 
 .menu li:hover {
-  background-color: #e6eaff;
+    background-color: #e6eaff;
 }
 
 .menu .dropdown-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  min-width: 180px;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-  border-radius: 0 0 6px 6px;
-  overflow: hidden;
-
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 0 0 6px 6px;
+    overflow: hidden;
 }
 
 .menu .dropdown:hover .dropdown-content {
-  display: block;
+    display: block;
 }
 
 .menu .dropdown > a::after {
-  content: " ▼";
-  font-size: 10px;
-  margin-left: 5px;
+    content: " ▼";
+    font-size: 10px;
+    margin-left: 5px;
 }
 
 .menu .dropdown-content li a {
-  padding: 12px 16px;
-  color: #333;
-  background-color: #fff;
-  white-space: nowrap;
+    padding: 12px 16px;
+    color: #333;
+    background-color: #fff;
+    white-space: nowrap;
 }
 
 .menu .dropdown-content li a:hover {
-  background-color: #f0f0f0;
+    background-color: #f0f0f0;
 }
 
 /* Hamburger menu */
 .hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-  width: 30px;
-  height: 30px;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-  z-index: 1100;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    z-index: 1100;
 }
 .hamburger span {
-  height: 4px;
-  width: 100%;
-  background: #5f94ff;
-  margin: 4px 0;
-  border-radius: 2px;
-  transition: 0.4s;
+    height: 4px;
+    width: 100%;
+    background: #5f94ff;
+    margin: 4px 0;
+    border-radius: 2px;
+    transition: 0.4s;
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 900px) {
-
-  .menu {
-    position: relative;
-  }
-  .menu ul {
-    flex-direction: column;
-    width: 100%;
-    display: none;
-    background: #f5f5f5;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
-    z-index: 1000;
-  }
-  .menu ul.active {
-    display: flex;
-  }
-  .menu li {
-    width: 100%;
-  }
-  .menu a {
-    padding: 15px;
-    border-bottom: 1px solid #eee;
-  }
-  .menu .dropdown-content {
-    position: static;
-    box-shadow: none;
-    min-width: 100%;
-    border-radius: 0;
-  }
-  .menu .dropdown:hover .dropdown-content,
-  .menu .dropdown:focus-within .dropdown-content {
-    display: none;
-  }
-  .menu .dropdown.open .dropdown-content {
-    display: block;
-  }
-  .hamburger {
-    display: flex;
-  }
+    .menu {
+        position: relative;
+    }
+    .menu ul {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        background: #f5f5f5;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+    }
+    .menu ul.active {
+        display: flex;
+    }
+    .menu li {
+        width: 100%;
+    }
+    .menu a {
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+    }
+    .menu .dropdown-content {
+        position: static;
+        box-shadow: none;
+        min-width: 100%;
+        border-radius: 0;
+    }
+    .menu .dropdown:hover .dropdown-content,
+    .menu .dropdown:focus-within .dropdown-content {
+        display: none;
+    }
+    .menu .dropdown.open .dropdown-content {
+        display: block;
+    }
+    .hamburger {
+        display: flex;
+    }
 }
 
 .top-bar {
-  background-color: #5f94ff;
-  color: white;
-  font-size: 12px;
-  height: 30px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
+    background-color: #5f94ff;
+    color: white;
+    font-size: 12px;
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .marquee {
-  white-space: nowrap;
-  display: inline-block;
-  animation: scrollText 15s linear infinite;
-  padding-left: 50%; /* Start dari kanan */
+    white-space: nowrap;
+    display: inline-block;
+    animation: scrollText 15s linear infinite;
+    padding-left: 50%; /* Start dari kanan */
 }
 
 @keyframes scrollText {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
-
 
 /* General Reset */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 /* Navbar */
 .navbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background: #ffffff;
-  padding: 15px 20px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    padding: 15px 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .logo {
-  font-size: 20px;
-  font-weight: bold;
-  color: #5f94ff;
+    font-size: 20px;
+    font-weight: bold;
+    color: #5f94ff;
 }
 
 .contact {
-  display: flex;
-  gap: 15px;
-  flex-wrap: wrap;
-  align-items: center;
-  font-size: 14px;
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 14px;
 }
 
 .contact span {
-  cursor: pointer;
-  white-space: nowrap;
-  color: #444;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #444;
 }
-
-
 
 /* Login Modal */
 .login-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  width: 90%;
-  max-width: 350px;
-  border-radius: 10px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  z-index: 1000;
-  padding: 25px;
-  text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    width: 90%;
+    max-width: 350px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 25px;
+    text-align: center;
 }
 
 .login-box input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .login-box button {
-  width: 100%;
-  padding: 12px;
-  background: #4a64ff;
-  border: none;
-  color: white;
-  font-weight: bold;
-  border-radius: 5px;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background 0.3s;
+    width: 100%;
+    padding: 12px;
+    background: #4a64ff;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
 .login-box button:hover {
-  background: #3c4cd4;
+    background: #3c4cd4;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .contact {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
+    .contact {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
 
-  .logo {
-    width: 100%;
-    margin-bottom: 10px;
-    font-size: 16px;
-  }
+    .logo {
+        width: 100%;
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
 }
 
 /* Styling dasar untuk judul berita */
@@ -1144,7 +1141,7 @@ h3 {
 }
 
 .news-title-link {
-    font-family: 'Poppins', sans-serif; /* Gunakan font yang modern dan mudah dibaca */
+    font-family: "Poppins", sans-serif; /* Gunakan font yang modern dan mudah dibaca */
     font-size: 1.2em; /* Ukuran font yang lebih besar */
     font-weight: 700; /* Lebih tebal */
     color: #2c3e50; /* Warna teks default yang gelap dan profesional */
@@ -1154,12 +1151,13 @@ h3 {
     padding-bottom: 5px; /* Sedikit ruang untuk garis bawah kustom */
 
     /* Transisi halus untuk semua properti yang berubah */
-    transition: color 0.3s ease-out, transform 0.3s ease-out, text-shadow 0.3s ease-out;
+    transition: color 0.3s ease-out, transform 0.3s ease-out,
+        text-shadow 0.3s ease-out;
 }
 
 /* Efek garis bawah kustom (underlining from center) */
 .news-title-link::after {
-    content: '';
+    content: "";
     position: absolute;
     width: 0;
     height: 3px; /* Ketebalan garis bawah */
@@ -1221,7 +1219,12 @@ h3 {
 .card-content {
     position: relative; /* Penting agar teks berada di atas gambar saat gambar muncul */
     z-index: 2; /* Pastikan teks selalu di atas gambar */
-    background-color: rgba(255, 255, 255, 0.9); /* Latar belakang semi-transparan untuk teks agar terbaca */
+    background-color: rgba(
+        255,
+        255,
+        255,
+        0.9
+    ); /* Latar belakang semi-transparan untuk teks agar terbaca */
     padding: 10px;
     border-radius: 5px;
     margin-top: auto; /* Dorong konten ke bawah */
@@ -1249,7 +1252,6 @@ h3 {
     text-decoration: underline;
 }
 
-
 /* Efek saat kursor diarahkan ke area .info-card */
 .info-card:hover .card-image {
     opacity: 1; /* Gambar menjadi terlihat */
@@ -1263,112 +1265,112 @@ h3 {
 }
 /* Header Gambar */
 .header {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
 }
 
 .header-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    z-index: 1;
 }
 
 /* Overlay Konten di atas gambar */
 .header-overlay {
-  position: absolute;
-  top: 40%;
-  left: 5%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 30px 40px;
-  border-left: 5px solid #5f94ff;
-  max-width: 500px;
-  z-index: 2;
-  animation: slideInLeft 2s ease forwards;
-  opacity: 0;
-  text-align: left;
+    position: absolute;
+    top: 40%;
+    left: 5%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 30px 40px;
+    border-left: 5px solid #5f94ff;
+    max-width: 500px;
+    z-index: 2;
+    animation: slideInLeft 2s ease forwards;
+    opacity: 0;
+    text-align: left;
 }
 
 /* Judul dan Tombol */
 .header-overlay h1 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #1f2937;
-  margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    color: #1f2937;
+    margin-bottom: 20px;
 }
 
 .header-btn {
-  display: inline-block;
-  background-color: #5f94ff;
-  color: white;
-  font-weight: bold;
-  padding: 12px 20px;
-  text-decoration: none;
-  border-radius: 6px;
+    display: inline-block;
+    background-color: #5f94ff;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 6px;
 }
 
 /* Animasi masuk dari kiri */
 @keyframes slideInLeft {
-  0% {
-    opacity: 0;
-    transform: translate(-100px, -50%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, -50%);
-  }
+    0% {
+        opacity: 0;
+        transform: translate(-100px, -50%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
 }
 
 /* Responsif Mobile */
 @media (max-width: 768px) {
-  .header-overlay {
-    left: 4%; /* Tengah horizontal */
-    top: 50%; /* Tengah vertikal */
-    transform: translate(-50%, -50%);
-    text-align: left;
-    padding: 20px;
-    width: 90%;
-    max-width: 100%;
-    border-left: none;
-    border-radius: 8px;
-  }
+    .header-overlay {
+        left: 4%; /* Tengah horizontal */
+        top: 50%; /* Tengah vertikal */
+        transform: translate(-50%, -50%);
+        text-align: left;
+        padding: 20px;
+        width: 90%;
+        max-width: 100%;
+        border-left: none;
+        border-radius: 8px;
+    }
 
-  .header-overlay h1 {
-    font-size: 24px;
-  }
+    .header-overlay h1 {
+        font-size: 24px;
+    }
 
-  .header-btn {
-    padding: 10px 16px;
-    font-size: 14px;
-  }
+    .header-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
 }
 
-        .btn {
-        display: inline-block;
-        padding: 8px 16px;
-        background-color: #3490dc; /* Biru */
-        color: white;
-        text-decoration: none;
-        border-radius: 7px;
-        font-weight: 600;
-        transition: background-color 0.2s ease;
-        }
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #3490dc; /* Biru */
+    color: white;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: 600;
+    transition: background-color 0.2s ease;
+}
 
-      .btn:hover {
-      background-color: #064a7e;
-      }
+.btn:hover {
+    background-color: #064a7e;
+}
 
-      .btn-secondary {
-      background-color: #3490dc; /* Abu-abu */
-      }
+.btn-secondary {
+    background-color: #3490dc; /* Abu-abu */
+}
 
-      .btn-secondary:hover {
-      background-color: #064a7e;
-      }
+.btn-secondary:hover {
+    background-color: #064a7e;
+}
 .logout-button {
     background-color: #3490dc;
     font-style: italic;
@@ -1378,80 +1380,79 @@ h3 {
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
+}
 
-  .logout-button:hover {
+.logout-button:hover {
     background-color: #174166;
-  }
+}
 
-  .welcome-text {
+.welcome-text {
     font-weight: bold;
     margin-right: 10px;
     font-style: oblique;
-  }
+}
 @keyframes slideFadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .info-button {
-  opacity: 0;
-  animation: slideFadeIn 0.4s ease-out forwards;
+    opacity: 0;
+    animation: slideFadeIn 0.4s ease-out forwards;
 }
 
 .info-button:nth-child(1) {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 .info-button:nth-child(2) {
-  animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 .info-button:nth-child(3) {
-  animation-delay: 0.6s;
+    animation-delay: 0.6s;
 }
 
 .darurat {
-  background-image: url('/image/bg_darurat.png');
-  background-size: cover;
-  height :30%;
-  background-position: center;
-  position: relative;
+    background-image: url("/image/bg_darurat.png");
+    background-size: cover;
+    height: 30%;
+    background-position: center;
+    position: relative;
 }
 
 .darurat-overlay {
-  position: relative;  
-  width: 100%;
-  min-width: 100%;
-  height: 100%;
-  background-color: rgba(0, 123, 255, 0.7); /* Tetap pakai overlay dalam */
-  display: flex;
-  justify-content: center; 
-  align-items: center;
-  padding: 0; 
-  z-index: 100; /* Optional: agar menutupi konten */
-  color: white; /* Agar teks terlihat jelas */
-  text-align: center;
+    position: relative;
+    width: 100%;
+    min-width: 100%;
+    height: 100%;
+    background-color: rgba(0, 123, 255, 0.7); /* Tetap pakai overlay dalam */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    z-index: 100; /* Optional: agar menutupi konten */
+    color: white; /* Agar teks terlihat jelas */
+    text-align: center;
 }
 
 .quote-icon {
-  font-size: 2em;
-  margin-bottom: -15px;
+    font-size: 2em;
+    margin-bottom: -15px;
 }
 
 .darurat-text {
-  font-size: 1.2em;
-  font-family: 'Work Sans';
-  font-style: normal;
-  margin-bottom: 10px;
+    font-size: 1.2em;
+    font-family: "Work Sans";
+    font-style: normal;
+    margin-bottom: 10px;
 }
 
-
 .testimonial-author {
-  font-style: italic;
-  font-weight: bold;
+    font-style: italic;
+    font-weight: bold;
 }
